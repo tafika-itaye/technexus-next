@@ -44,12 +44,20 @@ export default function PtHomePage() {
       </div>
       <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "12px 40px", display: "flex", gap: "28px", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
         {brands.map(b => (
-          <span key={b} style={{ color: "var(--fl-neutral-40)", fontSize: "12px", fontWeight: 600 }}>{b}</span>
+          <span key={b} style={{ color: "#cccccc", fontSize: "12px", fontWeight: 600 }}>{b}</span>
         ))}
       </div>
       <div style={{ background: "var(--accent)", padding: "8px 40px", display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
-        {["Registado PPDA","MANePS Activo","MSME BRN.A6SNWQY","Conforme MRA"].map(b => (
-          <span key={b} style={{ color: "#fff", fontSize: "11px", fontWeight: 600, letterSpacing: "0.06em" }}>{b}</span>
+        {[
+          { label: "Registado PPDA", color: "#90caf9" },
+          { label: "MANePS Activo", color: "#90caf9" },
+          { label: "MSME BRN.A6SNWQY", color: "#90caf9" },
+          { label: "Conforme MRA", color: "#90caf9" },
+        ].map(b => (
+          <span key={b.label} style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#fff", fontSize: "11px", fontWeight: 600, letterSpacing: "0.06em" }}>
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: b.color, display: "inline-block", flexShrink: 0 }} />
+            {b.label}
+          </span>
         ))}
       </div>
       <div style={{ background: "var(--fl-neutral-90)", padding: "72px 40px 64px", textAlign: "center" }}>
@@ -85,3 +93,5 @@ export default function PtHomePage() {
     </div>
   );
 }
+
+
