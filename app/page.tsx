@@ -118,7 +118,7 @@ export default function Home() {
             title={b.name}
             loading={i < 3 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "auto"}
-            className="brand-logo" style={{ height: "28px", width: "auto", objectFit: "contain" }}
+            width={120} height={28} className="brand-logo" style={{ height: "28px", width: "auto", objectFit: "contain" }}
           />
         ))}
       </div>
@@ -234,6 +234,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
