@@ -153,8 +153,8 @@ export default function CredentialsPage() {
               <input type="text" value={contact} onChange={e => setContact(e.target.value)} placeholder="+265 ... or your@email.com" required style={inp} />
             </div>
             <div>
-              <label style={lbl}>Service Required *</label>
-              <select value={service} onChange={e => setService(e.target.value)} style={inp}>
+              <label htmlFor="cred-service" style={lbl}>Service Required *</label>
+              <select id="cred-service" value={service} onChange={e => setService(e.target.value)} style={inp}>
                 <option value="">— Select a service —</option>
                 <option>IT Hardware / Catalogue</option>
                 <option>PC Assembly</option>
@@ -186,6 +186,7 @@ export default function CredentialsPage() {
     </div>
   );
 }
+
 
 
 

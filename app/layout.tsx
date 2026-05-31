@@ -29,8 +29,24 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <a href="https://wa.me/265889941700" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" style={{ position:"fixed", bottom:"28px", right:"28px", zIndex:9999, background:"#25D366", borderRadius:"50%", width:"56px", height:"56px", display:"flex", alignItems:"center", justifyContent:"center", boxShadow:"0 4px 16px rgba(0,0,0,0.28)", textDecoration:"none" }}><WaIcon /></a>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "TechNexus",
+          "legalName": "TechNexus MW",
+          "url": "https://www.technexusmw.com",
+          "telephone": "+265-889-941-700",
+          "email": "technexus_mw@proton.me",
+          "logo": "https://www.technexusmw.com/Products_logos/technexuslogo1.webp",
+          "description": "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Blantyre, Malawi.",
+          "address": { "@type": "PostalAddress", "addressLocality": "Blantyre", "addressCountry": "MW" },
+          "identifier": "BRN.A6SNWQY",
+          "sameAs": ["https://wa.me/265889941700"]
+        }) }} />
       </body>
     </html>
   );
 }
+
+
 

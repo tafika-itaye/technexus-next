@@ -192,16 +192,16 @@ export default function Home() {
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "24px" }}>Fill in below and we will respond via WhatsApp within 24 hours.</p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             <div>
-              <label style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Name *</label>
-              <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
+              <label htmlFor="qe-name" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Name *</label>
+              <input id="qe-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
             </div>
             <div>
-              <label style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Organisation</label>
-              <input type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Company / NGO / Institution" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
+              <label htmlFor="qe-org" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Organisation</label>
+              <input id="qe-org" type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Company / NGO / Institution" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
             </div>
             <div style={{ gridColumn: "1 / -1" }}>
-              <label style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Service *</label>
-              <select value={service} onChange={e => setService(e.target.value)} style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }}>
+              <label htmlFor="qe-service" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Service *</label>
+              <select id="qe-service" value={service} onChange={e => setService(e.target.value)} style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }}>
                 <option>Select a service</option>
                 <option>IT Hardware / Catalogue</option>
                 <option>PC Assembly</option>
@@ -234,4 +234,5 @@ export default function Home() {
     </>
   );
 }
+
 
