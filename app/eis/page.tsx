@@ -1,10 +1,10 @@
-﻿import type { Metadata } from "next"
+﻿"use client";
+import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "EIS Bridge and POS Software | TechNexus",
   description: "MRA-certified electronic invoicing for Malawi. Real-time EIS submission, QR receipts, offline queue. Connects to QuickBooks and Sage. Onboarding in 72 hours.",
 }
 
-"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -276,4 +276,6 @@ export default function EISPage() {
     </div>
   );
 }
+
+
 
