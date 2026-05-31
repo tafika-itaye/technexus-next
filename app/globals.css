@@ -33,9 +33,9 @@
   --font-display: 'Syne', sans-serif;
   --font-body:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --nav-h:        64px;
+  --page-pad:     40px;
 }
 
-/* EIS dark theme tokens */
 [data-theme="eis"] {
   --c-bg:           #0a0f0d;
   --c-surface:      #111a14;
@@ -51,17 +51,8 @@
   --c-white:        #ffffff;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: clip;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-body);
   background: var(--bg);
@@ -71,28 +62,11 @@ body {
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
 }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--accent-dark); }
+img { max-width: 100%; display: block; }
+*:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: var(--accent-dark);
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-*:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* Dark colour scheme */
 [data-color-scheme="dark"] {
   --bg:          #111111;
   --surface:     #1a1a1a;
@@ -102,32 +76,84 @@ img {
   --border:      #2a2a2a;
 }
 
-/* Nav mobile */
+/* NAV */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
   padding: 0 24px;
   gap: 2px;
 }
+
+/* MOBILE OVERRIDES */
 @media (max-width: 768px) {
-  .ham-btn {
-    display: flex !important;
-  }
-  .nav-phone {
-    display: none;
-  }
+  :root { --page-pad: 16px; }
+
+  /* Nav */
+  .ham-btn { display: flex !important; }
+  .nav-phone { display: none; }
   .nav-links {
     display: none;
     flex-direction: column;
     padding: 8px 0;
     border-top: 1px solid #2a2a2a;
   }
-  .nav-links.nav-open {
-    display: flex;
-  }
+  .nav-links.nav-open { display: flex; }
   .nav-links a {
     padding: 12px 24px !important;
     border-bottom: none !important;
     border-top: 1px solid #2a2a2a;
   }
+
+  /* Page padding */
+  .page-hero { padding: 48px 16px 32px !important; }
+  .page-content { padding: 24px 16px !important; }
+
+  /* Grid collapses */
+  .mobile-stack { grid-template-columns: 1fr !important; }
+  .mobile-stack-2 { grid-template-columns: 1fr 1fr !important; }
+
+  /* Hero headings */
+  .hero-title { font-size: 1.8rem !important; }
+
+  /* Tables */
+  table { font-size: 12px !important; }
+  th, td { padding: 8px 10px !important; }
+
+  /* WA FAB — smaller, higher to avoid browser chrome */
+  .wa-fab {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 20px !important;
+    right: 16px !important;
+  }
+
+  /* EIS stats grid — 2 col on mobile */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* EIS features — single col */
+  .features-grid { grid-template-columns: 1fr !important; }
+
+  /* EIS process — scroll horizontally */
+  .process-grid {
+    grid-template-columns: repeat(5, minmax(160px, 1fr)) !important;
+    overflow-x: auto;
+  }
+
+  /* Pricing cards — single col */
+  .plans-grid { grid-template-columns: 1fr !important; }
+
+  /* Form grids */
+  .form-grid-2 { grid-template-columns: 1fr !important; }
+
+  /* Service cards */
+  .service-grid { grid-template-columns: 1fr !important; }
+
+  /* Contact grid on EIS */
+  .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+@media (max-width: 480px) {
+  :root { --page-pad: 12px; }
+  .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .mobile-stack-2 { grid-template-columns: 1fr !important; }
 }

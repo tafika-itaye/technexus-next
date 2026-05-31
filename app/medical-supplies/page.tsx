@@ -231,15 +231,18 @@ const pharma: [string,string,string,string][] = [
 export default function MedicalSuppliesPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/medical_equipment_1.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
-        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-          Medical Supplies Catalogue
-        </h1>
-        <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
-          Healthcare equipment, consumables and pharmaceuticals sourced through verified SADC partners. Serving Malawi, Zambia, Mozambique and South Africa.
-        </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
-          Rate: 1 USD = MK 1,734 · March 2026 · Contact for formal quotations
+      <div style={{ position: "relative", background: "var(--fl-neutral-90)", minHeight: "280px", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", overflow: "hidden" }}>
+        <img src="/index_main/medical_equipment_1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.35 }} loading="eager" fetchPriority="high" />
+        <div style={{ position: "relative", zIndex: 1, padding: "64px 24px 48px" }}>
+          <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+            Medical Supplies Catalogue
+          </h1>
+          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
+            Healthcare equipment, consumables and pharmaceuticals sourced through verified SADC partners. Serving Malawi, Zambia, Mozambique and South Africa.
+          </p>
+          <div style={{ display: "inline-block", background: "rgba(0,120,212,0.25)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "#90caf9", fontSize: "13px" }}>
+            Rate: 1 USD = MK 1,734 · March 2026 · Contact for formal quotations
+          </div>
         </div>
       </div>
 
@@ -290,5 +293,6 @@ export default function MedicalSuppliesPage() {
     </div>
   );
 }
+
 
 

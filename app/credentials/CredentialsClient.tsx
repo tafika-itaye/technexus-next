@@ -64,15 +64,15 @@ export default function CredentialsPage() {
     <div style={{ background: BG, color: TEXT, fontFamily: "var(--font-body)", minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ padding: "80px 40px 48px", textAlign: "center", borderBottom: "1px solid " + BORDER, backgroundImage: "url(/index_main/server_rack_2.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
-        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "var(--fl-neutral-90)", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+      <div style={{ padding: "64px 24px 48px", textAlign: "center", borderBottom: "1px solid " + BORDER, background: "var(--fl-neutral-90)" }}>
+        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Company Credentials &amp; Contact
         </h1>
-        <p style={{ color: MUTED, fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
+        <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "15px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
           Registration details, compliance framework, diplomatic references and a direct enquiry form.
           Available for government tenders, private sector contracts and development partner procurement.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.12)", border: "1px solid " + ACCENT, borderRadius: "999px", padding: "6px 20px", color: ACCENT, fontSize: "13px" }}>
+        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.25)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "#90caf9", fontSize: "13px" }}>
           MANePS Active · PPDA Registered · MRA Compliant · BRN.A6SNWQY
         </div>
       </div>
@@ -186,6 +186,8 @@ export default function CredentialsPage() {
     </div>
   );
 }
+
+
 
 
 
