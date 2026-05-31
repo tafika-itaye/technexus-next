@@ -15,10 +15,27 @@ const links = [
   { href: "/credentials",          label: "Credentials" },
 ];
 
+function getLang(pathname: string): "en" | "pt" {
+  return pathname.startsWith("/pt") ? "pt" : "en";
+}
+
+function getBasePath(pathname: string): string {
+  if (pathname.startsWith("/pt")) return pathname.slice(3) || "/";
+  return pathname;
+}
+
+function buildLink(base: string, lang: "en" | "pt"): string {
+  const b = base === "/" ? "" : base;
+  return lang === "pt" ? `/pt${b}` : base;
+}
+
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
+
+  const lang = getLang(pathname);
+  const base = getBasePath(pathname);
 
   useEffect(() => {
     const saved = localStorage.getItem("tn-theme");
@@ -42,7 +59,7 @@ export default function Nav() {
   return (
     <header style={{ background: "var(--fl-neutral-90)", borderBottom: "3px solid var(--accent)" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", height: "56px", gap: "16px" }}>
-        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+        <Link href={lang === "pt" ? "/pt" : "/"} style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
           <Image
             src="/Products_logos/technexuslogo1.webp"
             alt="TechNexus logo"
@@ -58,6 +75,45 @@ export default function Nav() {
         </Link>
 
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          {/* Language selector */}
+          <div style={{ display: "flex", alignItems: "center", gap: "2px", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", overflow: "hidden", fontSize: "12px", fontWeight: 600 }}>
+            <Link
+              href={buildLink(base, "en")}
+              style={{
+                padding: "4px 9px",
+                textDecoration: "none",
+                background: lang === "en" ? "var(--accent)" : "transparent",
+                color: lang === "en" ? "#fff" : "var(--fl-neutral-40)",
+                borderRight: "1px solid var(--fl-neutral-60)",
+              }}
+            >
+              EN
+            </Link>
+            <Link
+              href={buildLink(base, "pt")}
+              style={{
+                padding: "4px 9px",
+                textDecoration: "none",
+                background: lang === "pt" ? "var(--accent)" : "transparent",
+                color: lang === "pt" ? "#fff" : "var(--fl-neutral-40)",
+                borderRight: "1px solid var(--fl-neutral-60)",
+              }}
+            >
+              PT
+            </Link>
+            <span
+              title="Chichewa — Coming Soon"
+              style={{
+                padding: "4px 9px",
+                color: "var(--fl-neutral-60)",
+                cursor: "not-allowed",
+                userSelect: "none",
+              }}
+            >
+              NY
+            </span>
+          </div>
+
           <a href="tel:+265889941700" className="nav-phone" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--fl-neutral-40)", fontSize: "13px", textDecoration: "none", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", padding: "4px 10px" }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.58 4.5 2 2 0 0 1 3.55 2.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
             +265 889 941 700
@@ -90,11 +146,12 @@ export default function Nav() {
       <nav aria-label="Main navigation">
         <div className={`nav-links${open ? " nav-open" : ""}`}>
           {links.map(({ href, label }) => {
-            const active = pathname === href || (href !== "/" && pathname.startsWith(href));
+            const resolvedHref = lang === "pt" ? `/pt${href === "/" ? "" : href}` : href;
+            const active = pathname === resolvedHref || (resolvedHref !== "/" && resolvedHref !== "/pt" && pathname.startsWith(resolvedHref));
             return (
               <Link
                 key={href}
-                href={href}
+                href={resolvedHref}
                 className={`nav-item${active ? " nav-item-active" : ""}`}
               >
                 {label}
