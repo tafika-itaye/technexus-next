@@ -68,7 +68,19 @@ const services = [
   },
 ];
 
-const brands = ["HP","Dell","Lenovo","Samsung","Synology","APC","Canon","ASUS","Microsoft","AWS","Google"];
+const brands = [
+  { name: "HP",         src: "/Products_logos/hp.png" },
+  { name: "Dell",       src: "/Products_logos/dell.png" },
+  { name: "Lenovo",     src: "/Products_logos/lenovo.png" },
+  { name: "Samsung",    src: "/Products_logos/samsung.png" },
+  { name: "Synology",   src: "/Products_logos/synology.png" },
+  { name: "APC",        src: "/Products_logos/apc.png" },
+  { name: "Canon",      src: "/Products_logos/canon.png" },
+  { name: "ASUS",       src: "/Products_logos/asus.png" },
+  { name: "Microsoft",  src: "/Products_logos/microsoft.png" },
+  { name: "AWS",        src: "/Products_logos/amazon_cloud_aws.png" },
+  { name: "Google",     src: "/Products_logos/google.png" },
+];
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -96,15 +108,21 @@ export default function Home() {
 
   return (
     <>
-      {/* LOGO STRIP */}
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "12px 40px", display: "flex", gap: "32px", alignItems: "center", overflowX: "auto" }}>
+      {/* BRAND LOGO STRIP */}
+      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "14px 40px", display: "flex", gap: "28px", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflowX: "auto" }}>
         {brands.map(b => (
-          <span key={b} style={{ color: "var(--fl-neutral-40)", fontSize: "12px", fontWeight: 600, whiteSpace: "nowrap" }}>{b}</span>
+          <img
+            key={b.name}
+            src={b.src}
+            alt={b.name}
+            title={b.name}
+            style={{ height: "28px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(0.6)", opacity: 0.8 }}
+          />
         ))}
       </div>
 
       {/* BADGES */}
-      <div style={{ background: "var(--accent)", padding: "8px 40px", display: "flex", gap: "24px", flexWrap: "wrap" }}>
+      <div style={{ background: "var(--accent)", padding: "8px 40px", display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
         {["PPDA Registered","MANePS Active","MSME BRN.A6SNWQY","MRA Compliant"].map(b => (
           <span key={b} style={{ color: "#fff", fontSize: "11px", fontWeight: 600, letterSpacing: "0.06em" }}>{b}</span>
         ))}

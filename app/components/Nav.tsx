@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/",                    label: "Home" },
-  { href: "/catalogue",           label: "IT Catalogue" },
-  { href: "/computer-assembly",   label: "PC Assembly" },
-  { href: "/language-services",   label: "Language Services" },
-  { href: "/medical-supplies",    label: "Medical Supplies" },
-  { href: "/software-development",label: "Software Dev" },
-  { href: "/eis",                 label: "EIS Compliance" },
-  { href: "/credentials",         label: "Credentials" },
+  { href: "/",                     label: "Home" },
+  { href: "/catalogue",            label: "IT Catalogue" },
+  { href: "/computer-assembly",    label: "PC Assembly" },
+  { href: "/language-services",    label: "Language Services" },
+  { href: "/medical-supplies",     label: "Medical Supplies" },
+  { href: "/software-development", label: "Software Dev" },
+  { href: "/eis",                  label: "EIS Compliance" },
+  { href: "/credentials",          label: "Credentials" },
 ];
 
 export default function Nav() {
@@ -37,14 +37,12 @@ export default function Nav() {
           </div>
         </Link>
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div style={{ display: "flex", gap: "8px", fontSize: "11px" }}>
-            <Link href="/eis" style={{ color: "var(--fl-neutral-40)" }}>EN</Link>
-          </div>
           <a href="tel:+265889941700" style={{ color: "var(--fl-neutral-40)", fontSize: "13px", textDecoration: "none" }}>+265 889 941 700</a>
-          <a href="https://wa.me/265889941700" target="_blank" rel="noopener" style={{ color: "#25D366", fontSize: "13px", textDecoration: "none" }}>WhatsApp</a>
+          <a href="https://wa.me/265889941700" target="_blank" rel="noopener" style={{ color: "#25D366", fontSize: "13px", fontWeight: 600, textDecoration: "none" }}>WhatsApp</a>
         </div>
       </div>
-      <nav aria-label="Main navigation" style={{ position: "relative" }}>
+
+      <nav aria-label="Main navigation">
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -54,7 +52,7 @@ export default function Nav() {
         >
           <span />
         </button>
-        <div style={{ display: "flex", flexWrap: "wrap", padding: "0 40px", gap: "4px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", padding: "0 32px", gap: "2px" }}>
           {links.map(({ href, label }) => {
             const active = pathname === href || (href !== "/" && pathname.startsWith(href));
             return (
@@ -62,12 +60,14 @@ export default function Nav() {
                 key={href}
                 href={href}
                 style={{
-                  color: active ? "var(--accent)" : "var(--fl-neutral-40)",
-                  fontWeight: active ? 600 : 400,
+                  color: active ? "var(--accent)" : "var(--fl-neutral-30)",
+                  fontWeight: 700,
                   fontSize: "13px",
-                  padding: "8px 12px",
+                  letterSpacing: "0.03em",
+                  padding: "9px 14px",
                   textDecoration: "none",
                   borderBottom: active ? "2px solid var(--accent)" : "2px solid transparent",
+                  transition: "color 0.15s",
                 }}
               >
                 {label}
