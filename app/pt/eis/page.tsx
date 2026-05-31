@@ -3,16 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const ptLinks = [
-  { href: "/pt", label: "Inicio" },
-  { href: "/pt/catalogue", label: "Catalogo IT" },
-  { href: "/pt/computer-assembly", label: "Montagem PC" },
-  { href: "/pt/language-services", label: "Servicos Linguisticos" },
-  { href: "/pt/medical-supplies", label: "Material Medico" },
-  { href: "/pt/software-development", label: "Software" },
-  { href: "/pt/eis", label: "Conformidade EIS" },
-  { href: "/pt/credentials", label: "Credenciais" },
-];
 
 const pillars = [
   { title: "Conformidade Garantida", body: "Ligamos o seu negocio ao EIS da MRA rapidamente. Sem lacunas. Sem penalizacoes. Cada venda e assinada digitalmente pela MRA com QR legivel em cada recibo." },
@@ -98,17 +88,6 @@ export default function PtEisPage() {
 
   return (
     <div style={{ background: BG, color: TEXT, fontFamily: "var(--font-body)" }}>
-
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "8px 24px", display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-        {ptLinks.map(l => (
-          <Link key={l.href} href={l.href} style={{ color: l.href === "/pt/eis" ? G : "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", textDecoration: "none", borderRadius: "4px" }}>{l.label}</Link>
-        ))}
-        <div style={{ marginLeft: "auto", display: "flex", gap: "8px" }}>
-          <Link href="/eis" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>EN</Link>
-          <Link href="/pt/eis" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid " + G, borderRadius: "4px", color: G, textDecoration: "none" }}>PT</Link>
-          <Link href="/ny/eis" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>NY</Link>
-        </div>
-      </div>
 
       <section style={{ minHeight: "80vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "100px 32px 64px", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,211,102,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
@@ -329,3 +308,4 @@ export default function PtEisPage() {
     </div>
   );
 }
+

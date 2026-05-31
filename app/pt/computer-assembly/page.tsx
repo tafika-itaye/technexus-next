@@ -14,16 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const ptLinks = [
-  { href: "/pt", label: "Inicio" },
-  { href: "/pt/catalogue", label: "Catalogo IT" },
-  { href: "/pt/computer-assembly", label: "Montagem PC" },
-  { href: "/pt/language-services", label: "Servicos Linguisticos" },
-  { href: "/pt/medical-supplies", label: "Material Medico" },
-  { href: "/pt/software-development", label: "Software" },
-  { href: "/pt/eis", label: "Conformidade EIS" },
-  { href: "/pt/credentials", label: "Credenciais" },
-];
 
 const components = [
   { num: 1, part: "CPU", spec: "Intel Core i5-12400 (6 nucleos, 12 threads, 4,4GHz Turbo)", mwk: "MK 483,800", usd: "$279", img: "/images/pc-parts/intel-core-i5-12400.jpg" },
@@ -79,17 +69,6 @@ const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", border
 export default function PtComputerAssemblyPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
-
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "8px 24px", display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-        {ptLinks.map(l => (
-          <Link key={l.href} href={l.href} style={{ color: l.href === "/pt/computer-assembly" ? "var(--fl-blue)" : "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", textDecoration: "none", borderRadius: "4px" }}>{l.label}</Link>
-        ))}
-        <div style={{ marginLeft: "auto", display: "flex", gap: "8px" }}>
-          <Link href="/computer-assembly" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>EN</Link>
-          <Link href="/pt/computer-assembly" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid var(--fl-blue)", borderRadius: "4px", color: "var(--fl-blue)", textDecoration: "none" }}>PT</Link>
-          <Link href="/ny/computer-assembly" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>NY</Link>
-        </div>
-      </div>
 
       <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
@@ -225,3 +204,4 @@ export default function PtComputerAssemblyPage() {
     </div>
   );
 }
+

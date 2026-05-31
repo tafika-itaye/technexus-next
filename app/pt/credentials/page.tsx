@@ -3,16 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const ptLinks = [
-  { href: "/pt", label: "Inicio" },
-  { href: "/pt/catalogue", label: "Catalogo IT" },
-  { href: "/pt/computer-assembly", label: "Montagem PC" },
-  { href: "/pt/language-services", label: "Servicos Linguisticos" },
-  { href: "/pt/medical-supplies", label: "Material Medico" },
-  { href: "/pt/software-development", label: "Software" },
-  { href: "/pt/eis", label: "Conformidade EIS" },
-  { href: "/pt/credentials", label: "Credenciais" },
-];
 
 const registration = [
   { label: "Nome Legal", value: "TechNexus" },
@@ -86,17 +76,6 @@ export default function PtCredentialsPage() {
 
   return (
     <div style={{ color: TEXT, fontFamily: "var(--font-body)" }}>
-
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "8px 24px", display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-        {ptLinks.map(l => (
-          <Link key={l.href} href={l.href} style={{ color: l.href === "/pt/credentials" ? "var(--fl-blue)" : "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", textDecoration: "none", borderRadius: "4px" }}>{l.label}</Link>
-        ))}
-        <div style={{ marginLeft: "auto", display: "flex", gap: "8px" }}>
-          <Link href="/credentials" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>EN</Link>
-          <Link href="/pt/credentials" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid var(--fl-blue)", borderRadius: "4px", color: "var(--fl-blue)", textDecoration: "none" }}>PT</Link>
-          <Link href="/ny/credentials" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>NY</Link>
-        </div>
-      </div>
 
       <div style={{ background: "var(--accent)", padding: "48px 40px 36px", textAlign: "center" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: "#fff", marginBottom: "12px" }}>Credenciais da Empresa e Contacto</h1>
@@ -200,3 +179,4 @@ export default function PtCredentialsPage() {
     </div>
   );
 }
+

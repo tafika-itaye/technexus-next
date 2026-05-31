@@ -14,16 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-const ptLinks = [
-  { href: "/pt", label: "Inicio" },
-  { href: "/pt/catalogue", label: "Catalogo IT" },
-  { href: "/pt/computer-assembly", label: "Montagem PC" },
-  { href: "/pt/language-services", label: "Servicos Linguisticos" },
-  { href: "/pt/medical-supplies", label: "Material Medico" },
-  { href: "/pt/software-development", label: "Software" },
-  { href: "/pt/eis", label: "Conformidade EIS" },
-  { href: "/pt/credentials", label: "Credenciais" },
-];
 
 const BG = "var(--fl-neutral-2)";
 const SURF = "#ffffff";
@@ -252,17 +242,6 @@ export default function PtMedicalSuppliesPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "8px 24px", display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
-        {ptLinks.map(l => (
-          <Link key={l.href} href={l.href} style={{ color: l.href === "/pt/medical-supplies" ? "var(--fl-blue)" : "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", textDecoration: "none", borderRadius: "4px" }}>{l.label}</Link>
-        ))}
-        <div style={{ marginLeft: "auto", display: "flex", gap: "8px" }}>
-          <Link href="/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>EN</Link>
-          <Link href="/pt/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid var(--fl-blue)", borderRadius: "4px", color: "var(--fl-blue)", textDecoration: "none" }}>PT</Link>
-          <Link href="/ny/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>NY</Link>
-        </div>
-      </div>
-
       <div style={{ position: "relative", background: "var(--fl-neutral-90)", minHeight: "280px", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", overflow: "hidden" }}>
         <img src="/index_main/medical_equipment_1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.35 }} loading="eager" />
         <div style={{ position: "relative", zIndex: 1, padding: "64px 24px 48px" }}>
@@ -325,3 +304,4 @@ export default function PtMedicalSuppliesPage() {
     </div>
   );
 }
+
