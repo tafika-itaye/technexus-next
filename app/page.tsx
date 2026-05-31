@@ -110,12 +110,14 @@ export default function Home() {
     <>
       {/* BRAND LOGO STRIP */}
       <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "14px 40px", display: "flex", gap: "28px", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflowX: "auto" }}>
-        {brands.map(b => (
+        {brands.map((b, i) => (
           <img
             key={b.name}
             src={b.src}
             alt={b.name}
             title={b.name}
+            loading={i < 3 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "auto"}
             style={{ height: "28px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(0.6)", opacity: 0.8 }}
           />
         ))}
@@ -232,3 +234,4 @@ export default function Home() {
     </>
   );
 }
+
