@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "TechNexus Scripts — Servicos Linguisticos & Consultoria",
@@ -13,188 +14,255 @@ export const metadata: Metadata = {
   },
 };
 
+const langServices = [
+  { name: "Traducao de Documentos", langs: "EN↔PT, EN↔NY, EN↔SW", unit: "por pagina (250 palavras)", mwk: "MK 17.340", usd: "$10", wa: "Traducao%20de%20Documentos%0APreco%3A%20%2410" },
+  { name: "Traducao Certificada", langs: "EN↔PT, EN↔NY", unit: "por pagina (250 palavras)", mwk: "MK 26.010", usd: "$15", wa: "Traducao%20Certificada%0APreco%3A%20%2415" },
+  { name: "Transcricao Audio", langs: "EN, PT, NY, SW", unit: "por hora de audio", mwk: "MK 86.700", usd: "$50", wa: "Transcricao%20Audio%0APreco%3A%20%2450" },
+  { name: "Transcricao + Traducao", langs: "EN↔PT, EN↔NY", unit: "por hora de audio", mwk: "MK 138.720", usd: "$80", wa: "Transcricao%20%2B%20Traducao%0APreco%3A%20%2480" },
+  { name: "Legendagem / Legendas", langs: "EN, PT, NY, SW", unit: "por minuto de video", mwk: "MK 8.670", usd: "$5", wa: "Legendagem%0APreco%3A%20%245" },
+  { name: "Interpretacao Consecutiva", langs: "EN↔PT, EN↔NY", unit: "por hora", mwk: "MK 121.380", usd: "$70", wa: "Interpretacao%20Consecutiva%0APreco%3A%20%2470" },
+  { name: "Interpretacao de Conferencia", langs: "EN↔PT, EN↔NY", unit: "por meio dia", mwk: "MK 346.800", usd: "$200", wa: "Interpretacao%20de%20Conferencia%0APreco%3A%20%24200" },
+  { name: "Formacao Linguistica", langs: "EN, PT, NY, SW", unit: "por hora (grupo)", mwk: "MK 69.360", usd: "$40", wa: "Formacao%20Linguistica%0APreco%3A%20%2440" },
+  { name: "Revisao e Edicao", langs: "EN, PT", unit: "por pagina", mwk: "MK 8.670", usd: "$5", wa: "Revisao%20e%20Edicao%0APreco%3A%20%245" },
+  { name: "Localizacao Website / App", langs: "EN↔PT, EN↔NY", unit: "orcamento personalizado", mwk: "a partir de MK 346.800", usd: "a partir de $200", wa: "Localizacao%20Website%20App%0APreco%3A%20a%20partir%20de%20%24200" },
+];
+
+const tenderServices = [
+  { name: "Registo de Pre-Qualificacao", desc: "Formularios de registo de fornecedores, perfis de empresa, documentos de conformidade", mwk: "MK 100.000" },
+  { name: "Resposta a Concurso Simples", desc: "Concursos por cotacao, RFQs, documentos de proposta simples", mwk: "MK 200.000" },
+  { name: "Resposta a Concurso Complexo", desc: "Propostas completas, propostas tecnicas e financeiras, declaracoes metodologicas, RFPs", mwk: "MK 450.000" },
+  { name: "Revisao de Conformidade", desc: "Verificar documentos concluidos quanto a erros, campos em falta, lacunas de conformidade", mwk: "MK 75.000" },
+  { name: "Traducao de Documentos de Concurso", desc: "Traduzir documentos de concurso: Ingles, Portugues, Chichewa, Swahili", mwk: "MK 7.000/pagina" },
+];
+
+const localReg = [
+  { name: "Registo MSME / Nome Comercial", desc: "Registar nome comercial ou MSME com MBRS", mwk: "MK 50.000" },
+  { name: "Constituicao de Empresa", desc: "Registo de Sociedade por Quotas com MBRS. Memorando, estatutos, alocacao de accoes", mwk: "MK 150.000" },
+  { name: "Registo TPIN", desc: "NIF do contribuinte com Autoridade Tributaria do Malawi. Necessario para conformidade fiscal e procurement", mwk: "MK 30.000" },
+  { name: "Registo IVA MRA", desc: "Registo de IVA para empresas que excedam o limiar de volume de negocios da MRA", mwk: "MK 50.000" },
+  { name: "Registo de Fornecedor PPDA", desc: "Registar como fornecedor no portal da Autoridade de Procurement e Alienacao de Activos Publicos", mwk: "MK 80.000" },
+  { name: "Registo MANePS", desc: "Sistema Nacional de Procurement Electronico do Malawi — necessario para concursos governamentais", mwk: "MK 80.000" },
+  { name: "Licenciamento TEVETA / Sectorial", desc: "Licenciamento pela Autoridade de Educacao e Formacao Tecnica, Empresarial e Vocacional", mwk: "MK 100.000" },
+  { name: "Relatorios Anuais e Revisao de Conformidade", desc: "Preparar e submeter relatorios anuais da empresa, rever estado de conformidade em todos os registos", mwk: "MK 60.000" },
+];
+
+const crossBorderReg = [
+  { country: "Zambia", name: "Registo PACRA", desc: "Agencia de Registo de Patentes e Empresas — pesquisa, reserva e registo de nome de empresa", mwk: "MK 200.000" },
+  { country: "Zambia", name: "TPIN / Registo Fiscal ZRA", desc: "Registo de contribuinte da Autoridade Tributaria da Zambia para operar na Zambia", mwk: "MK 100.000" },
+  { country: "Mocambique", name: "Registo CPPME / NUIT", desc: "Registo comercial no CPPME e numero fiscal (NUIT) na AT-Mocambique. Inclui preparacao de documentos em Portugues", mwk: "MK 250.000" },
+  { country: "Mocambique", name: "Alvara Comercial", desc: "Licenca comercial municipal. Necessaria para operacoes formais em Mocambique", mwk: "MK 150.000" },
+  { country: "Africa do Sul", name: "Registo CIPC", desc: "Registo na Comissao de Empresas e Propriedade Intelectual. Empresa privada (Pty Ltd) ou NPC", mwk: "MK 300.000" },
+  { country: "Africa do Sul", name: "Numero Fiscal SARS", desc: "Registo no Servico de Receitas da Africa do Sul para imposto sobre o rendimento e IVA", mwk: "MK 120.000" },
+  { country: "Multi-pais", name: "Pacote Completo de Registo", desc: "Registo de empresa, numero fiscal e licenca de operacao num unico pais. Inclui toda a traducao de documentos e coordenacao de agentes", mwk: "MK 400.000" },
+];
+
+const langPairs = [
+  { pair: "Ingles para/de Portugues", body: "Documentos, contratos, correspondencia, registos medicos, instrumentos juridicos. Clientes diplomaticos e institucionais." },
+  { pair: "Ingles para/de Chichewa", body: "Saude comunitaria, comunicacoes governamentais, materiais educativos, documentacao de trabalho de campo de ONGs." },
+  { pair: "Ingles para/de Swahili", body: "Comercio transfronteirico, comunicacoes de ONGs da Africa Oriental, media e radiodifusao." },
+  { pair: "Portugues para/de Chichewa", body: "Corredor Malawi-Mocambique: documentacao fronteiriça, acordos comerciais, materiais consulares." },
+];
+
+const sectors = [
+  { title: "Missoes Diplomaticas", body: "Correspondencia consular, notas diplomaticas, documentacao de vistos, materiais de protocolo. Discrição garantida." },
+  { title: "Saude", body: "Registos de pacientes, documentacao de ensaios clinicos, manuais de dispositivos medicos. Manuseamento em conformidade com HIPAA." },
+  { title: "Juridico e Conformidade", body: "Contratos, declaracoes juradas, documentos judiciais, quadros de conformidade. Traducoes certificadas disponiveis." },
+  { title: "Empresarial e ONG", body: "Relatorios anuais, politica de RH, documentacao de projectos, relatorios de doadores, materiais de conselho." },
+  { title: "Procurement e Concursos", body: "Pacotes de pre-qualificacao, respostas a concursos, documentos RFQ, revisoes de conformidade. Servico a preco fixo." },
+  { title: "Negocios Transfronteiricos", body: "Registo de empresas, conformidade fiscal, licencas de operacao no Malawi, Zambia, Mocambique e Africa do Sul." },
+  { title: "Media e Radiodifusao", body: "Legendagem para filmes, documentarios, videos de formacao e conteudos de e-learning." },
+  { title: "Educacao", body: "Materiais curriculares, localizacao de manuais, manuais de formacao, exames." },
+];
+
+const BG = "var(--fl-neutral-2)";
+const SURF = "#ffffff";
+const BORDER = "var(--fl-neutral-8)";
+const TEXT = "var(--fl-neutral-90)";
+const MUTED = "#595959";
+const ACCENT = "var(--fl-blue)";
+const TEAL = "var(--fl-teal)";
+
+const TH: React.CSSProperties = { padding: "10px 16px", textAlign: "left", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.06em", color: MUTED, borderBottom: "1px solid var(--fl-neutral-8)", background: "var(--fl-neutral-4)" };
+const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", borderBottom: "1px solid var(--fl-neutral-8)", color: TEXT };
+
+const WA_BASE = "https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20para%3A%0A";
+
+function QuoteBtn({ text }: { text: string }) {
+  return (
+    <a href={WA_BASE + text} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+      Quote
+    </a>
+  );
+}
+
 export default function PTLanguageServicesPage() {
   return (
-    <>
-      {/* PT nav strip */}
-      <div style={{ background: "var(--surface-alt, #1a1a2e)", borderBottom: "1px solid var(--border)", padding: "6px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: ".82rem", flexWrap: "wrap", gap: "6px" }}>
-        <nav style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="/pt">Inicio</a>
-          <a href="/pt/catalogue">Catalogo IT</a>
-          <a href="/pt/computer-assembly">Montagem PC</a>
-          <a href="/pt/language-services" style={{ fontWeight: 700, color: "var(--fl-blue, #4f8ef7)" }}>Servicos Linguisticos</a>
-          <a href="/pt/medical-supplies">Material Medico</a>
-          <a href="/pt/software-development">Software</a>
-          <a href="/pt/credentials">Credenciais</a>
-        </nav>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <a href="/language-services">EN</a>
-          <span style={{ fontWeight: 700, color: "var(--fl-blue, #4f8ef7)" }}>PT</span>
-          <a href="/ny/language-services">NY</a>
+    <div style={{ background: BG, minHeight: "100vh" }}>
+
+      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+          TechNexus Scripts — Servicos Linguisticos &amp; Consultoria
+        </h1>
+        <p style={{ color: "#999", fontSize: "15px", maxWidth: "680px", margin: "0 auto 20px", lineHeight: 1.7 }}>
+          Traducao, transcricao, legendagem, interpretacao e formacao linguistica profissional. Ao servico de missoes diplomaticas, ONGs, instituicoes de saude e clientes privados em toda a Africa Austral e Oriental.
+        </p>
+        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
+          Ingles · Portugues · Chichewa · Swahili · Conformidade HIPAA/RGPD
         </div>
       </div>
 
-      <div className="hero">
-        <h2>TechNexus Scripts — Servicos Linguisticos &amp; Consultoria</h2>
-        <p>Traducao, transcricao, legendagem, interpretacao e formacao linguistica profissional. Ao servico de missoes diplomaticas, ONGs, instituicoes de saude e clientes privados em toda a Africa Austral e Oriental.</p>
-        <div className="pill">Ingles · Portugues · Chichewa · Swahili · Conformidade HIPAA/RGPD</div>
-      </div>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 
-      <div className="content">
-        <div className="sh">
-          <h2>Servicos &amp; Precos</h2>
-          <p className="sd">Todos os precos excluem IVA de 17,5%. Descontos por volume disponiveis.</p>
-        </div>
-        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: "var(--radius)" }}>
-          <table style={{ minWidth: "520px" }}>
+        <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "6px" }}>Servicos Linguisticos e Precos</h2>
+        <p style={{ fontSize: "14px", color: MUTED, marginBottom: "24px" }}>Precos excluem IVA de 17,5%. Descontos por volume disponiveis.</p>
+        <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>
               <tr>
-                <th scope="col">Servico</th>
-                <th scope="col">Idiomas</th>
-                <th scope="col">Unidade</th>
-                <th scope="col">MWK</th>
-                <th scope="col">USD</th>
-                <th scope="col">Quote</th>
+                <th style={TH}>Servico</th>
+                <th style={TH}>Linguas</th>
+                <th style={TH}>Unidade</th>
+                <th style={TH}>MWK</th>
+                <th style={TH}>USD</th>
+                <th style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td className="pn">Traducao de Documentos</td><td>EN PT NY SW</td><td>por pagina (250 palavras)</td><td className="mk">MK 17.340</td><td className="pr">$10</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Traducao%20de%20Documentos%20%2410" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Traducao Certificada</td><td>EN PT NY</td><td>por pagina (250 palavras)</td><td className="mk">MK 26.010</td><td className="pr">$15</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Traducao%20Certificada%20%2415" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Transcricao Audio</td><td>EN PT NY SW</td><td>por hora de audio</td><td className="mk">MK 86.700</td><td className="pr">$50</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Transcricao%20Audio%20%2450" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Transcricao + Traducao</td><td>EN PT NY</td><td>por hora de audio</td><td className="mk">MK 138.720</td><td className="pr">$80</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Transcricao%20Traducao%20%2480" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Legendagem / Captioning</td><td>EN PT NY SW</td><td>por minuto de video</td><td className="mk">MK 8.670</td><td className="pr">$5</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Legendagem%20%245" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Interpretacao Consecutiva</td><td>EN PT NY</td><td>por hora</td><td className="mk">MK 121.380</td><td className="pr">$70</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Interpretacao%20Consecutiva%20%2470" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Interpretacao de Conferencia</td><td>EN PT NY</td><td>por meio dia</td><td className="mk">MK 346.800</td><td className="pr">$200</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Interpretacao%20Conferencia%20%24200" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Formacao Linguistica</td><td>EN PT NY SW</td><td>por hora (grupo)</td><td className="mk">MK 69.360</td><td className="pr">$40</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Formacao%20Linguistica%20%2440" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Revisao &amp; Edicao</td><td>EN PT</td><td>por pagina</td><td className="mk">MK 8.670</td><td className="pr">$5</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Revisao%20Edicao%20%245" target="_blank" rel="noopener">Quote</a></td></tr>
-              <tr><td className="pn">Localizacao de Website / App</td><td>EN PT NY</td><td>orcamento personalizado</td><td className="mk">a partir de MK 346.800</td><td className="pr">a partir de $200</td><td><a className="wa-row-quote" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20Localizacao%20Website%20App" target="_blank" rel="noopener">Quote</a></td></tr>
+              {langServices.map((s, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
+                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
+                  <td style={{ ...TD, color: MUTED }}>{s.langs}</td>
+                  <td style={{ ...TD, color: MUTED }}>{s.unit}</td>
+                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
+                  <td style={{ ...TD, color: MUTED }}>{s.usd}</td>
+                  <td style={TD}><QuoteBtn text={s.wa} /></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
-        <div className="sh">
-          <h2>Consultoria de Concursos e Pre-Qualificacao</h2>
-          <p className="sd">Pare de perder contratos por erros de documentacao. Preco fixo.</p>
+        <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "20px" }}>Pares Linguisticos</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: "16px", marginBottom: "48px" }}>
+          {langPairs.map(p => (
+            <div key={p.pair} style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "24px" }}>
+              <h4 style={{ fontFamily: "var(--font-syne)", fontSize: "15px", fontWeight: 700, color: TEXT, marginBottom: "8px" }}>{p.pair}</h4>
+              <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.6 }}>{p.body}</p>
+            </div>
+          ))}
         </div>
-        <p style={{ fontSize: ".84rem", color: "var(--muted)", marginBottom: "16px", lineHeight: 1.6 }}>Preenchemos os seus documentos de concurso, formularios de pre-qualificacao e respostas a licitacoes com precisao -- no seu idioma. Disponivel em Ingles, Portugues, Chichewa e Swahili.</p>
-        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: "var(--radius)", marginBottom: "16px" }}>
-          <table style={{ minWidth: "480px" }}>
+
+        <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "20px" }}>Sectores Servidos</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: "16px", marginBottom: "48px" }}>
+          {sectors.map(s => (
+            <div key={s.title} style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "24px" }}>
+              <h4 style={{ fontFamily: "var(--font-syne)", fontSize: "15px", fontWeight: 700, color: TEXT, marginBottom: "8px" }}>{s.title}</h4>
+              <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.6 }}>{s.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ background: SURF, border: "1px solid " + BORDER, borderLeft: "4px solid " + ACCENT, borderRadius: "8px", padding: "24px", marginBottom: "32px" }}>
+          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "16px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Referencia Diplomatica</h3>
+          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>O Alto Comissariado da Republica de Mocambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou servicos linguisticos profissionais a Missao durante um periodo prolongado. A Missao elogia a TechNexus pelos seus elevados padroes de profissionalismo, exactidao, fiabilidade e discricao.</p>
+        </div>
+
+        <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "6px" }}>Consultoria em Concursos e Pre-Qualificacao</h2>
+        <p style={{ fontSize: "14px", color: MUTED, marginBottom: "8px" }}>Pare de perder contratos por erros de documentacao. Servico a preco fixo.</p>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px", lineHeight: 1.7 }}>Preenchemos os seus documentos de concurso, formularios de pre-qualificacao e respostas a propostas com precisao — no seu idioma. Disponivel em Ingles, Portugues, Chichewa e Swahili.</p>
+        <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
             <thead>
               <tr>
-                <th scope="col">Servico</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">A partir de (MWK)</th>
+                <th style={TH}>Servico</th>
+                <th style={TH}>Descricao</th>
+                <th style={TH}>A partir de (MWK)</th>
+                <th style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Registo de Pre-Qualificacao</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Formularios de registo de fornecedor, perfis de empresa, documentos de conformidade</td><td>MK 100.000</td></tr>
-              <tr><td>Resposta Simples a Concurso</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Concursos de cotacao, RFQs, documentos de licitacao simples</td><td>MK 200.000</td></tr>
-              <tr><td>Resposta Complexa a Concurso</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Propostas completas, licitacoes tecnicas e financeiras, declaracoes de metodo, RFPs</td><td>MK 450.000</td></tr>
-              <tr><td>Revisao de Conformidade</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Verificar erros, campos em falta e lacunas de conformidade</td><td>MK 75.000</td></tr>
-              <tr><td>Traducao de Documentos de Concurso</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Traduzir documentos: Ingles, Portugues, Chichewa, Swahili</td><td>MK 7.000/pag.</td></tr>
+              {tenderServices.map((s, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
+                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
+                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
+                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
+                  <td style={TD}><QuoteBtn text={encodeURIComponent(s.name)} /></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
-        <div className="sh">
-          <h2>Registo de Empresas &amp; Consultoria de Conformidade</h2>
-          <p className="sd">Registos locais e transfronteiricos. Tratamos da papelada.</p>
-        </div>
-        <p style={{ fontSize: ".84rem", color: "var(--muted)", marginBottom: "20px", lineHeight: 1.6 }}>Preparamos e submetemos documentos de registo de empresas, licenciamento e conformidade em seu nome. Registos locais no Malawi e registos transfronteiricos para a Zambia, Mocambique e Africa do Sul. Trabalhamos com PPDA, MRA, TPIN, MANePS e registos estrangeiros relevantes.</p>
+        <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "6px" }}>Registo de Empresas e Consultoria de Conformidade</h2>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px", lineHeight: 1.7 }}>Preparamos e submetemos documentos de registo de empresas, licenciamento e conformidade em seu nome. Registos locais no Malawi e registos transfronteiricos para Zambia, Mocambique e Africa do Sul.</p>
 
-        <div className="sh" style={{ marginTop: 0, borderLeftColor: "var(--teal)" }}>
-          <h2>Registos Locais -- Malawi</h2>
-        </div>
-        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: "var(--radius)", marginBottom: "20px" }}>
-          <table style={{ minWidth: "480px" }}>
+        <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "17px", fontWeight: 700, color: TEAL, marginBottom: "16px" }}>Registos Locais — Malawi</h3>
+        <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "32px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
             <thead>
               <tr>
-                <th scope="col">Servico</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">A partir de (MWK)</th>
+                <th style={TH}>Servico</th>
+                <th style={TH}>Descricao</th>
+                <th style={TH}>A partir de (MWK)</th>
+                <th style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>Registo MSME / Nome Comercial</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo de nome comercial ou MSME no MBRS (antigo Registo Geral)</td><td>MK 50.000</td></tr>
-              <tr><td>Constituicao de Empresa</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo de Sociedade por Quotas no MBRS. Memorando, estatutos, distribuicao de accoes</td><td>MK 150.000</td></tr>
-              <tr><td>Registo TPIN</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>NIF de contribuinte na Autoridade Tributaria do Malawi (MRA). Obrigatorio para conformidade fiscal e procurement</td><td>MK 30.000</td></tr>
-              <tr><td>Registo IVA na MRA</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo de IVA para empresas que ultrapassem o limite de volume de negocios da MRA</td><td>MK 50.000</td></tr>
-              <tr><td>Registo de Fornecedor PPDA</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo como fornecedor no portal da Autoridade de Procurement Publico e Alienacao de Bens</td><td>MK 80.000</td></tr>
-              <tr><td>Registo MANePS</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Sistema Nacional de Procurement Electronico do Malawi -- obrigatorio para concursos do Estado</td><td>MK 80.000</td></tr>
-              <tr><td>Licenciamento TEVETA / Sectorial</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Licenciamento pela Autoridade de Educacao Tecnica, Empresarial e Vocacional para prestadores de formacao</td><td>MK 100.000</td></tr>
-              <tr><td>Relatorio Anual &amp; Revisao de Conformidade</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Preparar e submeter relatorios anuais de empresa, rever o estado de conformidade em todos os registos</td><td>MK 60.000</td></tr>
+              {localReg.map((s, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
+                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
+                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
+                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
+                  <td style={TD}><QuoteBtn text={encodeURIComponent(s.name)} /></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
-        <div className="sh" style={{ marginTop: 0, borderLeftColor: "#4CAF50" }}>
-          <h2>Registos Transfronteiricos</h2>
-        </div>
-        <p style={{ fontSize: ".82rem", color: "var(--muted)", marginBottom: "16px", lineHeight: 1.6 }}>Coordenamos com agentes locais na Zambia, Mocambique e Africa do Sul para gerir os processos de registo remotamente. Os documentos sao preparados, traduzidos quando necessario, e submetidos em seu nome.</p>
-        <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: "var(--radius)", marginBottom: "20px" }}>
-          <table style={{ minWidth: "520px" }}>
+        <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "17px", fontWeight: 700, color: "#4CAF50", marginBottom: "8px" }}>Registos Transfronteiricos</h3>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "16px", lineHeight: 1.7 }}>Coordenamos com agentes locais na Zambia, Mocambique e Africa do Sul para gerir processos de registo remotamente. Os documentos sao preparados, traduzidos quando necessario, e submetidos em seu nome.</p>
+        <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "24px" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>
               <tr>
-                <th scope="col">Pais</th>
-                <th scope="col">Servico</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">A partir de (MWK)</th>
+                <th style={TH}>Pais</th>
+                <th style={TH}>Servico</th>
+                <th style={TH}>Descricao</th>
+                <th style={TH}>A partir de (MWK)</th>
+                <th style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Zambia</td><td>Registo PACRA</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Agencia de Registo de Patentes e Empresas -- pesquisa, reserva e registo de nome comercial</td><td>MK 200.000</td></tr>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Zambia</td><td>TPIN / Registo Fiscal ZRA</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo fiscal na Autoridade Tributaria da Zambia para negocios na Zambia</td><td>MK 100.000</td></tr>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Mocambique</td><td>Registo CPPME / NUIT</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo comercial no CPPME e numero fiscal (NUIT) na AT-Mocambique. Inclui preparacao de documentos em Portugues</td><td>MK 250.000</td></tr>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Mocambique</td><td>Alvara Comercial</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Licenca comercial municipal. Obrigatoria para operar formalmente em Mocambique</td><td>MK 150.000</td></tr>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Africa do Sul</td><td>Registo CIPC</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo na Comissao de Empresas e Propriedade Intelectual. Empresa privada (Pty Ltd) ou NPC</td><td>MK 300.000</td></tr>
-              <tr><td style={{ color: "var(--amber)", fontWeight: 700 }}>Africa do Sul</td><td>Numero Fiscal SARS</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo no Servico de Receitas da Africa do Sul para imposto sobre o rendimento e IVA</td><td>MK 120.000</td></tr>
-              <tr><td style={{ color: "#aaa", fontWeight: 600 }}>Multi-pais</td><td>Pacote Completo de Registo</td><td style={{ color: "var(--muted)", fontSize: ".8rem" }}>Registo de empresa, numero fiscal e licenca comercial num unico pais. Inclui toda a traducao e coordenacao de agentes</td><td>MK 400.000</td></tr>
+              {crossBorderReg.map((s, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
+                  <td style={{ ...TD, fontWeight: 700, color: s.country === "Multi-pais" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}>{s.country}</td>
+                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
+                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
+                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
+                  <td style={TD}><QuoteBtn text={encodeURIComponent(s.name)} /></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
 
-        <div className="cred-box" style={{ marginBottom: "28px" }}>
-          <h3>Notas Importantes sobre Registos Transfronteiricos</h3>
-          <p>As taxas governamentais, honorarios de agentes no pais de destino e custos de notarizacao sao cobrados separadamente ao custo real. Fornecemos um orcamento detalhado antes de qualquer pagamento. Prazos por pais: Malawi 5-10 dias, Zambia 10-15 dias, Mocambique 15-25 dias, Africa do Sul 10-20 dias.</p>
+        <div style={{ background: SURF, border: "1px solid " + BORDER, borderLeft: "4px solid #4CAF50", borderRadius: "8px", padding: "24px", marginBottom: "32px" }}>
+          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "15px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Notas Importantes sobre Registos Transfronteiricos</h3>
+          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>As taxas de registo governamentais, taxas de agentes no pais de destino e custos de notarizacao sao cobrados separadamente ao custo real. Fornecemos um orcamento detalhado antes de qualquer pagamento ser necessario. Os prazos variam por pais: Malawi 5-10 dias, Zambia 10-15 dias, Mocambique 15-25 dias, Africa do Sul 10-20 dias.</p>
         </div>
 
-        <div className="sh"><h2>Pares de Idiomas</h2></div>
-        <div className="stack-grid">
-          <div className="stack-item"><h4>Ingles e Portugues</h4><p>Documentos, contratos, correspondencia, registos medicos, instrumentos juridicos. Clientes diplomaticos e institucionais.</p></div>
-          <div className="stack-item"><h4>Ingles e Chichewa</h4><p>Saude comunitaria, comunicacoes governamentais, materiais educativos, documentacao de trabalho de campo ONG.</p></div>
-          <div className="stack-item"><h4>Ingles e Swahili</h4><p>Comercio transfronteirico, comunicacoes ONG na Africa Oriental, media e radiodifusao.</p></div>
-          <div className="stack-item"><h4>Portugues e Chichewa</h4><p>Corredor Malawi-Mocambique: documentacao fronteirica, acordos comerciais, materiais consulares.</p></div>
+        <div style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "32px", marginBottom: "32px" }}>
+          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "18px", fontWeight: 700, color: TEXT, marginBottom: "12px" }}>Como Encomendar</h3>
+          <p style={{ fontSize: "14px", color: MUTED, lineHeight: 1.7, marginBottom: "20px" }}>
+            Envie o seu documento de origem ou requisitos via WhatsApp ou email. Confirmamos o ambito, prazo de entrega e emitimos um orcamento em 24 horas. Prazo padrao: 1-3 dias uteis por documento; 5-25 dias uteis para servicos de registo. Servico urgente disponivel para trabalhos linguisticos. Acordo de confidencialidade disponivel mediante pedido.
+          </p>
+          <a href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20da%20pagina%20Servicos%20Linguisticos." target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
+            Pedir Orcamento
+          </a>
         </div>
 
-        <div className="sh"><h2>Sectores Servidos</h2></div>
-        <div className="stack-grid">
-          <div className="stack-item"><h4>Missoes Diplomaticas</h4><p>Correspondencia consular, notas diplomaticas, documentacao de vistos, materiais de protocolo. Discrição garantida.</p></div>
-          <div className="stack-item"><h4>Saude</h4><p>Registos de doentes, documentacao de ensaios clinicos, manuais de dispositivos medicos. Tratamento HIPAA.</p></div>
-          <div className="stack-item"><h4>Juridico &amp; Conformidade</h4><p>Contratos, declaracoes juradas, documentos judiciais, quadros de conformidade. Traducoes certificadas disponiveis.</p></div>
-          <div className="stack-item"><h4>Empresas &amp; ONG</h4><p>Relatorios anuais, politica de RH, documentacao de projectos, relatorios de doadores, materiais para o conselho.</p></div>
-          <div className="stack-item"><h4>Procurement &amp; Concursos</h4><p>Dossies de pre-qualificacao, respostas a concursos, documentos RFQ, revisoes de conformidade. Servico a preco fixo.</p></div>
-          <div className="stack-item"><h4>Negocios Transfronteiricos</h4><p>Registo de empresas, conformidade fiscal, licencas comerciais no Malawi, Zambia, Mocambique e Africa do Sul.</p></div>
-          <div className="stack-item"><h4>Media &amp; Radiodifusao</h4><p>Legendagem para cinema, documentarios, videos de formacao e conteudo e-learning.</p></div>
-          <div className="stack-item"><h4>Educacao</h4><p>Materiais curriculares, localizacao de manuais, manuais de formacao, exames.</p></div>
-        </div>
-
-        <div className="cred-box">
-          <h3>Referencia Diplomatica</h3>
-          <p>O Alto Comissariado da Republica de Mocambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou servicos linguisticos profissionais a Missao durante um periodo prolongado. A Missao elogia a TechNexus pelos seus elevados padroes de profissionalismo, exactidao, fiabilidade e discrição.</p>
-        </div>
-
-        <div className="cred-box">
-          <h3>Como Encomendar</h3>
-          <p>Envie o seu documento de origem ou requisitos via WhatsApp ou e-mail. Confirmamos o ambito, o prazo e emitimos um orcamento em 24 horas. Prazo normal: 1-3 dias uteis por documento; 5-25 dias uteis para servicos de registo. Servico urgente disponivel para trabalhos linguisticos. Acordo de confidencialidade mediante pedido.</p>
-        </div>
       </div>
-
-      <div className="quote-bar">
-        <p><strong>Pronto para encomendar?</strong> Contacte-nos para um orcamento formal ou para discutir o seu projecto.</p>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          <a className="quote-bar-btn" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20I%20would%20like%20a%20quote%20from%20the%20Servicos%20Linguisticos%20page." target="_blank" rel="noopener">Pedir Orcamento via WhatsApp</a>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

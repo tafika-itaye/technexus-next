@@ -92,7 +92,7 @@ export default function LanguageServicesPage() {
     <div style={{ background: BG, minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/african_woman_interpreter_1.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           TechNexus Scripts — Language and Consulting Services
         </h1>
@@ -268,5 +268,6 @@ export default function LanguageServicesPage() {
     </div>
   );
 }
+
 
 
