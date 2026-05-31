@@ -34,6 +34,8 @@
   --font-body:    'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --nav-h:        64px;
   --page-pad:     40px;
+  --card-title:   var(--fl-neutral-90);
+  --card-body:    #595959;
 }
 
 [data-theme="eis"] {
@@ -72,11 +74,13 @@ img { max-width: 100%; display: block; }
   --surface:     #1a1a1a;
   --surface-alt: #1e1e1e;
   --text:        #e8e8e8;
-  --muted:       #999999;
+  --muted:       #aaaaaa;
   --border:      #2a2a2a;
+  --card-title:  #f0f0f0;
+  --card-body:   #bbbbbb;
 }
 
-/* NAV */
+/* NAV LINKS */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -84,11 +88,55 @@ img { max-width: 100%; display: block; }
   gap: 2px;
 }
 
+.nav-item {
+  color: #cccccc;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  padding: 7px 14px;
+  text-decoration: none !important;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  display: block;
+  line-height: 1.4;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
+  text-decoration: none !important;
+}
+
+.nav-item-active {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  background: rgba(0,120,212,0.12) !important;
+}
+
+/* BRAND LOGOS */
+.brand-logo {
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+.brand-logo:hover {
+  filter: grayscale(0) opacity(1);
+}
+
+/* CARD TEXT — respects dark mode via CSS vars */
+.card-title {
+  color: var(--card-title);
+  font-weight: 700;
+}
+.card-body {
+  color: var(--card-body);
+}
+
 /* MOBILE OVERRIDES */
 @media (max-width: 768px) {
   :root { --page-pad: 16px; }
 
-  /* Nav */
   .ham-btn { display: flex !important; }
   .nav-phone { display: none; }
   .nav-links {
@@ -100,26 +148,21 @@ img { max-width: 100%; display: block; }
   .nav-links.nav-open { display: flex; }
   .nav-links a {
     padding: 12px 24px !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid #2a2a2a !important;
     border-bottom: none !important;
-    border-top: 1px solid #2a2a2a;
   }
 
-  /* Page padding */
   .page-hero { padding: 48px 16px 32px !important; }
   .page-content { padding: 24px 16px !important; }
-
-  /* Grid collapses */
   .mobile-stack { grid-template-columns: 1fr !important; }
   .mobile-stack-2 { grid-template-columns: 1fr 1fr !important; }
-
-  /* Hero headings */
   .hero-title { font-size: 1.8rem !important; }
-
-  /* Tables */
   table { font-size: 12px !important; }
   th, td { padding: 8px 10px !important; }
 
-  /* WA FAB — smaller, higher to avoid browser chrome */
   .wa-fab {
     width: 48px !important;
     height: 48px !important;
@@ -127,28 +170,15 @@ img { max-width: 100%; display: block; }
     right: 16px !important;
   }
 
-  /* EIS stats grid — 2 col on mobile */
   .stats-grid { grid-template-columns: 1fr 1fr !important; }
-
-  /* EIS features — single col */
   .features-grid { grid-template-columns: 1fr !important; }
-
-  /* EIS process — scroll horizontally */
   .process-grid {
     grid-template-columns: repeat(5, minmax(160px, 1fr)) !important;
     overflow-x: auto;
   }
-
-  /* Pricing cards — single col */
   .plans-grid { grid-template-columns: 1fr !important; }
-
-  /* Form grids */
   .form-grid-2 { grid-template-columns: 1fr !important; }
-
-  /* Service cards */
   .service-grid { grid-template-columns: 1fr !important; }
-
-  /* Contact grid on EIS */
   .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
 }
 

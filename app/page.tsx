@@ -118,7 +118,7 @@ export default function Home() {
             title={b.name}
             loading={i < 3 ? "eager" : "lazy"}
             fetchPriority={i === 0 ? "high" : "auto"}
-            style={{ height: "28px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(0.6)", opacity: 0.8 }}
+            className="brand-logo" style={{ height: "28px", width: "auto", objectFit: "contain" }}
           />
         ))}
       </div>
@@ -161,7 +161,7 @@ export default function Home() {
       <div style={{ background: "var(--surface-alt)", padding: "48px 40px" }}>
         <div style={{ maxWidth: "1120px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "24px" }}>
           {filtered.map(s => (
-            <Link key={s.href} href={s.href} style={{ textDecoration: "none", background: "#fff", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }}>
+            <Link key={s.href} href={s.href} style={{ textDecoration: "none", background: "var(--surface)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }}>
               <div style={{ height: "180px", overflow: "hidden", position: "relative", background: s.img ? "var(--fl-neutral-8)" : "linear-gradient(135deg,#032d1e 0%,#075E54 60%,#0a2742 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {s.img ? (
                   <img src={s.img} alt={s.alt} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
@@ -186,7 +186,7 @@ export default function Home() {
       </div>
 
       {/* QUICK ENQUIRY */}
-      <div style={{ background: "#fff", padding: "64px 40px", borderTop: "1px solid var(--border)" }}>
+      <div style={{ background: "var(--surface)", padding: "64px 40px", borderTop: "1px solid var(--border)" }}>
         <div style={{ maxWidth: "640px", margin: "0 auto" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontSize: "22px", fontWeight: 700, marginBottom: "8px" }}>Quick Enquiry</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "24px" }}>Fill in below and we will respond via WhatsApp within 24 hours.</p>
@@ -234,5 +234,8 @@ export default function Home() {
     </>
   );
 }
+
+
+
 
 

@@ -95,17 +95,7 @@ export default function Nav() {
               <Link
                 key={href}
                 href={href}
-                style={{
-                  color: active ? "var(--accent)" : "var(--fl-neutral-30, #ccc)",
-                  fontWeight: 700,
-                  fontSize: "13px",
-                  letterSpacing: "0.03em",
-                  padding: "9px 14px",
-                  textDecoration: "none",
-                  borderBottom: active ? "2px solid var(--accent)" : "2px solid transparent",
-                  transition: "color 0.15s",
-                  display: "block",
-                }}
+                className={`nav-item${active ? " nav-item-active" : ""}`}
               >
                 {label}
               </Link>
@@ -116,4 +106,3 @@ export default function Nav() {
     </header>
   );
 }
-
