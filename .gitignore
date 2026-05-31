@@ -44,3 +44,5 @@ CLAUDE.md
 AUDIT.md
 .env.local
 *.env
+
+/out
