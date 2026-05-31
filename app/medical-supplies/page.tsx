@@ -1,4 +1,10 @@
-﻿const BG = "var(--fl-neutral-2)";
+﻿import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Medical Supplies | TechNexus",
+  description: "Healthcare equipment, consumables and pharmaceuticals sourced through verified SADC partners. Serving Malawi, Zambia, Mozambique and South Africa.",
+}
+
+const BG = "var(--fl-neutral-2)";
 const SURF = "#ffffff";
 const BORDER = "var(--fl-neutral-8)";
 const TEXT = "var(--fl-neutral-90)";
@@ -284,4 +290,5 @@ export default function MedicalSuppliesPage() {
     </div>
   );
 }
+
 

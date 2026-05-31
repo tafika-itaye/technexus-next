@@ -1,4 +1,10 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Language Services | TechNexus Scripts",
+  description: "Professional translation, transcription, subtitling, interpretation and tender consulting. English, Portuguese, Chichewa, Swahili. Serving diplomatic missions and NGOs across Southern Africa.",
+}
+
+import Link from "next/link";
 
 const langServices = [
   { name: "Document Translation", langs: "EN↔PT, EN↔NY, EN↔SW", unit: "per page (250 words)", mwk: "MK 17,340", usd: "$10", wa: "Document%20Translation%0APrice%3A%20%2410" },
@@ -262,4 +268,5 @@ export default function LanguageServicesPage() {
     </div>
   );
 }
+
 

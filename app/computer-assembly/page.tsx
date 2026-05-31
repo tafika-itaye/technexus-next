@@ -1,4 +1,10 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Custom PC Assembly | TechNexus",
+  description: "Custom desktop PCs built to spec. Intel i5, Windows 11 Pro, QA-tested. Volume pricing for schools, government and enterprise in Malawi.",
+}
+
+import Link from "next/link";
 
 const components = [
   { num: 1, part: "CPU", spec: "Intel Core i5-12400 (6-core, 12-thread, 4.4GHz Turbo)", mwk: "MK 483,800", usd: "$279", img: "/images/pc-parts/intel-core-i5-12400.jpg" },
@@ -197,3 +203,4 @@ export default function ComputerAssemblyPage() {
     </div>
   );
 }
+

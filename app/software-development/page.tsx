@@ -1,4 +1,10 @@
-﻿const BG = "var(--fl-neutral-2)";
+﻿import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Software Development | TechNexus",
+  description: "Bespoke business applications, web systems and digital platforms built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment across Southern Africa.",
+}
+
+const BG = "var(--fl-neutral-2)";
 const SURF = "#ffffff";
 const BORDER = "var(--fl-neutral-8)";
 const TEXT = "var(--fl-neutral-90)";
@@ -165,4 +171,5 @@ export default function SoftwareDevelopmentPage() {
     </div>
   );
 }
+
 

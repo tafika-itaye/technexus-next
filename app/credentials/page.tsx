@@ -1,4 +1,10 @@
-﻿"use client";
+﻿import type { Metadata } from "next"
+export const metadata: Metadata = {
+  title: "Company Credentials | TechNexus",
+  description: "TechNexus registration details, compliance framework, diplomatic references and direct enquiry form. PPDA registered, MANePS active, MRA compliant.",
+}
+
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -186,5 +192,6 @@ export default function CredentialsPage() {
     </div>
   );
 }
+
 
 
