@@ -48,7 +48,7 @@ export default function SoftwareDevelopmentPage() {
     <div style={{ background: BG, minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center" }}>
+      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/software_dev_1.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Software Development and IT Consultancy
         </h1>
@@ -165,3 +165,4 @@ export default function SoftwareDevelopmentPage() {
     </div>
   );
 }
+

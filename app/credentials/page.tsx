@@ -64,7 +64,7 @@ export default function CredentialsPage() {
     <div style={{ background: BG, color: TEXT, fontFamily: "var(--font-body)", minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ padding: "80px 40px 48px", textAlign: "center", borderBottom: "1px solid " + BORDER }}>
+      <div style={{ padding: "80px 40px 48px", textAlign: "center", borderBottom: "1px solid " + BORDER, backgroundImage: "url(/index_main/server_rack_2.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "var(--fl-neutral-90)", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Company Credentials &amp; Contact
         </h1>
@@ -186,4 +186,5 @@ export default function CredentialsPage() {
     </div>
   );
 }
+
 
