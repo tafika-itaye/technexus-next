@@ -99,7 +99,9 @@ export default function PTLanguageServicesPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+      <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
+        <div style={{ position: "relative" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           TechNexus Scripts — Servicos Linguisticos &amp; Consultoria
         </h1>
@@ -111,6 +113,7 @@ export default function PTLanguageServicesPage() {
         </div>
       </div>
 
+      </div>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 
         <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "6px" }}>Servicos Linguisticos e Precos</h2>
@@ -266,4 +269,6 @@ export default function PTLanguageServicesPage() {
     </div>
   );
 }
+
+
 

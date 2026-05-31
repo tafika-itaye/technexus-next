@@ -92,8 +92,10 @@ export default function LanguageServicesPage() {
     <div style={{ background: BG, minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
-        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+      <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/language_services_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
+        <div style={{ position: "relative" }}>
+<h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           TechNexus Scripts — Language and Consulting Services
         </h1>
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "680px", margin: "0 auto 20px", lineHeight: 1.7 }}>
@@ -104,6 +106,7 @@ export default function LanguageServicesPage() {
         </div>
       </div>
 
+      </div>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 
         {/* LANGUAGE SERVICES TABLE */}
@@ -268,6 +271,11 @@ export default function LanguageServicesPage() {
     </div>
   );
 }
+
+
+
+
+
 
 
 
