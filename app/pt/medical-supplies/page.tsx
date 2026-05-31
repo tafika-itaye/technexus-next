@@ -1,4 +1,5 @@
 ﻿import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "TechNexus — Catalogo de Material Medico",
@@ -13,29 +14,66 @@ export const metadata: Metadata = {
   },
 };
 
-type MedRow = { name: string; pack: string; mwk: string; usd: string; wa: string };
+const ptLinks = [
+  { href: "/pt", label: "Inicio" },
+  { href: "/pt/catalogue", label: "Catalogo IT" },
+  { href: "/pt/computer-assembly", label: "Montagem PC" },
+  { href: "/pt/language-services", label: "Servicos Linguisticos" },
+  { href: "/pt/medical-supplies", label: "Material Medico" },
+  { href: "/pt/software-development", label: "Software" },
+  { href: "/pt/eis", label: "Conformidade EIS" },
+  { href: "/pt/credentials", label: "Credenciais" },
+];
 
-function MedTable({ rows }: { rows: MedRow[] }) {
+const BG = "var(--fl-neutral-2)";
+const SURF = "#ffffff";
+const BORDER = "var(--fl-neutral-8)";
+const TEXT = "var(--fl-neutral-90)";
+const MUTED = "#595959";
+const ACCENT = "var(--fl-blue)";
+const TH: React.CSSProperties = { padding: "10px 16px", textAlign: "left" as const, fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.06em", color: MUTED, borderBottom: "1px solid var(--fl-neutral-8)", background: "var(--fl-neutral-4)" };
+const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", borderBottom: "1px solid var(--fl-neutral-8)", color: TEXT };
+const WA = "https://wa.me/265889941700?text=Ola%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20para%3A%0A";
+
+function SectionHead({ title, sub }: { title: string; sub?: string }) {
   return (
-    <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", borderRadius: "var(--radius)", marginBottom: "20px" }}>
-      <table style={{ minWidth: "400px" }}>
+    <div style={{ borderLeft: "4px solid var(--fl-blue)", paddingLeft: "16px", marginBottom: sub ? "6px" : "20px" }}>
+      <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>{title}</h2>
+      {sub && <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>{sub}</p>}
+    </div>
+  );
+}
+
+function QuoteBtn({ name, price }: { name: string; price: string }) {
+  const wa = WA + encodeURIComponent(name) + "%0APreco%3A%20" + encodeURIComponent(price);
+  return (
+    <a href={wa} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+      Quote
+    </a>
+  );
+}
+
+function ProdTable({ rows }: { rows: [string, string, string, string][] }) {
+  return (
+    <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "36px" }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "400px" }}>
         <thead>
           <tr>
-            <th scope="col">Produto</th>
-            <th scope="col">Embalagem</th>
-            <th scope="col">MWK</th>
-            <th scope="col">USD</th>
-            <th scope="col">Quote</th>
+            <th style={TH}>Produto</th>
+            <th style={TH}>Embalagem</th>
+            <th style={TH}>MWK</th>
+            <th style={TH}>USD</th>
+            <th style={TH}>Quote</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((r, i) => (
-            <tr key={i}>
-              <td className="pn">{r.name}</td>
-              <td>{r.pack}</td>
-              <td className="mk">{r.mwk}</td>
-              <td className="pr">{r.usd}</td>
-              <td><a className="wa-row-quote" href={r.wa} target="_blank" rel="noopener">Quote</a></td>
+          {rows.map(([name, pack, mwk, usd], i) => (
+            <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
+              <td style={{ ...TD, fontWeight: 600 }}>{name}</td>
+              <td style={{ ...TD, color: MUTED }}>{pack}</td>
+              <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{mwk}</td>
+              <td style={{ ...TD, color: MUTED }}>{usd}</td>
+              <td style={TD}><QuoteBtn name={name} price={usd} /></td>
             </tr>
           ))}
         </tbody>
@@ -44,258 +82,246 @@ function MedTable({ rows }: { rows: MedRow[] }) {
   );
 }
 
-const wa = (name: string, price: string) =>
-  `https://wa.me/265889941700?text=Hi%20TechNexus%2C%20quote%20for%3A%20${encodeURIComponent(name)}%20${encodeURIComponent(price)}`;
-
-const mascaras: MedRow[] = [
-  { name: "Mascara Cirurgica 3 Camadas", pack: "1x50", mwk: "MK 5,120", usd: "$2.96", wa: wa("Mascara Cirurgica 3 Camadas", "$2.96") },
-  { name: "Mascara KN95", pack: "1x1", mwk: "MK 590", usd: "$0.33", wa: wa("Mascara KN95", "$0.33") },
-  { name: "Mascara N95", pack: "1x1", mwk: "MK 787", usd: "$0.45", wa: wa("Mascara N95", "$0.45") },
-  { name: "Mascara NIOSH N95", pack: "1x20", mwk: "MK 31,507", usd: "$18.17", wa: wa("Mascara NIOSH N95", "$18.17") },
-  { name: "Mascara KN95 com Filtro", pack: "1x10", mwk: "MK 5,907", usd: "$3.41", wa: wa("Mascara KN95 com Filtro", "$3.41") },
-  { name: "Mascara FFP2", pack: "1x20", mwk: "MK 15,754", usd: "$9.09", wa: wa("Mascara FFP2", "$9.09") },
+const masks: [string,string,string,string][] = [
+  ["Mascara Cirurgica 3 Camadas","1x50","MK 5,120","$2.96"],
+  ["Mascara KN95","1x1","MK 590","$0.33"],
+  ["Mascara N95","1x1","MK 787","$0.45"],
+  ["Mascara NIOSH N95","1x20","MK 31,507","$18.17"],
+  ["Mascara KN95 com Filtro","1x10","MK 5,907","$3.41"],
+  ["Mascara FFP2","1x20","MK 15,754","$9.09"],
+];
+const respiratory: [string,string,string,string][] = [
+  ["Mascara de Nebulizacao","1x1","MK 3,938","$2.28"],
+  ["Mascara de Oxigenio Simples","1x1","MK 3,938","$2.28"],
+  ["Mascara de Oxigenio com Reservatorio","1x1","MK 3,938","$2.28"],
+];
+const gloves: [string,string,string,string][] = [
+  ["Luvas de Nitrilo","1x100","MK 13,785","$7.95"],
+  ["Luvas de Exame","1x100","MK 13,785","$7.95"],
+  ["Luvas Plasticas / Descartaveis","1x100","MK 1,969","$1.13"],
+  ["Luvas Cirurgicas","1x50 pares","MK 33,476","$19.30"],
+  ["Luvas Ginecologicas","1x25 pares","MK 47,261","$27.26"],
+];
+const syringes: [string,string,string,string][] = [
+  ["Seringas Insulina 1ml + Agulhas","1x100","MK 20,677","$11.92"],
+  ["Seringas LUER LOCK 5ml + Agulhas","1x100","MK 21,662","$12.50"],
+  ["Seringas LUER LOCK 10/20/50ml","varias","MK 23,631","$13.63"],
+  ["Seringas LUER SLIP 3ml + Agulhas","1x100","MK 20,677","$11.92"],
+  ["Seringas LUER SLIP 5ml e 10ml","1x100","MK 19,692","$11.35"],
+  ["Bisturi #11","1x100","MK 17,723","$10.22"],
+  ["Bisturi #15","1x100","MK 17,723","$10.22"],
+  ["Bisturi #20","1x100","MK 17,723","$10.22"],
+];
+const disinfectants: [string,string,string,string][] = [
+  ["Gel Alcoolico 70% 100ml","1x1","MK 2,364","$1.36"],
+  ["Alcool Etilico 70% 100ml","1x1","MK 2,364","$1.36"],
+  ["Alcool Etilico 70% 250ml","1x1","MK 5,120","$2.96"],
+  ["Alcool Etilico 70% 500ml","1x1","MK 7,876","$4.54"],
+  ["Alcool Etilico 70% 1000ml","1x1","MK 10,830","$6.25"],
+  ["Alcool Etilico 70% 5L","1x1","MK 35,445","$20.45"],
+  ["Gel Alcoolico 70% 5L","1x1","MK 39,385","$22.71"],
+  ["Gel de Ecografia 5L","1x1","MK 39,385","$22.71"],
+];
+const diagnostics: [string,string,string,string][] = [
+  ["Estetoscopio Profissional","1x1","MK 15,754","$9.09"],
+  ["Estetoscopio Duplo Profissional","1x1","MK 17,723","$10.22"],
+  ["Esfigmomanometro Digital","1x1","MK 51,200","$29.52"],
+  ["Kit Estetoscopio e Esfigmo.","1x1","MK 47,261","$27.26"],
+  ["Otoscopio","1x1","MK 118,153","$68.14"],
+  ["Oximetro de Pulso Digital","1x1","MK 27,569","$15.89"],
+  ["Termometro Digital","1x1","MK 5,120","$2.96"],
+];
+const monitoring: [string,string,string,string][] = [
+  ["Termometro de Mercurio","1x1","MK 3,938","$2.28"],
+  ["Termometro Infravermelhos","1x1","MK 23,631","$13.63"],
+  ["Relogio de Bolso","1x1","MK 5,907","$3.41"],
+  ["Lanterna de Exame","1x1","MK 7,876","$4.54"],
+  ["Torniquete","1x1","MK 5,907","$3.41"],
+  ["Fluxometro de Oxigenio","1x1","MK 78,768","$45.43"],
+  ["Ressuscitador Ambu Ped. e Adulto","1x1","MK 118,153","$68.14"],
+  ["Medidor de Pico de Fluxo","1x1","MK 27,569","$15.89"],
+  ["Medidor de Pico de Fluxo Ped.","1x1","MK 51,200","$29.52"],
+  ["Canula Nasal de Oxigenio","1x1","MK 2,954","$1.70"],
+  ["Estetoscopio Fetal","1x1","MK 11,815","$6.82"],
+  ["Infantometro","1x1","MK 82,707","$47.69"],
+  ["Organizador Semanal de Comprimidos Tipo 1","1x1","MK 5,907","$3.41"],
+  ["Organizador Semanal de Comprimidos Tipo 2","1x1","MK 2,756","$1.59"],
+  ["Copo de Colheita de Urina 60ml","1x1","MK 590","$0.33"],
+  ["Nebulizador","1x1","MK 98,461","$56.78"],
+  ["Kit de Primeiros Socorros","1x1","MK 27,569","$15.89"],
+  ["Caixa Cadeia de Frio com Termometro","1x1","MK 157,538","$90.86"],
+];
+const labCotton: [string,string,string,string][] = [
+  ["Seladora de Bolsas de Esterilizacao","1x1","MK 492,305","$283.91"],
+  ["Saco de Gelo","1x1","MK 3,938","$2.28"],
+  ["Tubos de Vacuo Amarelos 4ml","1x100","MK 43,323","$24.98"],
+  ["Suporte para Tubos de Laboratorio","1x1","MK 24,615","$14.20"],
+  ["Tubos de Vacuo Roxos 4ml","1x100","MK 33,476","$19.30"],
+  ["Bolas de Algodao 50g","1x100","MK 3,938","$2.28"],
+  ["Fio de Sutura 75cm","1x1","MK 51,200","$29.52"],
+  ["Fio de Sutura 90cm","1x1","MK 63,016","$36.34"],
+  ["Rolo de Algodao Absorvente 50g","1x1","MK 1,969","$1.13"],
+  ["Rolo de Algodao Absorvente 100g","1x1","MK 3,151","$1.81"],
+  ["Rolo de Algodao Absorvente 500g","1x1","MK 9,846","$5.68"],
+  ["Gaze Nao Esteril 5x5cm","1x100","MK 3,938","$2.28"],
+  ["Gaze Nao Esteril 7.5x7.5cm","1x100","MK 6,302","$3.64"],
+  ["Gaze Esteril 10x10cm","1x50","MK 15,360","$8.86"],
+  ["Gaze Nao Esteril 10x10cm","1x100","MK 8,271","$4.77"],
+  ["Ligadura de Gaze 7.5cm x 5m","1x12","MK 3,938","$2.28"],
+  ["Ligadura de Gaze 10cm x 5m","1x12","MK 6,302","$3.64"],
+  ["Adesivo de Oxido de Zinco 2.5cm x 5m","1x1","MK 1,969","$1.13"],
+  ["Adesivo de Oxido de Zinco 5cm x 5m","1x1","MK 2,364","$1.36"],
+  ["Adesivo de Oxido de Zinco 7.5cm x 5m","1x1","MK 2,954","$1.70"],
+  ["Pensos Transparentes","1x100","MK 3,938","$2.28"],
+  ["Toucas Descartaveis","1x100","MK 9,846","$5.68"],
+  ["Fralda Absorvente Descartavel","1x10","MK 17,723","$10.22"],
+  ["Campo Cirurgico","1x50","MK 27,569","$15.89"],
+  ["Saco de Colheita de Urina","1x1","MK 1,969","$1.13"],
+  ["Fato Impermeavel","1x1","MK 11,815","$6.82"],
+  ["Kit Cirurgico (Casaco e Calcas)","1x1","MK 35,445","$20.45"],
+  ["Bata Descartavel para Visitas","1x1","MK 3,151","$1.81"],
+  ["Avental Branco Descartavel","1x100","MK 18,511","$10.67"],
+  ["Oculos de Proteccao","1x1","MK 3,938","$2.28"],
+  ["Caixa para Cortantes / Incineracao","1x1","MK 2,756","$1.59"],
+  ["Modelo de Esqueleto Humano","1x1","MK 1,063,379","$613.25"],
+  ["Rolo de Esterilizacao 100x200mm","1x1","MK 59,076","$34.07"],
+  ["Rolo de Esterilizacao 250x50mm","1x1","MK 63,016","$36.34"],
+  ["Rolo de Esterilizacao 150x200mm","1x1","MK 78,768","$45.43"],
+  ["Rolo de Esterilizacao 250x200mm","1x1","MK 118,153","$68.14"],
+];
+const furniture: [string,string,string,string][] = [
+  ["Banco de Dois Degraus para Mesa de Exame","1x1","MK 157,538","$90.86"],
+  ["Cadeira de Banho e Higiene","1x1","MK 275,691","$158.99"],
+  ["Armario de Cabeceira","1x1","MK 275,691","$158.99"],
+  ["Mesa de Instrumentos Mayo","1x1","MK 236,306","$136.27"],
+  ["Berco Hospitalar","1x1","MK 433,228","$249.85"],
+  ["Almofada","1x1","MK 39,385","$22.71"],
+  ["Colchao Anti-Escaras","1x1","MK 177,229","$102.21"],
+  ["Colchao","1x1","MK 315,075","$181.70"],
+  ["Marquesa de Massagem / Tratamento","1x1","MK 472,613","$272.56"],
+  ["Mesa Ginecologica","1x1","MK 590,766","$340.69"],
+  ["Mesa de Observacao e Exame","1x1","MK 551,381","$317.99"],
+  ["Cama Hospitalar Articulada","1x1","MK 708,920","$408.83"],
+  ["Cama Hospitalar","1x1","MK 630,150","$363.41"],
+  ["Tina de Esterilizacao 23cm","1x1","MK 98,461","$56.78"],
+  ["Tina de Esterilizacao 26cm","1x1","MK 108,308","$62.47"],
+  ["Tina de Esterilizacao 30cm","1x1","MK 118,153","$68.14"],
+  ["Balanca Digital Pediatrica (plana)","1x1","MK 118,153","$68.14"],
+  ["Balanca Digital Pediatrica (sentada)","1x1","MK 196,922","$113.56"],
+  ["Balanca de Casa de Banho para Adulto","1x1","MK 47,261","$27.26"],
+  ["Balanca Manual com Altimetro","1x1","MK 472,613","$272.56"],
+  ["Balanca Mecanica com Altimetro","1x1","MK 551,381","$317.99"],
+  ["Balanca Electronica com Altimetro","1x1","MK 551,381","$317.99"],
+  ["Cadeira de Rodas Electrica","1x1","MK 2,166,142","$1,249.22"],
+  ["Cadeira de Rodas para Adulto","1x1","MK 393,845","$227.13"],
+  ["Arrastadeira com Tampa","1x1","MK 98,461","$56.78"],
+  ["Urinol Plastico","1x1","MK 39,385","$22.71"],
+  ["Especulo Vaginal Tamanho L","1x1","MK 47,261","$27.26"],
+  ["Martelo de Reflexos","1x1","MK 11,815","$6.82"],
+];
+const mobility: [string,string,string,string][] = [
+  ["Andarilho Standard","1x1","MK 86,646","$49.97"],
+  ["Bengala Standard","1x1","MK 15,754","$9.09"],
+  ["Muletas","1x2","MK 86,646","$49.97"],
+  ["Bengala com Assento","1x1","MK 35,445","$20.45"],
+  ["Bengala Quadripede","1x1","MK 31,507","$18.17"],
+  ["Bengala Quadripede Inox","1x1","MK 35,445","$20.45"],
+  ["Bengala Dobravel","1x1","MK 19,692","$11.35"],
+];
+const pharma: [string,string,string,string][] = [
+  ["AQUAFEN PLUS — Gel Diclofenac","1x1","MK 5,317","$3.06"],
+  ["IBUWIN-100 — Susp. Ibuprofeno","1x1","MK 4,096","$2.36"],
+  ["FEM-RED XT — Ferro + Acido Folico","1x10","MK 4,016","$2.32"],
+  ["VOLIGESIC PLUS — Paracetamol","10x10","MK 6,341","$3.65"],
+  ["SCOTRIZOL — Cotrimoxazol","100ml","MK 4,016","$2.32"],
+  ["SCONAZ — Fluconazol 150mg","1x1","MK 2,639","$1.52"],
+  ["IBUWIN-400mg — Ibuprofeno","10x10","MK 6,853","$3.96"],
+  ["SCORT — Inj. Triancinolona","1x1","MK 12,879","$7.42"],
+  ["GLUSCOT — Metformina 500mg","10x10","MK 8,507","$4.90"],
+  ["Teste Rapido Malaria (25)","1x25","MK 78,768","$45.43"],
+  ["Teste Rapido VIH (50)","1x50","MK 97,279","$56.10"],
+  ["VIGROSE-BLUE — Sildenafil","1x4","MK 3,938","$2.28"],
+  ["INFUMOX — Susp. Amoxicilina","100ml","MK 4,135","$2.38"],
+  ["FEBREX PLUS — Anti-Gripal","2x10","MK 2,088","$1.20"],
+  ["SALBUTAMOL-NC — Salbutamol","100ml","MK 2,364","$1.36"],
+  ["ERYTHROMEX — Eritromicina","10x10","MK 31,114","$17.94"],
+  ["CIPROFITAB — Ciprofloxacina","10x10","MK 20,874","$12.04"],
 ];
 
-const respiratorios: MedRow[] = [
-  { name: "Mascara de Nebulizacao", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Mascara de Nebulizacao", "$2.28") },
-  { name: "Mascara de Oxigenio Simples", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Mascara de Oxigenio Simples", "$2.28") },
-  { name: "Mascara de Oxigenio com Reservatorio", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Mascara de Oxigenio com Reservatorio", "$2.28") },
-];
-
-const luvas: MedRow[] = [
-  { name: "Luvas de Nitrilo", pack: "1x100", mwk: "MK 13,785", usd: "$7.95", wa: wa("Luvas de Nitrilo", "$7.95") },
-  { name: "Luvas de Exame", pack: "1x100", mwk: "MK 13,785", usd: "$7.95", wa: wa("Luvas de Exame", "$7.95") },
-  { name: "Luvas Plasticas", pack: "1x100", mwk: "MK 1,969", usd: "$1.13", wa: wa("Luvas Plasticas", "$1.13") },
-  { name: "Luvas Cirurgicas", pack: "1x50 pares", mwk: "MK 33,476", usd: "$19.30", wa: wa("Luvas Cirurgicas", "$19.30") },
-  { name: "Luvas Ginecologicas", pack: "1x25 pares", mwk: "MK 47,261", usd: "$27.26", wa: wa("Luvas Ginecologicas", "$27.26") },
-];
-
-const seringas: MedRow[] = [
-  { name: "Seringas Insulina 1ml + Agulhas", pack: "1x100", mwk: "MK 20,677", usd: "$11.92", wa: wa("Seringas Insulina 1ml + Agulhas", "$11.92") },
-  { name: "Seringas LUER LOCK 5ml", pack: "1x100", mwk: "MK 21,662", usd: "$12.50", wa: wa("Seringas LUER LOCK 5ml", "$12.50") },
-  { name: "Seringas LUER LOCK 10/20/50ml", pack: "various", mwk: "MK 23,631", usd: "$13.63", wa: wa("Seringas LUER LOCK 10/20/50ml", "$13.63") },
-  { name: "Seringas LUER SLIP 3ml", pack: "1x100", mwk: "MK 20,677", usd: "$11.92", wa: wa("Seringas LUER SLIP 3ml", "$11.92") },
-  { name: "Seringas LUER SLIP 5ml & 10ml", pack: "1x100", mwk: "MK 19,692", usd: "$11.35", wa: wa("Seringas LUER SLIP 5ml & 10ml", "$11.35") },
-  { name: "Lamina Bisturi #11", pack: "1x100", mwk: "MK 17,723", usd: "$10.22", wa: wa("Lamina Bisturi #11", "$10.22") },
-  { name: "Lamina Bisturi #15", pack: "1x100", mwk: "MK 17,723", usd: "$10.22", wa: wa("Lamina Bisturi #15", "$10.22") },
-  { name: "Lamina Bisturi #20", pack: "1x100", mwk: "MK 17,723", usd: "$10.22", wa: wa("Lamina Bisturi #20", "$10.22") },
-];
-
-const desinfectantes: MedRow[] = [
-  { name: "Gel Alcoolico 70% 100ml", pack: "1x1", mwk: "MK 2,364", usd: "$1.36", wa: wa("Gel Alcoolico 70% 100ml", "$1.36") },
-  { name: "Alcool Etilico 70% 100ml", pack: "1x1", mwk: "MK 2,364", usd: "$1.36", wa: wa("Alcool Etilico 70% 100ml", "$1.36") },
-  { name: "Alcool Etilico 70% 250ml", pack: "1x1", mwk: "MK 5,120", usd: "$2.96", wa: wa("Alcool Etilico 70% 250ml", "$2.96") },
-  { name: "Alcool Etilico 70% 500ml", pack: "1x1", mwk: "MK 7,876", usd: "$4.54", wa: wa("Alcool Etilico 70% 500ml", "$4.54") },
-  { name: "Alcool Etilico 70% 1000ml", pack: "1x1", mwk: "MK 10,830", usd: "$6.25", wa: wa("Alcool Etilico 70% 1000ml", "$6.25") },
-  { name: "Alcool Etilico 70% 5L", pack: "1x1", mwk: "MK 35,445", usd: "$20.45", wa: wa("Alcool Etilico 70% 5L", "$20.45") },
-  { name: "Gel Alcoolico 70% 5L", pack: "1x1", mwk: "MK 39,385", usd: "$22.71", wa: wa("Gel Alcoolico 70% 5L", "$22.71") },
-  { name: "Gel para Ecografia 5L", pack: "1x1", mwk: "MK 39,385", usd: "$22.71", wa: wa("Gel para Ecografia 5L", "$22.71") },
-];
-
-const diagnostico: MedRow[] = [
-  { name: "Estetoscopio Profissional", pack: "1x1", mwk: "MK 15,754", usd: "$9.09", wa: wa("Estetoscopio Profissional", "$9.09") },
-  { name: "Estetoscopio Dual Profissional", pack: "1x1", mwk: "MK 17,723", usd: "$10.22", wa: wa("Estetoscopio Dual Profissional", "$10.22") },
-  { name: "Esfigmomanometro Digital", pack: "1x1", mwk: "MK 51,200", usd: "$29.52", wa: wa("Esfigmomanometro Digital", "$29.52") },
-  { name: "Kit Estetoscopio + Esfigmomanometro", pack: "1x1", mwk: "MK 47,261", usd: "$27.26", wa: wa("Kit Estetoscopio + Esfigmomanometro", "$27.26") },
-  { name: "Otoscopio", pack: "1x1", mwk: "MK 118,153", usd: "$68.14", wa: wa("Otoscopio", "$68.14") },
-  { name: "Oximetro de Pulso Digital", pack: "1x1", mwk: "MK 27,569", usd: "$15.89", wa: wa("Oximetro de Pulso Digital", "$15.89") },
-  { name: "Termometro Digital", pack: "1x1", mwk: "MK 5,120", usd: "$2.96", wa: wa("Termometro Digital", "$2.96") },
-];
-
-const monitorizacao: MedRow[] = [
-  { name: "Termometro de Mercurio", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Termometro de Mercurio", "$2.28") },
-  { name: "Termometro Infravermelho", pack: "1x1", mwk: "MK 23,631", usd: "$13.63", wa: wa("Termometro Infravermelho", "$13.63") },
-  { name: "Relogio de Bolso", pack: "1x1", mwk: "MK 5,907", usd: "$3.41", wa: wa("Relogio de Bolso", "$3.41") },
-  { name: "Lanterna de Exame", pack: "1x1", mwk: "MK 7,876", usd: "$4.54", wa: wa("Lanterna de Exame", "$4.54") },
-  { name: "Torniquete", pack: "1x1", mwk: "MK 5,907", usd: "$3.41", wa: wa("Torniquete", "$3.41") },
-  { name: "Medidor de Fluxo de Oxigenio", pack: "1x1", mwk: "MK 78,768", usd: "$45.43", wa: wa("Medidor de Fluxo de Oxigenio", "$45.43") },
-  { name: "Ressuscitador Ambu", pack: "1x1", mwk: "MK 118,153", usd: "$68.14", wa: wa("Ressuscitador Ambu", "$68.14") },
-  { name: "Debito-Metrometro de Pico", pack: "1x1", mwk: "MK 27,569", usd: "$15.89", wa: wa("Debito-Metrometro de Pico", "$15.89") },
-  { name: "Debito-Metrometro Pediatrico", pack: "1x1", mwk: "MK 51,200", usd: "$29.52", wa: wa("Debito-Metrometro Pediatrico", "$29.52") },
-  { name: "Canula Nasal de Oxigenio", pack: "1x1", mwk: "MK 2,954", usd: "$1.70", wa: wa("Canula Nasal de Oxigenio", "$1.70") },
-  { name: "Estetoscopio Fetal", pack: "1x1", mwk: "MK 11,815", usd: "$6.82", wa: wa("Estetoscopio Fetal", "$6.82") },
-  { name: "Infantometro", pack: "1x1", mwk: "MK 82,707", usd: "$47.69", wa: wa("Infantometro", "$47.69") },
-  { name: "Organizador Semanal Tipo 1", pack: "1x1", mwk: "MK 5,907", usd: "$3.41", wa: wa("Organizador Semanal Tipo 1", "$3.41") },
-  { name: "Organizador Semanal Tipo 2", pack: "1x1", mwk: "MK 2,756", usd: "$1.59", wa: wa("Organizador Semanal Tipo 2", "$1.59") },
-  { name: "Copo de Colheita de Urina 60ml", pack: "1x1", mwk: "MK 590", usd: "$0.33", wa: wa("Copo de Colheita de Urina 60ml", "$0.33") },
-  { name: "Nebulizador", pack: "1x1", mwk: "MK 98,461", usd: "$56.78", wa: wa("Nebulizador", "$56.78") },
-  { name: "Kit de Primeiros Socorros", pack: "1x1", mwk: "MK 27,569", usd: "$15.89", wa: wa("Kit de Primeiros Socorros", "$15.89") },
-  { name: "Caixa de Cadeia de Frio", pack: "1x1", mwk: "MK 157,538", usd: "$90.86", wa: wa("Caixa de Cadeia de Frio", "$90.86") },
-];
-
-const laboratorio: MedRow[] = [
-  { name: "Seladora de Embalagens", pack: "1x1", mwk: "MK 492,305", usd: "$283.91", wa: wa("Seladora de Embalagens", "$283.91") },
-  { name: "Saco de Gelo", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Saco de Gelo", "$2.28") },
-  { name: "Tubos de Sangue Amarelos", pack: "1x100", mwk: "MK 43,323", usd: "$24.98", wa: wa("Tubos de Sangue Amarelos", "$24.98") },
-  { name: "Suporte de Tubos de Laboratorio", pack: "1x1", mwk: "MK 24,615", usd: "$14.20", wa: wa("Suporte de Tubos de Laboratorio", "$14.20") },
-  { name: "Tubos de Sangue Roxos 4ml", pack: "1x100", mwk: "MK 33,476", usd: "$19.30", wa: wa("Tubos de Sangue Roxos 4ml", "$19.30") },
-  { name: "Bolas de Algodao 50g", pack: "1x100", mwk: "MK 3,938", usd: "$2.28", wa: wa("Bolas de Algodao 50g", "$2.28") },
-  { name: "Fio de Sutura 75cm", pack: "1x1", mwk: "MK 51,200", usd: "$29.52", wa: wa("Fio de Sutura 75cm", "$29.52") },
-  { name: "Fio de Sutura 90cm", pack: "1x1", mwk: "MK 63,016", usd: "$36.34", wa: wa("Fio de Sutura 90cm", "$36.34") },
-  { name: "Rolo de Algodao Absorvente 50g", pack: "1x1", mwk: "MK 1,969", usd: "$1.13", wa: wa("Rolo de Algodao Absorvente 50g", "$1.13") },
-  { name: "Rolo de Algodao Absorvente 100g", pack: "1x1", mwk: "MK 3,151", usd: "$1.81", wa: wa("Rolo de Algodao Absorvente 100g", "$1.81") },
-  { name: "Rolo de Algodao Absorvente 500g", pack: "1x1", mwk: "MK 9,846", usd: "$5.68", wa: wa("Rolo de Algodao Absorvente 500g", "$5.68") },
-  { name: "Gaze Nao Esteril 5x5cm", pack: "1x100", mwk: "MK 3,938", usd: "$2.28", wa: wa("Gaze Nao Esteril 5x5cm", "$2.28") },
-  { name: "Gaze Nao Esteril 7.5x7.5cm", pack: "1x100", mwk: "MK 6,302", usd: "$3.64", wa: wa("Gaze Nao Esteril 7.5x7.5cm", "$3.64") },
-  { name: "Gaze Esteril 10x10cm", pack: "1x50", mwk: "MK 15,360", usd: "$8.86", wa: wa("Gaze Esteril 10x10cm", "$8.86") },
-  { name: "Gaze Nao Esteril 10x10cm", pack: "1x100", mwk: "MK 8,271", usd: "$4.77", wa: wa("Gaze Nao Esteril 10x10cm", "$4.77") },
-  { name: "Ligadura de Gaze 7.5cm", pack: "1x12", mwk: "MK 3,938", usd: "$2.28", wa: wa("Ligadura de Gaze 7.5cm", "$2.28") },
-  { name: "Ligadura de Gaze 10cm", pack: "1x12", mwk: "MK 6,302", usd: "$3.64", wa: wa("Ligadura de Gaze 10cm", "$3.64") },
-  { name: "Fita de Oxido de Zinco 2.5cm", pack: "1x1", mwk: "MK 1,969", usd: "$1.13", wa: wa("Fita de Oxido de Zinco 2.5cm", "$1.13") },
-  { name: "Fita de Oxido de Zinco 5cm", pack: "1x1", mwk: "MK 2,364", usd: "$1.36", wa: wa("Fita de Oxido de Zinco 5cm", "$1.36") },
-  { name: "Fita de Oxido de Zinco 7.5cm", pack: "1x1", mwk: "MK 2,954", usd: "$1.70", wa: wa("Fita de Oxido de Zinco 7.5cm", "$1.70") },
-  { name: "Pensos Transparentes", pack: "1x100", mwk: "MK 3,938", usd: "$2.28", wa: wa("Pensos Transparentes", "$2.28") },
-  { name: "Toucas Descartaveis", pack: "1x100", mwk: "MK 9,846", usd: "$5.68", wa: wa("Toucas Descartaveis", "$5.68") },
-  { name: "Absorvente Descartavel", pack: "1x10", mwk: "MK 17,723", usd: "$10.22", wa: wa("Absorvente Descartavel", "$10.22") },
-  { name: "Lencol Cirurgico", pack: "1x50", mwk: "MK 27,569", usd: "$15.89", wa: wa("Lencol Cirurgico", "$15.89") },
-  { name: "Saco de Colheita de Urina", pack: "1x1", mwk: "MK 1,969", usd: "$1.13", wa: wa("Saco de Colheita de Urina", "$1.13") },
-  { name: "Fato-Macaco Impermeavel", pack: "1x1", mwk: "MK 11,815", usd: "$6.82", wa: wa("Fato-Macaco Impermeavel", "$6.82") },
-  { name: "Conjunto Scrub", pack: "1x1", mwk: "MK 35,445", usd: "$20.45", wa: wa("Conjunto Scrub", "$20.45") },
-  { name: "Bata Descartavel de Visita", pack: "1x1", mwk: "MK 3,151", usd: "$1.81", wa: wa("Bata Descartavel de Visita", "$1.81") },
-  { name: "Avental Branco Descartavel", pack: "1x100", mwk: "MK 18,511", usd: "$10.67", wa: wa("Avental Branco Descartavel", "$10.67") },
-  { name: "Oculos de Seguranca", pack: "1x1", mwk: "MK 3,938", usd: "$2.28", wa: wa("Oculos de Seguranca", "$2.28") },
-  { name: "Caixa de Residuos Cortantes", pack: "1x1", mwk: "MK 2,756", usd: "$1.59", wa: wa("Caixa de Residuos Cortantes", "$1.59") },
-  { name: "Modelo de Esqueleto Humano", pack: "1x1", mwk: "MK 1,063,379", usd: "$613.25", wa: wa("Modelo de Esqueleto Humano", "$613.25") },
-  { name: "Rolo de Esterilizacao 100x200mm", pack: "1x1", mwk: "MK 59,076", usd: "$34.07", wa: wa("Rolo de Esterilizacao 100x200mm", "$34.07") },
-  { name: "Rolo de Esterilizacao 250x50mm", pack: "1x1", mwk: "MK 63,016", usd: "$36.34", wa: wa("Rolo de Esterilizacao 250x50mm", "$36.34") },
-  { name: "Rolo de Esterilizacao 150x200mm", pack: "1x1", mwk: "MK 78,768", usd: "$45.43", wa: wa("Rolo de Esterilizacao 150x200mm", "$45.43") },
-  { name: "Rolo de Esterilizacao 250x200mm", pack: "1x1", mwk: "MK 118,153", usd: "$68.14", wa: wa("Rolo de Esterilizacao 250x200mm", "$68.14") },
-];
-
-const mobiliario: MedRow[] = [
-  { name: "Escadote para Mesa de Exame", pack: "1x1", mwk: "MK 157,538", usd: "$90.86", wa: wa("Escadote para Mesa de Exame", "$90.86") },
-  { name: "Cadeira de Banho e Higiene", pack: "1x1", mwk: "MK 275,691", usd: "$158.99", wa: wa("Cadeira de Banho e Higiene", "$158.99") },
-  { name: "Armario de Cabeceira", pack: "1x1", mwk: "MK 275,691", usd: "$158.99", wa: wa("Armario de Cabeceira", "$158.99") },
-  { name: "Mesa Mayo", pack: "1x1", mwk: "MK 236,306", usd: "$136.27", wa: wa("Mesa Mayo", "$136.27") },
-  { name: "Berco Hospitalar", pack: "1x1", mwk: "MK 433,228", usd: "$249.85", wa: wa("Berco Hospitalar", "$249.85") },
-  { name: "Almofada", pack: "1x1", mwk: "MK 39,385", usd: "$22.71", wa: wa("Almofada", "$22.71") },
-  { name: "Colchao Anti-Escaras", pack: "1x1", mwk: "MK 177,229", usd: "$102.21", wa: wa("Colchao Anti-Escaras", "$102.21") },
-  { name: "Colchao", pack: "1x1", mwk: "MK 315,075", usd: "$181.70", wa: wa("Colchao", "$181.70") },
-  { name: "Mesa de Massagem / Tratamento", pack: "1x1", mwk: "MK 472,613", usd: "$272.56", wa: wa("Mesa de Massagem / Tratamento", "$272.56") },
-  { name: "Mesa de Exame Ginecologico", pack: "1x1", mwk: "MK 590,766", usd: "$340.69", wa: wa("Mesa de Exame Ginecologico", "$340.69") },
-  { name: "Mesa de Observacao", pack: "1x1", mwk: "MK 551,381", usd: "$317.99", wa: wa("Mesa de Observacao", "$317.99") },
-  { name: "Cama Hospitalar Articulada", pack: "1x1", mwk: "MK 708,920", usd: "$408.83", wa: wa("Cama Hospitalar Articulada", "$408.83") },
-  { name: "Cama Hospitalar", pack: "1x1", mwk: "MK 630,150", usd: "$363.41", wa: wa("Cama Hospitalar", "$363.41") },
-  { name: "Panela de Esterilizacao 23cm", pack: "1x1", mwk: "MK 98,461", usd: "$56.78", wa: wa("Panela de Esterilizacao 23cm", "$56.78") },
-  { name: "Panela de Esterilizacao 26cm", pack: "1x1", mwk: "MK 108,308", usd: "$62.47", wa: wa("Panela de Esterilizacao 26cm", "$62.47") },
-  { name: "Panela de Esterilizacao 30cm", pack: "1x1", mwk: "MK 118,153", usd: "$68.14", wa: wa("Panela de Esterilizacao 30cm", "$68.14") },
-  { name: "Balanca Pediatrica Digital (plana)", pack: "1x1", mwk: "MK 118,153", usd: "$68.14", wa: wa("Balanca Pediatrica Digital plana", "$68.14") },
-  { name: "Balanca Pediatrica Digital (sentada)", pack: "1x1", mwk: "MK 196,922", usd: "$113.56", wa: wa("Balanca Pediatrica Digital sentada", "$113.56") },
-  { name: "Balanca de Adulto", pack: "1x1", mwk: "MK 47,261", usd: "$27.26", wa: wa("Balanca de Adulto", "$27.26") },
-  { name: "Balanca Manual c/ Altimetro", pack: "1x1", mwk: "MK 472,613", usd: "$272.56", wa: wa("Balanca Manual c/ Altimetro", "$272.56") },
-  { name: "Balanca Mecanica c/ Altimetro", pack: "1x1", mwk: "MK 551,381", usd: "$317.99", wa: wa("Balanca Mecanica c/ Altimetro", "$317.99") },
-  { name: "Balanca Electronica c/ Altimetro", pack: "1x1", mwk: "MK 551,381", usd: "$317.99", wa: wa("Balanca Electronica c/ Altimetro", "$317.99") },
-  { name: "Cadeira de Rodas Electrica", pack: "1x1", mwk: "MK 2,166,142", usd: "$1,249.22", wa: wa("Cadeira de Rodas Electrica", "$1249.22") },
-  { name: "Cadeira de Rodas Adulto", pack: "1x1", mwk: "MK 393,845", usd: "$227.13", wa: wa("Cadeira de Rodas Adulto", "$227.13") },
-  { name: "Arrastadeira com Tampa", pack: "1x1", mwk: "MK 98,461", usd: "$56.78", wa: wa("Arrastadeira com Tampa", "$56.78") },
-  { name: "Urinol Plastico", pack: "1x1", mwk: "MK 39,385", usd: "$22.71", wa: wa("Urinol Plastico", "$22.71") },
-  { name: "Especulo Vaginal Tam. L", pack: "1x1", mwk: "MK 47,261", usd: "$27.26", wa: wa("Especulo Vaginal Tam. L", "$27.26") },
-  { name: "Martelo de Reflexos", pack: "1x1", mwk: "MK 11,815", usd: "$6.82", wa: wa("Martelo de Reflexos", "$6.82") },
-];
-
-const mobilidade: MedRow[] = [
-  { name: "Andarilho Standard", pack: "1x1", mwk: "MK 86,646", usd: "$49.97", wa: wa("Andarilho Standard", "$49.97") },
-  { name: "Bengala Standard", pack: "1x1", mwk: "MK 15,754", usd: "$9.09", wa: wa("Bengala Standard", "$9.09") },
-  { name: "Muletas", pack: "1x2", mwk: "MK 86,646", usd: "$49.97", wa: wa("Muletas", "$49.97") },
-  { name: "Bengala com Assento", pack: "1x1", mwk: "MK 35,445", usd: "$20.45", wa: wa("Bengala com Assento", "$20.45") },
-  { name: "Bengala Quadripode", pack: "1x1", mwk: "MK 31,507", usd: "$18.17", wa: wa("Bengala Quadripode", "$18.17") },
-  { name: "Bengala Quadripode Inox", pack: "1x1", mwk: "MK 35,445", usd: "$20.45", wa: wa("Bengala Quadripode Inox", "$20.45") },
-  { name: "Bengala Dobravelzinco", pack: "1x1", mwk: "MK 19,692", usd: "$11.35", wa: wa("Bengala Dobravel", "$11.35") },
-];
-
-const medicamentos: MedRow[] = [
-  { name: "AQUAFEN PLUS — Gel Diclofenac", pack: "1x1", mwk: "MK 5,317", usd: "$3.06", wa: wa("AQUAFEN PLUS Gel Diclofenac", "$3.06") },
-  { name: "IBUWIN-100 — Suspensao Ibuprofeno", pack: "1x1", mwk: "MK 4,096", usd: "$2.36", wa: wa("IBUWIN-100 Suspensao Ibuprofeno", "$2.36") },
-  { name: "FEM-RED XT — Ferroso + Acido Folico", pack: "1x10", mwk: "MK 4,016", usd: "$2.32", wa: wa("FEM-RED XT Ferroso Acido Folico", "$2.32") },
-  { name: "VOLIGESIC PLUS — Paracetamol", pack: "10x10", mwk: "MK 6,341", usd: "$3.65", wa: wa("VOLIGESIC PLUS Paracetamol", "$3.65") },
-  { name: "SCOTRIZOL — Cotrimoxazol", pack: "100ml", mwk: "MK 4,016", usd: "$2.32", wa: wa("SCOTRIZOL Cotrimoxazol", "$2.32") },
-  { name: "SCONAZ — Fluconazole 150mg", pack: "1x1", mwk: "MK 2,639", usd: "$1.52", wa: wa("SCONAZ Fluconazole 150mg", "$1.52") },
-  { name: "IBUWIN-400mg — Ibuprofeno", pack: "10x10", mwk: "MK 6,853", usd: "$3.96", wa: wa("IBUWIN-400mg Ibuprofeno", "$3.96") },
-  { name: "SCORT — Triamcinolone Inj.", pack: "1x1", mwk: "MK 12,879", usd: "$7.42", wa: wa("SCORT Triamcinolone Inj.", "$7.42") },
-  { name: "GLUSCOT — Metformina 500mg", pack: "10x10", mwk: "MK 8,507", usd: "$4.90", wa: wa("GLUSCOT Metformina 500mg", "$4.90") },
-  { name: "Teste Rapido Malaria (25)", pack: "1x25", mwk: "MK 78,768", usd: "$45.43", wa: wa("Teste Rapido Malaria 25", "$45.43") },
-  { name: "Teste Rapido HIV (50)", pack: "1x50", mwk: "MK 97,279", usd: "$56.10", wa: wa("Teste Rapido HIV 50", "$56.10") },
-  { name: "VIGROSE-BLUE — Sildenafil", pack: "1x4", mwk: "MK 3,938", usd: "$2.28", wa: wa("VIGROSE-BLUE Sildenafil", "$2.28") },
-  { name: "INFUMOX — Suspensao Amoxicilina", pack: "100ml", mwk: "MK 4,135", usd: "$2.38", wa: wa("INFUMOX Suspensao Amoxicilina", "$2.38") },
-  { name: "FEBREX PLUS — Anti-Gripe", pack: "2x10", mwk: "MK 2,088", usd: "$1.20", wa: wa("FEBREX PLUS Anti-Gripe", "$1.20") },
-  { name: "SALBUTAMOL-NC — Salbutamol", pack: "100ml", mwk: "MK 2,364", usd: "$1.36", wa: wa("SALBUTAMOL-NC Salbutamol", "$1.36") },
-  { name: "ERYTHROMEX — Eritromicina", pack: "10x10", mwk: "MK 31,114", usd: "$17.94", wa: wa("ERYTHROMEX Eritromicina", "$17.94") },
-  { name: "CIPROFITAB — Ciprofloxacina", pack: "10x10", mwk: "MK 20,874", usd: "$12.04", wa: wa("CIPROFITAB Ciprofloxacina", "$12.04") },
-];
-
-export default function PTMedicalSuppliesPage() {
+export default function PtMedicalSuppliesPage() {
   return (
-    <>
-      {/* PT nav strip */}
-      <div style={{ background: "var(--surface-alt, #1a1a2e)", borderBottom: "1px solid var(--border)", padding: "6px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: ".82rem", flexWrap: "wrap", gap: "6px" }}>
-        <nav style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a href="/pt">Inicio</a>
-          <a href="/pt/catalogue">Catalogo IT</a>
-          <a href="/pt/computer-assembly">Montagem PC</a>
-          <a href="/pt/language-services">Servicos Linguisticos</a>
-          <a href="/pt/medical-supplies" style={{ fontWeight: 700, color: "var(--fl-blue, #4f8ef7)" }}>Material Medico</a>
-          <a href="/pt/software-development">Software</a>
-          <a href="/pt/credentials">Credenciais</a>
-        </nav>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <a href="/medical-supplies">EN</a>
-          <span style={{ fontWeight: 700, color: "var(--fl-blue, #4f8ef7)" }}>PT</span>
-          <a href="/ny/medical-supplies">NY</a>
+    <div style={{ background: BG, minHeight: "100vh" }}>
+
+      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "8px 24px", display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap" }}>
+        {ptLinks.map(l => (
+          <Link key={l.href} href={l.href} style={{ color: l.href === "/pt/medical-supplies" ? "var(--fl-blue)" : "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", textDecoration: "none", borderRadius: "4px" }}>{l.label}</Link>
+        ))}
+        <div style={{ marginLeft: "auto", display: "flex", gap: "8px" }}>
+          <Link href="/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>EN</Link>
+          <Link href="/pt/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid var(--fl-blue)", borderRadius: "4px", color: "var(--fl-blue)", textDecoration: "none" }}>PT</Link>
+          <Link href="/ny/medical-supplies" style={{ fontSize: "11px", padding: "3px 8px", border: "1px solid #444", borderRadius: "4px", color: "#999", textDecoration: "none" }}>NY</Link>
         </div>
       </div>
 
-      <div className="hero">
-        <h2>Catalogo de Material Medico</h2>
-        <p>Equipamento de saude, consumiveis e farmaceuticos provenientes de parceiros SADC verificados. Ao servico do Malawi, Zambia, Mocambique e Africa do Sul.</p>
-        <div className="pill">Taxa: 1 USD = MK 1.734 · Marco 2026 · Contacte para orcamentos formais</div>
-      </div>
-
-      <div className="content">
-        <div className="sh"><h2>Equipamento de Proteccao -- Mascaras</h2><p className="sd">Mascaras de proteccao certificadas para uso clinico e institucional.</p></div>
-        <MedTable rows={mascaras} />
-
-        <div className="sh"><h2>Dispositivos Respiratorios</h2><p className="sd">Suporte respiratorio para oxigenoterapia e nebulizacao.</p></div>
-        <MedTable rows={respiratorios} />
-
-        <div className="sh"><h2>Luvas</h2><p className="sd">Luvas de exame, cirurgicas e descartaveis.</p></div>
-        <MedTable rows={luvas} />
-
-        <div className="sh"><h2>Seringas &amp; Bisturis</h2></div>
-        <MedTable rows={seringas} />
-
-        <div className="sh"><h2>Desinfectantes &amp; Alcool</h2></div>
-        <MedTable rows={desinfectantes} />
-
-        <div className="sh"><h2>Instrumentos de Diagnostico</h2></div>
-        <MedTable rows={diagnostico} />
-
-        <div className="sh"><h2>Dispositivos de Monitorizacao</h2></div>
-        <MedTable rows={monitorizacao} />
-
-        <div className="sh"><h2>Laboratorio &amp; Algodao</h2></div>
-        <MedTable rows={laboratorio} />
-
-        <div className="sh"><h2>Mobiliario Hospitalar &amp; Balancas</h2></div>
-        <MedTable rows={mobiliario} />
-
-        <div className="sh"><h2>Auxiliares de Mobilidade</h2></div>
-        <MedTable rows={mobilidade} />
-
-        <div className="sh"><h2>Medicamentos &amp; Farmaceuticos</h2></div>
-        <MedTable rows={medicamentos} />
-
-        <div className="compliance">
-          <h3>Informacoes de Encomenda</h3>
-          <p>Todo o material medico e proveniente de parceiros grossistas verificados. Precos mediante consulta para encomendas institucionais e a granel. Descontos disponiveis para hospitais, clinicas, ONGs e programas de saude governamentais.</p>
+      <div style={{ position: "relative", background: "var(--fl-neutral-90)", minHeight: "280px", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", overflow: "hidden" }}>
+        <img src="/index_main/medical_equipment_1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.35 }} loading="eager" />
+        <div style={{ position: "relative", zIndex: 1, padding: "64px 24px 48px" }}>
+          <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+            Catalogo de Material Medico
+          </h1>
+          <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
+            Equipamento de saude, consumiveis e farmaceuticos provenientes de parceiros SADC verificados. Ao servico do Malawi, Zambia, Mocambique e Africa do Sul.
+          </p>
+          <div style={{ display: "inline-block", background: "rgba(0,120,212,0.25)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "#90caf9", fontSize: "13px" }}>
+            Taxa: 1 USD = MK 1,734 · Marco 2026 · Contacte para orcamentos formais
+          </div>
         </div>
       </div>
 
-      <div className="quote-bar">
-        <p><strong>Pronto para encomendar?</strong> Contacte-nos para um orcamento formal, precos de volume ou para organizar a entrega.</p>
-        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-          <a className="quote-bar-btn" href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20I%20would%20like%20a%20quote%20from%20the%20Material%20Medico%20page." target="_blank" rel="noopener">Pedir Orcamento via WhatsApp</a>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
+
+        <SectionHead title="Equipamento de Proteccao — Mascaras" sub="Mascaras de proteccao certificadas para uso clinico e institucional." />
+        <ProdTable rows={masks} />
+
+        <SectionHead title="Dispositivos Respiratorios" sub="Suporte respiratorio para oxigenoterapia e nebulizacao." />
+        <ProdTable rows={respiratory} />
+
+        <SectionHead title="Luvas" sub="Luvas de exame, cirurgicas e descartaveis." />
+        <ProdTable rows={gloves} />
+
+        <SectionHead title="Seringas e Bisturis" />
+        <ProdTable rows={syringes} />
+
+        <SectionHead title="Desinfectantes e Alcool" />
+        <ProdTable rows={disinfectants} />
+
+        <SectionHead title="Instrumentos de Diagnostico" />
+        <ProdTable rows={diagnostics} />
+
+        <SectionHead title="Dispositivos de Monitorizacao" />
+        <ProdTable rows={monitoring} />
+
+        <SectionHead title="Laboratorio e Algodao" />
+        <ProdTable rows={labCotton} />
+
+        <SectionHead title="Mobiliario Hospitalar e Balancas" />
+        <ProdTable rows={furniture} />
+
+        <SectionHead title="Auxiliares de Mobilidade" />
+        <ProdTable rows={mobility} />
+
+        <SectionHead title="Medicamentos e Farmaceuticos" />
+        <ProdTable rows={pharma} />
+
+        <div style={{ background: SURF, border: "1px solid " + BORDER, borderLeft: "4px solid var(--fl-blue)", borderRadius: "8px", padding: "24px", marginBottom: "32px" }}>
+          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "16px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Informacao de Encomenda</h3>
+          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7, marginBottom: "20px" }}>Todo o material medico e adquirido atraves de parceiros grossistas verificados. Precos sob consulta para encomendas institucionais e a granel. Descontos disponiveis para hospitais, clinicas, ONGs e programas de saude governamentais. Contacte a TechNexus para orcamentos formais e acordos de cadeia de fornecimento.</p>
+          <a href="https://wa.me/265889941700?text=Ola%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20da%20pagina%20Material%20Medico." target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
+            Pedir Orcamento
+          </a>
         </div>
+
       </div>
-    </>
+    </div>
   );
 }
