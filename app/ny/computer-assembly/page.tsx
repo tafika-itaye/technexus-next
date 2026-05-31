@@ -99,7 +99,7 @@ export default function NyComputerAssemblyPage() {
             <tbody>
               {components.map((c, i) => (
                 <tr key={c.num} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={TD}><img src={c.img} alt={c.part} style={{ width: "48px", height: "48px", objectFit: "contain" }} loading="lazy" /></td>
+                  <td style={TD}><img src={c.img} alt={c.part} width={48} height={48} style={{ width: "48px", height: "48px", objectFit: "contain" }} loading="lazy" /></td>
                   <td style={{ ...TD, color: MUTED }}>{c.num}</td>
                   <td style={{ ...TD, fontWeight: 600 }}>{c.part}</td>
                   <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{c.spec}</td>
@@ -174,7 +174,7 @@ export default function NyComputerAssemblyPage() {
             <tbody>
               {upgrades.map((u, i) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={TD}><img src={u.img} alt={u.part} style={{ width: "48px", height: "48px", objectFit: "contain" }} loading="lazy" /></td>
+                  <td style={TD}><img src={u.img} alt={u.part} width={48} height={48} style={{ width: "48px", height: "48px", objectFit: "contain" }} loading="lazy" /></td>
                   <td style={{ ...TD, fontWeight: 600 }}>{u.part}</td>
                   <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{u.change}</td>
                   <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{u.add}</td>
@@ -197,3 +197,4 @@ export default function NyComputerAssemblyPage() {
     </div>
   );
 }
+

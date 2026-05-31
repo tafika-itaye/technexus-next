@@ -253,7 +253,7 @@ export default function NyMedicalSuppliesPage() {
     <div style={{ background: BG, minHeight: "100vh" }}>
 
       <div style={{ position: "relative", background: "var(--fl-neutral-90)", minHeight: "280px", display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", overflow: "hidden" }}>
-        <img src="/index_main/medical_equipment_1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.35 }} loading="eager" />
+        <img src="/index_main/medical_equipment_1.webp" alt="" aria-hidden="true" width={1100} height={280} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.35 }} loading="eager" />
         <div style={{ position: "relative", zIndex: 1, padding: "64px 24px 48px" }}>
           <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
             Zinthu za Chipatala
@@ -314,3 +314,4 @@ export default function NyMedicalSuppliesPage() {
     </div>
   );
 }
+

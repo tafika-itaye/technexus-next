@@ -27,7 +27,7 @@ export default function PtHomePage() {
           {services.map(s => (
             <Link key={s.href} href={s.href} style={{ textDecoration: "none", background: "#fff", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column" }}>
               <div style={{ height: "180px", overflow: "hidden", position: "relative" }}>
-                <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
+                <img src={s.img} alt={s.title} width={600} height={400} style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
                 <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", display: "flex", alignItems: "flex-end", padding: "12px 16px" }}>
                   <span style={{ color: "#fff", fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>{s.label}</span>
                 </div>
@@ -44,6 +44,8 @@ export default function PtHomePage() {
     </div>
   );
 }
+
+
 
 
 

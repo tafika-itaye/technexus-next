@@ -166,7 +166,7 @@ function ProductCard({ p }: { p: { sku: string; title: string; specs: string; mw
   return (
     <div style={{ background: "#fff", borderRadius: "8px", border: "1px solid var(--fl-neutral-8)", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "var(--shadow-2)" }}>
       <div style={{ height: "160px", overflow: "hidden", background: "var(--fl-neutral-4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <img src={p.img} alt={p.title} style={{ width: "100%", height: "100%", objectFit: "contain", padding: "12px" }} loading="lazy" />
+        <img src={p.img} alt={p.title} width={200} height={200} style={{ width: "100%", height: "100%", objectFit: "contain", padding: "12px" }} loading="lazy" />
       </div>
       <div style={{ padding: "16px", flex: 1, display: "flex", flexDirection: "column" }}>
         <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em", color: "#999", textTransform: "uppercase", marginBottom: "4px" }}>{p.sku}</div>
@@ -183,6 +183,7 @@ function ProductCard({ p }: { p: { sku: string; title: string; specs: string; mw
     </div>
   );
 }
+
 
 
 

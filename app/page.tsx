@@ -164,7 +164,7 @@ export default function Home() {
             <Link key={s.href} href={s.href} style={{ textDecoration: "none", background: "var(--surface)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }}>
               <div style={{ height: "180px", overflow: "hidden", position: "relative", background: s.img ? "var(--fl-neutral-8)" : "linear-gradient(135deg,#032d1e 0%,#075E54 60%,#0a2742 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {s.img ? (
-                  <img src={s.img} alt={s.alt} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img src={s.img} alt={s.alt} width={600} height={400} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 ) : (
                   <div style={{ textAlign: "center", color: "#fff" }}>
                     <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.02em" }}>EIS Bridge &amp; POS</div>
@@ -234,6 +234,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
