@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const features = [
   { title: "Compliance Certainty", body: "We connect you to MRA EIS with no gaps and no penalties. Every sale is digitally signed and submitted in real time. MRA-signed QR receipts on every transaction." },
-  { title: "Business Continuity", body: "Keep your existing POS or accounting system. Our bridge connects it to EIS with no disruption to your workflow. Bridge-only or full POS â€” we advise you on the right fit." },
+  { title: "Business Continuity", body: "Keep your existing POS or accounting system. Our bridge connects it to EIS with no disruption to your workflow. Bridge-only or full POS Ã¢â‚¬â€ we advise you on the right fit." },
   { title: "Offline-Ready", body: "Power cuts and network drops do not stop your trading. Our system queues submissions and syncs when connectivity resumes. Built for Malawian conditions." },
   { title: "Peace of Mind", body: "Blantyre-based. Same-day response. Ongoing monitoring. MRA updates handled automatically. You trade; we keep you compliant." },
   { title: "MRA Certified", body: "TechNexus is a certified fiscal device integrator under the MRA EIS framework. Your compliance is backed by an accredited local partner." },
@@ -76,7 +76,7 @@ export default function EISPage() {
     <div style={{ background: BG, color: TEXT, fontFamily: "var(--font-body)" }}>
 
       {/* HERO */}
-      <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "120px 32px 80px", background: BG, position: "relative", overflow: "hidden" }}>
+      <section className="eis-hero" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "120px 32px 80px", background: BG, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46,204,113,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
         <h1 style={{ fontFamily: "var(--font-syne)", fontWeight: 800, fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#fff", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "24px" }}>
           EIS Compliance.<br />
@@ -109,7 +109,7 @@ export default function EISPage() {
           <p style={{ fontSize: "16px", color: MUTED, maxWidth: "560px", marginTop: "16px", fontWeight: 300 }}>
             We are MRA-certified and we have done this for businesses like yours. No offshore support queues. No guesswork.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: BORDER, marginTop: "64px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
+          <div className="features-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: BORDER, marginTop: "64px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
             {features.map(f => (
               <div key={f.title} style={{ background: SURF, padding: "40px 32px" }}>
                 <div style={{ fontFamily: "var(--font-syne)", fontSize: "15px", fontWeight: 700, color: "#fff", marginBottom: "12px" }}>{f.title}</div>
@@ -125,7 +125,7 @@ export default function EISPage() {
         <div style={con}>
           <div style={label}>How it works</div>
           <h2 style={secTitle}>From enquiry to compliant in five steps</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "1px", background: BORDER, marginTop: "64px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
+          <div className="process-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "1px", background: BORDER, marginTop: "64px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
             {steps.map(s => (
               <div key={s.num} style={{ background: BG, padding: "32px 24px" }}>
                 <div style={{ fontFamily: "var(--font-syne)", fontSize: "28px", fontWeight: 800, color: DIM, marginBottom: "12px" }}>{s.num}</div>
@@ -143,7 +143,7 @@ export default function EISPage() {
           <div style={label}>Pricing</div>
           <h2 style={secTitle}>No hidden costs</h2>
           <p style={{ fontSize: "14px", color: MUTED, marginTop: "12px" }}>Setup is once-off. Monthly fee covers monitoring, support, and all MRA update handling.</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1px", background: BORDER, marginTop: "48px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
+          <div className="plans-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1px", background: BORDER, marginTop: "48px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
             {plans.map(p => (
               <div key={p.name} style={{ background: p.featured ? SURF2 : SURF, padding: "32px 24px", display: "flex", flexDirection: "column", position: "relative", borderTop: p.featured ? "2px solid " + G : "2px solid transparent" }}>
                 {p.featured && (
@@ -163,7 +163,7 @@ export default function EISPage() {
               </div>
             ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: BORDER, marginTop: "1px", border: "1px solid " + BORDER, borderRadius: "0 0 12px 12px", overflow: "hidden" }}>
+          <div className="pricing-perks-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: BORDER, marginTop: "1px", border: "1px solid " + BORDER, borderRadius: "0 0 12px 12px", overflow: "hidden" }}>
             {[["Malawian First","Built and supported by a Blantyre-based team. No offshore queues, no remote-only support."],["Annual prepay","10% discount on monthly fees when paid annually."],["72-hour onboarding","Bridge-only clients live within 1 to 3 business days."],["No lock-in surprises","Clear pricing from day one. No hidden integration fees."]].map(([t,b]) => (
               <div key={t} style={{ background: SURF2, padding: "24px" }}>
                 <div style={{ fontSize: "13px", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>{t}</div>
@@ -198,7 +198,7 @@ export default function EISPage() {
       {/* CONTACT */}
       <section style={sec}>
         <div style={con}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
+          <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "start" }}>
             <div>
               <div style={label}>Get started</div>
               <h2 style={secTitle}>Talk to us today</h2>

@@ -124,6 +124,7 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   background: transparent;
   transition: background 0.2s ease;
+  flex-shrink: 0;
 }
 .brand-logo-wrap:hover {
   background: #ffffff;
@@ -138,7 +139,7 @@ img { max-width: 100%; display: block; }
   opacity: 1;
 }
 
-/* CARD TEXT â€” respects dark mode via CSS vars */
+/* CARD TEXT Ã¢â‚¬â€ respects dark mode via CSS vars */
 .card-title {
   color: var(--card-title);
   font-weight: 700;
@@ -190,10 +191,28 @@ img { max-width: 100%; display: block; }
     grid-template-columns: repeat(5, minmax(160px, 1fr)) !important;
     overflow-x: auto;
   }
-  .plans-grid { grid-template-columns: 1fr !important; }
+  .plans-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pricing-perks-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
   .form-grid-2 { grid-template-columns: 1fr !important; }
   .service-grid { grid-template-columns: 1fr !important; }
   .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  .brand-strip-scroll {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .brand-strip-scroll::-webkit-scrollbar { display: none; }
+
+  .home-hero { padding: 48px 16px 40px !important; }
+  .eis-hero { padding: 80px 20px 60px !important; }
 }
 
 @media (max-width: 480px) {

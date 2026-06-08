@@ -69,17 +69,15 @@ const services = [
 ];
 
 const brands = [
-  { name: "HP",         src: "/Products_logos/hp.png" },
-  { name: "Dell",       src: "/Products_logos/dell.png" },
-  { name: "Lenovo",     src: "/Products_logos/lenovo.png" },
-  { name: "Samsung",    src: "/Products_logos/samsung.png" },
-  { name: "Synology",   src: "/Products_logos/synology.png" },
-  { name: "APC",        src: "/Products_logos/apc.png" },
-  { name: "Canon",      src: "/Products_logos/canon.png" },
-  { name: "ASUS",       src: "/Products_logos/asus.png" },
-  { name: "Microsoft",  src: "/Products_logos/microsoft.png" },
-  { name: "AWS",        src: "/Products_logos/amazon_cloud_aws.png" },
-  { name: "Google",     src: "/Products_logos/google.png" },
+  { name: "HP",        src: "/Products_logos/hp.png" },
+  { name: "Dell",      src: "/Products_logos/dell.png" },
+  { name: "Lenovo",    src: "/Products_logos/lenovo.png" },
+  { name: "Synology",  src: "/Products_logos/synology.png" },
+  { name: "APC",       src: "/Products_logos/apc.png" },
+  { name: "Canon",     src: "/Products_logos/canon.png" },
+  { name: "ASUS",      src: "/Products_logos/asus.png" },
+  { name: "Microsoft", src: "/Products_logos/microsoft.png" },
+  { name: "AWS",       src: "/Products_logos/amazon_cloud_aws.png" },
 ];
 
 export default function Home() {
@@ -114,7 +112,7 @@ export default function Home() {
           <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#4a5568", textAlign: "center", marginBottom: "20px" }}>
             Brands we supply and support
           </p>
-          <div style={{ display: "flex", gap: "24px", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="brand-strip-scroll" style={{ display: "flex", gap: "8px", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
             {brands.map((b, i) => (
               <span key={b.name} className="brand-logo-wrap">
                 <img
@@ -139,7 +137,7 @@ export default function Home() {
       </div>
 
       {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "72px 40px 64px", textAlign: "center" }}>
+      <div className="home-hero" style={{ background: "var(--fl-neutral-90)", padding: "72px 40px 64px", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Technology. Language. Infrastructure.
         </h2>
