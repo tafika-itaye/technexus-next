@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -108,19 +108,27 @@ export default function Home() {
 
   return (
     <>
-      {/* BRAND LOGO STRIP */}
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "14px 40px", display: "flex", gap: "28px", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflowX: "auto" }}>
-        {brands.map((b, i) => (
-          <img
-            key={b.name}
-            src={b.src}
-            alt={b.name}
-            title={b.name}
-            loading={i < 3 ? "eager" : "lazy"}
-            fetchPriority={i === 0 ? "high" : "auto"}
-            width={120} height={28} className="brand-logo" style={{ height: "28px", width: "auto", objectFit: "contain" }}
-          />
-        ))}
+      {/* BRAND STRIP */}
+      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "32px 40px 28px" }}>
+        <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
+          <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#4a5568", textAlign: "center", marginBottom: "20px" }}>
+            Brands we supply and support
+          </p>
+          <div style={{ display: "flex", gap: "24px", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+            {brands.map((b, i) => (
+              <span key={b.name} className="brand-logo-wrap">
+                <img
+                  src={b.src}
+                  alt={b.name}
+                  title={b.name}
+                  loading={i < 3 ? "eager" : "lazy"}
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  width={120} height={28} className="brand-logo" style={{ height: "24px", width: "auto", objectFit: "contain" }}
+                />
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* BADGES */}
@@ -138,9 +146,6 @@ export default function Home() {
         <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
           End-to-end IT hardware, software development, language services, custom PC assembly, and medical equipment for businesses across Southern &amp; East Africa.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--accent)", borderRadius: "999px", padding: "6px 20px", color: "var(--accent)", fontSize: "13px", marginBottom: "32px" }}>
-          Verified suppliers across Malawi, Mozambique, South Africa, UAE &amp; China
-        </div>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <input
             type="text"

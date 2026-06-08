@@ -1,11 +1,11 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
 
 const features = [
   { title: "Compliance Certainty", body: "We connect you to MRA EIS with no gaps and no penalties. Every sale is digitally signed and submitted in real time. MRA-signed QR receipts on every transaction." },
-  { title: "Business Continuity", body: "Keep your existing POS or accounting system. Our bridge connects it to EIS with no disruption to your workflow. Bridge-only or full POS — we advise you on the right fit." },
+  { title: "Business Continuity", body: "Keep your existing POS or accounting system. Our bridge connects it to EIS with no disruption to your workflow. Bridge-only or full POS â€” we advise you on the right fit." },
   { title: "Offline-Ready", body: "Power cuts and network drops do not stop your trading. Our system queues submissions and syncs when connectivity resumes. Built for Malawian conditions." },
   { title: "Peace of Mind", body: "Blantyre-based. Same-day response. Ongoing monitoring. MRA updates handled automatically. You trade; we keep you compliant." },
   { title: "MRA Certified", body: "TechNexus is a certified fiscal device integrator under the MRA EIS framework. Your compliance is backed by an accredited local partner." },
@@ -78,22 +78,18 @@ export default function EISPage() {
       {/* HERO */}
       <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", textAlign: "center", padding: "120px 32px 80px", background: BG, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(46,204,113,0.08) 0%, transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", background: SURF, border: "1px solid " + BORDER, borderRadius: "999px", fontSize: "13px", color: MUTED, marginBottom: "10px" }}>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: G, display: "inline-block" }} />
-          MRA Electronic Invoicing System
-        </div>
-        <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "6px 14px", background: SURF, border: "1px solid " + BORDER, borderRadius: "999px", fontSize: "12px", color: MUTED, marginBottom: "32px", opacity: 0.85 }}>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: G, display: "inline-block" }} />
-          MRA Certified EIS Integrator &mdash; <Link href="/credentials" style={{ color: G, textDecoration: "underline", textUnderlineOffset: "3px" }}>View credentials</Link>
-        </div>
         <h1 style={{ fontFamily: "var(--font-syne)", fontWeight: 800, fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#fff", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "24px" }}>
           EIS Compliance.<br />
           <span style={{ color: G }}>Fast. Reliable. Local.</span>
         </h1>
-        <p style={{ fontSize: "18px", color: MUTED, maxWidth: "560px", lineHeight: 1.7, marginBottom: "40px", fontWeight: 300 }}>
+        <p style={{ fontSize: "18px", color: MUTED, maxWidth: "560px", lineHeight: 1.7, marginBottom: "16px", fontWeight: 300 }}>
           Connect your VAT-registered business to MRA EIS within 72 hours.
           Keep your current system or deploy a full POS.
           Local Blantyre support on every plan.
+        </p>
+        <p style={{ fontSize: "13px", color: TEXTDIM, marginBottom: "40px", letterSpacing: "0.02em" }}>
+          MRA Certified EIS Integrator &mdash;{" "}
+          <Link href="/credentials" style={{ color: MUTED, textDecoration: "underline", textUnderlineOffset: "3px" }}>View credentials</Link>
         </p>
         <div style={{ display: "flex", gap: "16px", flexWrap: "wrap", justifyContent: "center" }}>
           <a href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20I%20want%20to%20get%20EIS%20compliant" target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: G, color: "#000", fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "8px", textDecoration: "none" }}>
@@ -104,16 +100,6 @@ export default function EISPage() {
           </a>
         </div>
       </section>
-
-      {/* STATS */}
-      <div style={{ background: SURF, borderTop: "1px solid " + BORDER, borderBottom: "1px solid " + BORDER, display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
-        {[["72h","Typical onboarding time"],["MWK 0","Hidden costs"],["Same day","Support response"],["Local","Blantyre-based team"]].map(([v,l]) => (
-          <div key={l} style={{ padding: "32px 24px", textAlign: "center", borderRight: "1px solid " + BORDER }}>
-            <div style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(20px,3vw,32px)", fontWeight: 700, color: G, marginBottom: "6px" }}>{v}</div>
-            <div style={{ fontSize: "12px", color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em" }}>{l}</div>
-          </div>
-        ))}
-      </div>
 
       {/* FEATURES */}
       <section style={sec}>
@@ -159,8 +145,12 @@ export default function EISPage() {
           <p style={{ fontSize: "14px", color: MUTED, marginTop: "12px" }}>Setup is once-off. Monthly fee covers monitoring, support, and all MRA update handling.</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1px", background: BORDER, marginTop: "48px", border: "1px solid " + BORDER, borderRadius: "12px", overflow: "hidden" }}>
             {plans.map(p => (
-              <div key={p.name} style={{ background: p.featured ? SURF2 : SURF, padding: "32px 24px", display: "flex", flexDirection: "column", position: "relative" }}>
-                {p.featured && <div style={{ position: "absolute", top: "16px", right: "16px", background: G, color: "#000", fontSize: "10px", fontWeight: 700, padding: "3px 10px", borderRadius: "999px", letterSpacing: "0.06em" }}>Popular</div>}
+              <div key={p.name} style={{ background: p.featured ? SURF2 : SURF, padding: "32px 24px", display: "flex", flexDirection: "column", position: "relative", borderTop: p.featured ? "2px solid " + G : "2px solid transparent" }}>
+                {p.featured && (
+                  <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: G, marginBottom: "12px" }}>
+                    Most popular
+                  </div>
+                )}
                 <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: MUTED, marginBottom: "16px" }}>{p.name}</div>
                 <div style={{ fontFamily: "var(--font-syne)", fontWeight: 700, fontSize: "clamp(18px,2vw,24px)", color: G, marginBottom: "4px" }}>{p.setup}</div>
                 <div style={{ fontSize: "11px", color: TEXTDIM, marginBottom: "12px" }}>one-off setup</div>
@@ -174,7 +164,7 @@ export default function EISPage() {
             ))}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "1px", background: BORDER, marginTop: "1px", border: "1px solid " + BORDER, borderRadius: "0 0 12px 12px", overflow: "hidden" }}>
-            {[["First 20 clients","First month of support free on any package."],["Annual prepay","10% discount on monthly fees when paid annually."],["72-hour onboarding","Bridge-only clients live within 1 to 3 business days."],["No lock-in surprises","Clear pricing from day one. No hidden integration fees."]].map(([t,b]) => (
+            {[["Malawian First","Built and supported by a Blantyre-based team. No offshore queues, no remote-only support."],["Annual prepay","10% discount on monthly fees when paid annually."],["72-hour onboarding","Bridge-only clients live within 1 to 3 business days."],["No lock-in surprises","Clear pricing from day one. No hidden integration fees."]].map(([t,b]) => (
               <div key={t} style={{ background: SURF2, padding: "24px" }}>
                 <div style={{ fontSize: "13px", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>{t}</div>
                 <p style={{ fontSize: "12px", color: MUTED, lineHeight: 1.6 }}>{b}</p>
