@@ -1,4 +1,4 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
   --fl-blue:       #0078D4;
@@ -127,16 +127,18 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 .brand-logo-wrap:hover {
-  background: #ffffff;
+  background: var(--fl-neutral-4);
 }
 .brand-logo {
   filter: grayscale(1);
-  opacity: 0.45;
+  opacity: 0.55;
+  mix-blend-mode: multiply;
   transition: filter 0.2s ease, opacity 0.2s ease;
 }
 .brand-logo-wrap:hover .brand-logo {
   filter: grayscale(0);
   opacity: 1;
+  mix-blend-mode: normal;
 }
 
 /* CARD TEXT Ã¢â‚¬â€ respects dark mode via CSS vars */

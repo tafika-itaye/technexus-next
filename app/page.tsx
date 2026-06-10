@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -107,7 +107,7 @@ export default function Home() {
   return (
     <>
       {/* BRAND STRIP */}
-      <div style={{ background: "var(--fl-neutral-90)", borderBottom: "1px solid #2a2a2a", padding: "32px 40px 28px" }}>
+      <div style={{ background: "#ffffff", borderBottom: "1px solid var(--fl-neutral-8)", padding: "32px 40px 28px" }}>
         <div style={{ maxWidth: "1120px", margin: "0 auto" }}>
           <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#4a5568", textAlign: "center", marginBottom: "20px" }}>
             Brands we supply and support
