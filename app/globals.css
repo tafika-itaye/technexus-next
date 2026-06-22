@@ -227,3 +227,22 @@ img { max-width: 100%; display: block; }
   .stats-grid { grid-template-columns: 1fr 1fr !important; }
   .mobile-stack-2 { grid-template-columns: 1fr !important; }
 }
+
+/* NAV MOBILE / DESKTOP VISIBILITY */
+.nav-mobile-controls { display: none; }
+.nav-desktop-controls { display: flex; }
+.nav-mobile-drawer-controls { display: none; }
+
+@media (max-width: 768px) {
+  .nav-desktop-controls { display: none !important; }
+  .ham-btn { display: none !important; }
+  .nav-mobile-controls { display: flex !important; }
+  .nav-mobile-drawer-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 24px;
+    border-top: 1px solid #2a2a2a;
+    margin-top: 4px;
+  }
+}
