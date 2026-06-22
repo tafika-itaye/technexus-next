@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -62,7 +62,7 @@ export default function Nav() {
   }
 
   return (
-    <header style={{ background: "var(--fl-neutral-90)", borderBottom: "3px solid var(--accent)" }}>
+    <header style={{ background: "var(--nav-bg)", backdropFilter: "var(--nav-blur)", WebkitBackdropFilter: "var(--nav-blur)", borderBottom: "3px solid var(--accent)", position: "sticky", top: 0, zIndex: 100 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", height: "56px", gap: "16px" }}>
         <Link href={lang === "pt" ? "/pt" : lang === "ny" ? "/ny" : "/"} style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
           <Image

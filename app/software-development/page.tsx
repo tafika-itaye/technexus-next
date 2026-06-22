@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Software Development | TechNexus",
   description: "Bespoke business applications, web systems and digital platforms built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment across Southern Africa.",
@@ -61,7 +61,7 @@ export default function SoftwareDevelopmentPage() {
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
           Bespoke business applications, web systems and digital platforms. Built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
+        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
           ASP.NET Core · Blazor · PostgreSQL · Azure · Full-Stack
         </div>
       </div>

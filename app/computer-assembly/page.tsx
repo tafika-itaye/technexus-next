@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Custom PC Assembly | TechNexus",
   description: "Custom desktop PCs built to spec. Intel i5, Windows 11 Pro, QA-tested. Volume pricing for schools, government and enterprise in Malawi.",
@@ -69,7 +69,7 @@ export default function ComputerAssemblyPage() {
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
           Office and educational desktop PCs built to spec. Intel i5 platforms, quality components, Windows 11 Pro, assembled and QA-tested by certified technicians. Volume pricing for schools, government and enterprise.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
+        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
           Rate: 1 USD = MK 1,734 · March 2026 · 10+ units: custom specs available
         </div>
       </div>

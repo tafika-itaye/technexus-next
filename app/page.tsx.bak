@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useState } from "react";
 
 const services = [
   {
     href: "/catalogue",
-    img: "/index_main/server_rack_1-800.webp",
+    img: "/index_main/server_rack_1.webp",
     alt: "ICT, Office & Infrastructure Hardware",
     label: "ICT Catalogue",
     title: "ICT, Office & Infrastructure Hardware",
@@ -23,7 +23,7 @@ const services = [
   },
   {
     href: "/software-development",
-    img: "/index_main/software_dev_1-800.webp",
+    img: "/index_main/software_dev_1.webp",
     alt: "Custom Software & Web Applications",
     label: "Software Dev",
     title: "Custom Software & Web Applications",
@@ -59,7 +59,7 @@ const services = [
   },
   {
     href: "/credentials",
-    img: "/index_main/server_rack_2-800.webp",
+    img: "/index_main/server_rack_2.webp",
     alt: "Company Credentials & Contact Form",
     label: "Credentials & Contact",
     title: "Company Credentials & Contact Form",
@@ -69,15 +69,15 @@ const services = [
 ];
 
 const brands = [
-  { name: "HP",        src: "/Products_logos/optimized/hp.png" },
-  { name: "Dell",      src: "/Products_logos/optimized/dell.png" },
-  { name: "Lenovo",    src: "/Products_logos/optimized/lenovo.png" },
-  { name: "Synology",  src: "/Products_logos/optimized/synology.png" },
-  { name: "APC",       src: "/Products_logos/optimized/apc.png" },
-  { name: "Canon",     src: "/Products_logos/optimized/canon.png" },
-  { name: "ASUS",      src: "/Products_logos/optimized/asus.png" },
-  { name: "Microsoft", src: "/Products_logos/optimized/microsoft.png" },
-  { name: "AWS",       src: "/Products_logos/optimized/amazon_cloud_aws.png" },
+  { name: "HP",        src: "/Products_logos/hp.png" },
+  { name: "Dell",      src: "/Products_logos/dell.png" },
+  { name: "Lenovo",    src: "/Products_logos/lenovo.png" },
+  { name: "Synology",  src: "/Products_logos/synology.png" },
+  { name: "APC",       src: "/Products_logos/apc.png" },
+  { name: "Canon",     src: "/Products_logos/canon.png" },
+  { name: "ASUS",      src: "/Products_logos/asus.png" },
+  { name: "Microsoft", src: "/Products_logos/microsoft.png" },
+  { name: "AWS",       src: "/Products_logos/amazon_cloud_aws.png" },
 ];
 
 export default function Home() {
@@ -137,7 +137,7 @@ export default function Home() {
       </div>
 
       {/* HERO */}
-      <div className="home-hero" style={{ background: "linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.72)), url(/hero-bg.webp) center/cover no-repeat", padding: "72px 40px 64px", textAlign: "center" }}>
+      <div className="home-hero" style={{ background: "var(--fl-neutral-90)", padding: "72px 40px 64px", textAlign: "center" }}>
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Technology. Language. Infrastructure.
         </h2>

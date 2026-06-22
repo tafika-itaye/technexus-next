@@ -1,0 +1,10 @@
+﻿
+File          Line Comment                                                                                  NextCodeLine                                                                            
+----          ---- -------                                                                                  ------------                                                                            
+next-env.d.ts    1 /// <reference types="next" />                                                           /// <reference types="next/image-types/global" />                                       
+next-env.d.ts    2 /// <reference types="next/image-types/global" />                                        import "./.next/dev/types/routes.d.ts";                                                 
+next-env.d.ts    5 // NOTE: This file should not be edited                                                  // see https://nextjs.org/docs/app/api-reference/config/typescript for more information.
+next-env.d.ts    6 // see https://nextjs.org/docs/app/api-reference/config/typescript for more information.                                                                                         
+
+
+

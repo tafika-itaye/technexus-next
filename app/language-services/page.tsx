@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next"
+import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Language Services | TechNexus Scripts",
   description: "Professional translation, transcription, subtitling, interpretation and tender consulting. English, Portuguese, Chichewa, Swahili. Serving diplomatic missions and NGOs across Southern Africa.",
@@ -101,7 +101,7 @@ export default function LanguageServicesPage() {
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "680px", margin: "0 auto 20px", lineHeight: 1.7 }}>
           Professional translation, transcription, subtitling, interpretation, tender consulting, and business registration services. Serving diplomatic missions, NGOs, healthcare institutions and private clients across Southern and East Africa.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
+        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
           English · Portuguese · Chichewa · Swahili · HIPAA/GDPR-aware
         </div>
       </div>

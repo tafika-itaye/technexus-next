@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -72,9 +72,9 @@ export default function CredentialsPage() {
           Registration details, compliance framework, diplomatic references and a direct enquiry form.
           Available for government tenders, private sector contracts and development partner procurement.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.25)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "#90caf9", fontSize: "13px" }}>
+        <p style={{ fontSize: "13px", fontWeight: 700, color: "rgba(255,255,255,0.75)", letterSpacing: "0.04em", marginTop: "4px" }}>
           MANePS Active · PPDA Registered · MRA Compliant · BRN.A6SNWQY
-        </div>
+        </p>
       </div>
 
       {/* CONTENT */}

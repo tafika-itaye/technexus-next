@@ -464,6 +464,32 @@ export default function EISPage() {
               </div>
             </div>
 
+            {/* Buy Malawi badge */}
+            <a
+              href="https://buymalawi.mw/"
+              target="_blank"
+              rel="noopener"
+              style={{ display: "block", marginTop: "16px", textDecoration: "none" }}
+            >
+              <div style={{
+                padding: "16px 20px",
+                background: WHITE,
+                borderRadius: "10px",
+                border: `1px solid ${BDR}`,
+                boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/badges/buy_malawi.png"
+                  alt="Buy Malawian. Build Malawi. -- TechNexus is a verified member."
+                  style={{ maxWidth: "180px", width: "100%", height: "auto", display: "block" }}
+                />
+              </div>
+            </a>
+
             {/* Right: form uses button onClick, not form tag */}
             <div>
               <div style={{ background: WHITE, border: `1px solid ${BDR}`, borderRadius: "12px", padding: "36px", boxShadow: "0 2px 16px rgba(0,0,0,0.06)" }}>

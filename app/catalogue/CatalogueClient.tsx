@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -111,7 +111,7 @@ export default function CataloguePage() {
           Enterprise networking from Mikrotik and business-class laptops and desktops from HP, Lenovo and Dell.
           All pricing includes Dubai to Malawi air freight.
         </p>
-        <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px", marginBottom: "28px" }}>
+        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em", marginBottom: "28px" }}>
           Rate: 1 USD = MK 1,734 · March 2026 · Contact for formal quotations
         </div>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
