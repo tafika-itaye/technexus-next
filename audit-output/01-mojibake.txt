@@ -1,7 +1,0 @@
-﻿
-File            Count HitLines
-----            ----- --------
-app\globals.css     1 144     
-
-
-
