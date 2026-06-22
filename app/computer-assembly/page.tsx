@@ -61,18 +61,24 @@ export default function ComputerAssemblyPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center" }}>
-        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-          Custom Desktop PC Assembly
-        </h1>
-        <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
-          Office and educational desktop PCs built to spec. Intel i5 platforms, quality components, Windows 11 Pro, assembled and QA-tested by certified technicians. Volume pricing for schools, government and enterprise.
-        </p>
-        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
-          Rate: 1 USD = MK 1,734 · March 2026 · 10+ units: custom specs available
-        </div>
-      </div>
+          {/* HERO */}
+          <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/circuit_board_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)" }} />
+            <div style={{ position: "relative" }}>
+              <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+                Custom Desktop PC Assembly
+              </h1>
+              <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
+                Office and educational desktop PCs built to spec. Intel i5 platforms, quality components, Windows 11 Pro, assembled and QA-tested by certified technicians. Volume pricing for schools, government and enterprise.
+              </p>
+              <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
+                Rate: 1 USD = MK 1,734 · March 2026 · 10+ units: custom specs available
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
 
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 

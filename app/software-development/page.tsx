@@ -53,18 +53,21 @@ export default function SoftwareDevelopmentPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      {/* HERO */}
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/software_dev_1.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
-        <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-          Software Development and IT Consultancy
-        </h1>
-        <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
-          Bespoke business applications, web systems and digital platforms. Built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment.
-        </p>
-        <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
-          ASP.NET Core · Blazor · PostgreSQL · Azure · Full-Stack
-        </div>
-      </div>
+          {/* HERO */}
+          <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/laptop_code_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+            <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)" }} />
+            <div style={{ position: "relative" }}>
+              <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+                Software Development and IT Consultancy
+              </h1>
+              <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
+                Bespoke business applications, web systems and digital platforms. Built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment.
+              </p>
+              <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
+                ASP.NET Core · Blazor · PostgreSQL · Azure · Full-Stack
+              </div>
+            </div>
+          </div>
 
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 

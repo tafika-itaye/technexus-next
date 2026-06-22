@@ -483,10 +483,11 @@ export default function EISPage() {
               }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/badges/buy_malawi.png"
-                  alt="Buy Malawian. Build Malawi. -- TechNexus is a verified member."
-                  style={{ maxWidth: "180px", width: "100%", height: "auto", display: "block" }}
-                />
+                    <img
+                      src="/badges/buy_malawi.png"
+                      alt="Buy Malawian. Build Malawi. -- TechNexus is a verified member."
+                      style={{ width: "120px", height: "120px", objectFit: "contain", display: "block" }}
+                    />
               </div>
             </a>
 
