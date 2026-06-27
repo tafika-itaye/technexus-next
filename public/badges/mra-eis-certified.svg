@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="MRA EIS Certified Integrator">
+  <defs>
+    <path id="mra-top" d="M 32 120 A 88 88 0 0 1 208 120" fill="none"/>
+    <path id="mra-bot" d="M 38 120 A 82 82 0 0 0 202 120" fill="none"/>
+  </defs>
+  <circle cx="120" cy="120" r="118" fill="#0D1117" stroke="#1B7F3A" stroke-width="3"/>
+  <circle cx="120" cy="120" r="108" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text font-family="'Syne','Inter',system-ui,sans-serif" font-weight="800" font-size="13" letter-spacing="1.2" fill="#ffffff">
+    <textPath href="#mra-top" startOffset="50%" text-anchor="middle">MALAWI REVENUE AUTHORITY</textPath>
+  </text>
+  <text font-family="'Syne','Inter',system-ui,sans-serif" font-weight="700" font-size="15" letter-spacing="3" fill="#1B7F3A">
+    <textPath href="#mra-bot" startOffset="50%" text-anchor="middle">CERTIFIED INTEGRATOR</textPath>
+  </text>
+  <!-- side stars -->
+  <g fill="#1B7F3A">
+    <circle cx="34" cy="120" r="3"/>
+    <circle cx="206" cy="120" r="3"/>
+  </g>
+  <!-- inner seal -->
+  <circle cx="120" cy="120" r="62" fill="#1B7F3A"/>
+  <circle cx="120" cy="120" r="62" fill="none" stroke="#ffffff" stroke-width="2"/>
+  <text x="120" y="96" text-anchor="middle" font-family="'Syne','Inter',system-ui,sans-serif" font-weight="800" font-size="30" fill="#ffffff" letter-spacing="1">EIS</text>
+  <!-- check shield -->
+  <path d="M120 104 l24 8 v14 c0 16 -11 24 -24 30 c-13 -6 -24 -14 -24 -30 v-14 z" fill="#ffffff"/>
+  <path d="M110 132 l7 7 14 -15" fill="none" stroke="#1B7F3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="172" text-anchor="middle" font-family="'Inter',system-ui,sans-serif" font-weight="700" font-size="9" fill="rgba(255,255,255,0.85)" letter-spacing="1">COMPLIANT</text>
+</svg>

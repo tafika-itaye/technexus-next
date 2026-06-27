@@ -122,6 +122,32 @@ export default function CredentialsPage() {
           </p>
         </div>
 
+        {/* MRA CERTIFICATE */}
+        <h2 style={sh}>MRA Certificate of Compliance</h2>
+        <div style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px", marginBottom: "20px" }}>
+            <p style={{ fontSize: "14px", color: MUTED, lineHeight: 1.7, maxWidth: "560px", margin: 0 }}>
+              TechNexus EIS is certified by the Malawi Revenue Authority as a compliant fiscal integration.
+              Certificate W134-CI5P-G35R, issued 24/06/2026, valid to 24/06/2027. Verify by dialling *915# free of charge.
+            </p>
+            <a
+              href="/certificates/technexus-mra-eis-certificate.pdf"
+              download
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: ACCENT, color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}
+            >
+              ↓ Download Certificate (PDF)
+            </a>
+          </div>
+          <a href="/certificates/technexus-mra-eis-certificate.pdf" target="_blank" rel="noopener" style={{ display: "block" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/certificates/technexus-mra-eis-certificate.png"
+              alt="TechNexus Malawi Revenue Authority Certificate of Compliance — Certificate Number W134-CI5P-G35R"
+              style={{ width: "100%", maxWidth: "720px", height: "auto", display: "block", margin: "0 auto", border: "1px solid " + BORDER, borderRadius: "6px" }}
+            />
+          </a>
+        </div>
+
         {/* PROCUREMENT */}
         <h2 style={sh}>Procurement Framework</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "16px" }}>

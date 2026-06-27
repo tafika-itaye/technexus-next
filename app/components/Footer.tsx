@@ -21,6 +21,13 @@ export default function Footer() {
               {label}
             </Link>
           ))}
+          <a
+            href="/certificates/technexus-mra-eis-certificate.pdf"
+            download
+            style={{ fontSize: "13px", color: "var(--fl-neutral-40)", textDecoration: "none" }}
+          >
+            MRA Certificate
+          </a>
         </div>
         <div style={{ fontSize: "12px", color: "var(--fl-neutral-60)" }}>
           PPDA Registered &nbsp;|&nbsp; BRN.A6SNWQY &nbsp;|&nbsp; MRA Compliant

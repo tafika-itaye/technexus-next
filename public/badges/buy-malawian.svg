@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Buy Malawian, Build Malawi">
+  <defs>
+    <path id="bm-top" d="M 30 120 A 90 90 0 0 1 210 120" fill="none"/>
+    <path id="bm-bot" d="M 36 120 A 84 84 0 0 0 204 120" fill="none"/>
+  </defs>
+  <circle cx="120" cy="120" r="118" fill="#ffffff" stroke="#1B7F3A" stroke-width="3"/>
+  <circle cx="120" cy="120" r="110" fill="#ffffff" stroke="#E5E7EB" stroke-width="1"/>
+  <text font-family="'Syne','Inter',system-ui,sans-serif" font-weight="800" font-size="20" letter-spacing="2" fill="#C8102E">
+    <textPath href="#bm-top" startOffset="50%" text-anchor="middle">BUY MALAWIAN</textPath>
+  </text>
+  <text font-family="'Syne','Inter',system-ui,sans-serif" font-weight="800" font-size="20" letter-spacing="2" fill="#1B7F3A">
+    <textPath href="#bm-bot" startOffset="50%" text-anchor="middle">BUILD MALAWI</textPath>
+  </text>
+  <!-- Malawi flag roundel -->
+  <clipPath id="bm-clip"><circle cx="120" cy="120" r="60"/></clipPath>
+  <g clip-path="url(#bm-clip)">
+    <rect x="60" y="60" width="120" height="40" fill="#000000"/>
+    <rect x="60" y="100" width="120" height="40" fill="#C8102E"/>
+    <rect x="60" y="140" width="120" height="40" fill="#1B7F3A"/>
+    <!-- rising sun -->
+    <g fill="#C8102E">
+      <circle cx="120" cy="100" r="13"/>
+      <g stroke="#C8102E" stroke-width="2.4" stroke-linecap="round">
+        <line x1="120" y1="100" x2="120" y2="74"/>
+        <line x1="120" y1="100" x2="98" y2="80"/>
+        <line x1="120" y1="100" x2="142" y2="80"/>
+        <line x1="120" y1="100" x2="86" y2="88"/>
+        <line x1="120" y1="100" x2="154" y2="88"/>
+      </g>
+    </g>
+  </g>
+  <circle cx="120" cy="120" r="60" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="120" cy="120" r="62" fill="none" stroke="#1B7F3A" stroke-width="2"/>
+</svg>

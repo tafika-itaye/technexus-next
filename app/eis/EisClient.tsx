@@ -461,35 +461,41 @@ export default function EISPage() {
                 <p style={{ fontSize: "13px", color: BODY, lineHeight: 1.6, margin: 0 }}>
                   TechNexus is a certified fiscal device integrator under the MRA EIS framework. Your compliance is backed by an accredited local partner. <Link href="/credentials" style={{ color: G, textDecoration: "underline", textUnderlineOffset: "3px" }}>View credentials</Link>
                 </p>
+                <a
+                  href="/certificates/technexus-mra-eis-certificate.pdf"
+                  download
+                  style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", fontSize: "13px", fontWeight: 700, color: G, textDecoration: "none" }}
+                >
+                  ↓ Download MRA Certificate (PDF)
+                </a>
               </div>
             </div>
 
-            {/* Buy Malawi badge */}
-            <a
-              href="https://buymalawi.mw/"
-              target="_blank"
-              rel="noopener"
-              style={{ display: "block", marginTop: "16px", textDecoration: "none" }}
-            >
-              <div style={{
-                padding: "16px 20px",
-                background: WHITE,
-                borderRadius: "10px",
-                border: `1px solid ${BDR}`,
-                boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                    <img
-                      src="/badges/buy_malawi.png"
-                      alt="Buy Malawian. Build Malawi. -- TechNexus is a verified member."
-                      style={{ width: "120px", height: "120px", objectFit: "contain", display: "block" }}
-                    />
-              </div>
-            </a>
+            {/* Trust badges */}
+            <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "16px" }}>
+              <a
+                href="/credentials"
+                style={{ flex: "1 1 160px", textDecoration: "none" }}
+              >
+                <div style={{ padding: "20px", background: WHITE, borderRadius: "10px", border: `1px solid ${BDR}`, boxShadow: "0 2px 8px rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/badges/mra-eis-certified.svg" alt="MRA EIS Certified Integrator — TechNexus" width={120} height={120} style={{ display: "block" }} />
+                  <span style={{ fontSize: "11px", fontWeight: 700, color: BODY, letterSpacing: "0.04em", textAlign: "center" }}>Verify certificate →</span>
+                </div>
+              </a>
+              <a
+                href="https://buymalawi.mw/"
+                target="_blank"
+                rel="noopener"
+                style={{ flex: "1 1 160px", textDecoration: "none" }}
+              >
+                <div style={{ padding: "20px", background: WHITE, borderRadius: "10px", border: `1px solid ${BDR}`, boxShadow: "0 2px 8px rgba(0,0,0,0.06)", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/badges/buy-malawian.svg" alt="Buy Malawian, Build Malawi — TechNexus is a verified member" width={120} height={120} style={{ display: "block" }} />
+                  <span style={{ fontSize: "11px", fontWeight: 700, color: BODY, letterSpacing: "0.04em", textAlign: "center" }}>Proudly Malawian</span>
+                </div>
+              </a>
+            </div>
 
             {/* Right: form uses button onClick, not form tag */}
             <div>
