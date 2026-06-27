@@ -1,5 +1,7 @@
 ﻿https://wwww.technexusmw.com 
-oficial site and catalog.
+official site and catalog.
 
-Tafika Bilson Itaye
+Tafika Bilson Itaye Jr.
+
++265889941700
 
