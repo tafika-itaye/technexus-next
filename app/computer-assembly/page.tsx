@@ -76,9 +76,6 @@ export default function ComputerAssemblyPage() {
               </div>
             </div>
           </div>
-              </div>
-            </div>
-          </div>
 
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 
