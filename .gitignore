@@ -46,3 +46,6 @@ AUDIT.md
 *.env
 
 /out
+
+# Quarantined files pending review
+_quarantine/
