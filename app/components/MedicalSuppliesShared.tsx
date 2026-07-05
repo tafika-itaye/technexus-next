@@ -36,6 +36,7 @@ const t = {
     heroSub: "Healthcare equipment, consumables and pharmaceuticals sourced through verified SADC partners. Serving Malawi, Zambia, Mozambique and South Africa.",
     ratePill: "Rate: 1 USD = MK 1,734 \u00b7 March 2026 \u00b7 Contact for formal quotations",
     colProduct: "Product", colPack: "Pack",
+    downloadLabel: "Download PDF Catalogue",
     s1: "Protective Equipment \u2014 Masks", s1sub: "Certified protective masks for clinical and institutional use.",
     s2: "Respiratory Masks and Devices", s2sub: "Respiratory support for oxygen therapy and nebulisation.",
     s3: "Gloves", s3sub: "Examination, surgical and disposable gloves.",
@@ -55,6 +56,7 @@ const t = {
     heroSub: "Equipamento de saude, consumiveis e farmaceuticos provenientes de parceiros SADC verificados. Ao servico do Malawi, Zambia, Mocambique e Africa do Sul.",
     ratePill: "Taxa: 1 USD = MK 1,734 \u00b7 Marco 2026 \u00b7 Contacte para orcamentos formais",
     colProduct: "Produto", colPack: "Embalagem",
+    downloadLabel: "Descarregar Catalogo PDF",
     s1: "Equipamento de Proteccao \u2014 Mascaras", s1sub: "Mascaras de proteccao certificadas para uso clinico e institucional.",
     s2: "Dispositivos Respiratorios", s2sub: "Suporte respiratorio para oxigenoterapia e nebulizacao.",
     s3: "Luvas", s3sub: "Luvas de exame, cirurgicas e descartaveis.",
@@ -74,6 +76,7 @@ const t = {
     heroSub: "Zida za zaumoyo, zinthu zomalizidwa ndi mankhwala ochokera kwa ogulitsa otsimikiziridwa a SADC. Tili ndi ntchito ku Malawi, Zambia, Mozambique ndi South Africa.",
     ratePill: "Mtengo: 1 USD = MK 1,734 \u00b7 Marichi 2026 \u00b7 Lumikizanani kwa quotation yovomerezeka",
     colProduct: "Chinthu", colPack: "Phukusi",
+    downloadLabel: "Tsitsani Katalogi ya PDF",
     s1: "Zida Zotetezera \u2014 Masiki", s1sub: "Masiki azoteteza otsimikiziridwa kwa chipatala ndi mabungwe.",
     s2: "Zipangizo Zotetezera Kupuma", s2sub: "Thandizo la kupuma kwa okisijeni ndi nebulization.",
     s3: "Migonjera ya Dzanja", s3sub: "Migonjera ya kuyeza, opaleshoni ndi yomalizidwa.",
@@ -145,7 +148,12 @@ export default function MedicalSuppliesShared({ locale, data }: { locale: Locale
         <div style={{ position: "relative", zIndex: 1, padding: "64px 24px 48px" }}>
           <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(1.8rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>{tr.heroTitle}</h1>
           <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>{tr.heroSub}</p>
-          <div style={{ display: "inline-block", background: "rgba(0,120,212,0.25)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "#90caf9", fontSize: "13px" }}>{tr.ratePill}</div>
+          <div style={{ color: "rgba(255,255,255,0.7)", fontSize: "13px" }}>{tr.ratePill}</div>
+          <div style={{ marginTop: "20px" }}>
+            <a href="/medical-supplies-catalogue.pdf" download style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "var(--fl-blue)", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
+              &#8595; {tr.downloadLabel}
+            </a>
+          </div>
         </div>
       </div>
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>

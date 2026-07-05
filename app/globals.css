@@ -228,6 +228,72 @@ img { max-width: 100%; display: block; }
   .mobile-stack-2 { grid-template-columns: 1fr !important; }
 }
 
+/* ============ MODERN UI POLISH ============ */
+
+::selection { background: var(--accent); color: #fff; }
+
+/* Service cards: lift + image zoom on hover */
+.svc-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+.svc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-16) !important;
+}
+.svc-card .svc-card-img {
+  transition: transform 0.45s ease;
+}
+.svc-card:hover .svc-card-img {
+  transform: scale(1.05);
+}
+
+/* Buttons: subtle press feedback */
+button:active,
+a[role="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Hero entrance */
+.hero-fade-in {
+  animation: hero-fade 0.6s ease-out both;
+}
+@keyframes hero-fade {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* EIS spotlight banner */
+.eis-spotlight {
+  background: linear-gradient(120deg, #032d1e 0%, #075E54 55%, #0a2742 100%);
+  position: relative;
+  overflow: hidden;
+}
+.eis-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 85% 20%, rgba(37,211,102,0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+.eis-spotlight-cta {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.eis-spotlight-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  text-decoration: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
 /* NAV MOBILE / DESKTOP VISIBILITY */
 .nav-mobile-controls { display: none; }
 .nav-desktop-controls { display: flex; }

@@ -147,7 +147,7 @@ export default function Nav() {
               <Link href={buildLink(base, "ny")} style={{ padding: "4px 10px", fontSize: "12px", fontWeight: 700, textDecoration: "none", background: lang === "ny" ? "var(--accent)" : "transparent", color: lang === "ny" ? "#fff" : "var(--fl-neutral-40)", border: "1px solid var(--fl-neutral-60)", borderRadius: "4px" }}>NY</Link>
             </div>
             <button onClick={toggleTheme} style={{ background: "none", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", color: "var(--fl-neutral-40)", fontSize: "13px", padding: "6px 14px", cursor: "pointer" }}>
-              {dark ? "☀ Light mode" : "☾ Dark mode"}
+              {dark ? "Light mode" : "Dark mode"}
             </button>
           </div>
         </div>

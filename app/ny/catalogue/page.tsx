@@ -99,7 +99,7 @@ export default function NyCataloguePage() {
   return (
     <div style={{ background: "var(--fl-neutral-2)", minHeight: "100vh" }}>
 
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center" }}>
+      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)), url(/index_main/server_rack_1-1200.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Kabuku ka IT
         </h1>

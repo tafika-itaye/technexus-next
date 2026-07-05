@@ -62,7 +62,7 @@ export default function PTSoftwareDevelopmentPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/software_dev_1.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
+      <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url(/index_main/software_dev_1-1200.webp)", backgroundSize: "cover", backgroundPosition: "center", position: "relative" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Desenvolvimento de Software &amp; Consultoria IT
         </h1>

@@ -120,7 +120,7 @@ export default function Home() {
                   alt={b.name}
                   title={b.name}
                   loading={i < 3 ? "eager" : "lazy"}
-                  fetchPriority={i === 0 ? "high" : "auto"}
+                  decoding="async"
                   width={120} height={28} className="brand-logo" style={{ height: "24px", width: "auto", objectFit: "contain" }}
                 />
               </span>
@@ -137,26 +137,63 @@ export default function Home() {
       </div>
 
       {/* HERO */}
-      <div className="home-hero" style={{ background: "linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.72)), url(/hero-bg.webp) center/cover no-repeat", padding: "72px 40px 64px", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-          Technology. Language. Infrastructure.
-        </h2>
-        <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
-          End-to-end IT hardware, software development, language services, custom PC assembly, and medical equipment for businesses across Southern &amp; East Africa.
-        </p>
-        <div style={{ maxWidth: "480px", margin: "0 auto" }}>
-          <input
-            type="text"
-            placeholder="Search services..."
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            style={{ width: "100%", padding: "12px 20px", borderRadius: "8px", border: "1px solid #2a2a3a", background: "#1a1a2e", color: "#fff", fontSize: "15px", outline: "none" }}
-          />
-          {query && (
-            <div style={{ marginTop: "8px", color: "var(--fl-neutral-40)", fontSize: "13px" }}>
-              {filtered.length} of {services.length} items match
+      <div className="home-hero" style={{ position: "relative", overflow: "hidden", background: "#0a0a0a", padding: "72px 40px 64px", textAlign: "center" }}>
+        <img
+          src="/hero-bg-1280.webp"
+          srcSet="/hero-bg-800.webp 800w, /hero-bg-1280.webp 1280w, /hero-bg-1600.webp 1600w"
+          sizes="100vw"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.28 }}
+        />
+        <div className="hero-fade-in" style={{ position: "relative" }}>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
+            Technology. Language. Infrastructure.
+          </h2>
+          <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
+            End-to-end IT hardware, software development, language services, custom PC assembly, and medical equipment for businesses across Southern &amp; East Africa.
+          </p>
+          <div style={{ maxWidth: "480px", margin: "0 auto" }}>
+            <input
+              type="text"
+              placeholder="Search services..."
+              value={query}
+              onChange={e => setQuery(e.target.value)}
+              style={{ width: "100%", padding: "12px 20px", borderRadius: "8px", border: "1px solid #2a2a3a", background: "#1a1a2e", color: "#fff", fontSize: "15px", outline: "none" }}
+            />
+            {query && (
+              <div style={{ marginTop: "8px", color: "var(--fl-neutral-40)", fontSize: "13px" }}>
+                {filtered.length} of {services.length} items match
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* EIS SPOTLIGHT */}
+      <div className="eis-spotlight" style={{ padding: "40px 40px" }}>
+        <div style={{ maxWidth: "1120px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
+          <div style={{ flex: "1 1 480px" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.4)", borderRadius: "999px", padding: "4px 14px", marginBottom: "12px" }}>
+              <span style={{ color: "#25D366", fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>MRA-Certified Integrator</span>
             </div>
-          )}
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "8px" }}>
+              EIS Bridge &amp; POS — e-invoicing compliance, live in 72 hours.
+            </h3>
+            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px", lineHeight: 1.65, maxWidth: "560px", margin: 0 }}>
+              Real-time MRA submission, signed QR receipts, offline queue, and Sage &amp; QuickBooks sync. Keep your current system or deploy a full POS.
+            </p>
+          </div>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+            <Link href="/eis" className="eis-spotlight-cta" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#25D366", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
+              View EIS Packages →
+            </Link>
+            <Link href="/eis#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)", fontWeight: 600, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
+              Book Consultation
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -164,10 +201,10 @@ export default function Home() {
       <div style={{ background: "var(--surface-alt)", padding: "48px 40px" }}>
         <div style={{ maxWidth: "1120px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "24px" }}>
           {filtered.map(s => (
-            <Link key={s.href} href={s.href} style={{ textDecoration: "none", background: "var(--surface)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column", transition: "box-shadow 0.2s" }}>
+            <Link key={s.href} href={s.href} className="svc-card" style={{ textDecoration: "none", background: "var(--surface)", borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "var(--shadow-4)", display: "flex", flexDirection: "column" }}>
               <div style={{ height: "180px", overflow: "hidden", position: "relative", background: s.img ? "var(--fl-neutral-8)" : "linear-gradient(135deg,#032d1e 0%,#075E54 60%,#0a2742 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {s.img ? (
-                  <img src={s.img} alt={s.alt} width={600} height={400} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <img src={s.img} alt={s.alt} width={600} height={400} loading="lazy" decoding="async" className="svc-card-img" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 ) : (
                   <div style={{ textAlign: "center", color: "#fff" }}>
                     <div style={{ fontWeight: 800, fontSize: "1rem", letterSpacing: "-0.02em" }}>EIS Bridge &amp; POS</div>

@@ -86,7 +86,7 @@ export default function NyCredentialsPage() {
       </div>
 
       <div style={{ height: "220px", overflow: "hidden", position: "relative", background: "#0a2742" }}>
-        <img src="/index_main/server_rack_2.webp" alt="TechNexus credentials" width={1100} height={220} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.45 }} />
+        <img src="/index_main/server_rack_2-1200.webp" alt="TechNexus credentials" width={1100} height={220} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.45 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,40,80,0.7) 0%, transparent 60%)" }} />
       </div>
 
