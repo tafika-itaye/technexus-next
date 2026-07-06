@@ -2,8 +2,8 @@
 import EisClient from "./EisClient"
 
 export const metadata: Metadata = {
-  title: "EIS Bridge and POS Software | TechNexus",
-  description: "MRA-certified electronic invoicing for Malawi. Real-time EIS submission, QR receipts, offline queue. Connects to QuickBooks and Sage. Onboarding in 72 hours.",
+  title: "MRA-Certified EIS + POS Software | TechNexus",
+  description: "MRA-certified EIS bridge and POS software for Malawi businesses. QR receipts, stock control, offline support, accounting sync and nationwide onboarding.",
 }
 
 export default function EISPage() {

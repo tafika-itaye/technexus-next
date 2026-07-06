@@ -7,7 +7,7 @@ import { useState } from "react";
 const registration = [
   { label: "Nome Legal", value: "TechNexus" },
   { label: "Registo Comercial", value: "BRN.A6SNWQY — MSME, Republica do Malawi" },
-  { label: "Morada", value: "Blantyre, Malawi" },
+  { label: "Morada", value: "Lilongwe e todo o Malawi" },
   { label: "Contacto Principal", value: "+265 889 941 700 · +265 995 753 326" },
   { label: "E-mail", value: "technexus_mw@proton.me" },
   { label: "Estado MANePS", value: "Activo — Sistema Nacional de Procurement Electronico do Malawi" },

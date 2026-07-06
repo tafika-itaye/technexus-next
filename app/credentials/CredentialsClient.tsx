@@ -5,7 +5,7 @@ import { useState } from "react";
 const registration = [
   ["Legal Name", "TechNexus"],
   ["Business Registration", "BRN.A6SNWQY — MSME, Republic of Malawi"],
-  ["Physical Address", "Blantyre, Malawi"],
+  ["Physical Address", "Lilongwe and nationwide, Malawi"],
   ["Primary Contact", "+265 889 941 700 · +265 995 753 326"],
   ["Email", "technexus_mw@proton.me"],
   ["MANePS Status", "Active — Malawi National Electronic Procurement System"],
@@ -212,7 +212,6 @@ export default function CredentialsPage() {
     </div>
   );
 }
-
 
 
 

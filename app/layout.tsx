@@ -10,7 +10,7 @@ const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["700",
 
 export const metadata: Metadata = {
   title: "TechNexus — IT Solutions, Language Services & Equipment Supply",
-  description: "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Blantyre, Malawi.",
+  description: "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Lilongwe and nationwide, Malawi.",
   metadataBase: new URL("https://www.technexusmw.com"),
   openGraph: { siteName: "TechNexus", locale: "en_GB", type: "website", images: [{ url: "/Products_logos/technexuslogo1.webp", width: 400, height: 400 }] },
 };
@@ -32,8 +32,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           "telephone": "+265-889-941-700",
           "email": "technexus_mw@proton.me",
           "logo": "https://www.technexusmw.com/Products_logos/technexuslogo1.webp",
-          "description": "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Blantyre, Malawi.",
-          "address": { "@type": "PostalAddress", "addressLocality": "Blantyre", "addressCountry": "MW" },
+          "description": "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Lilongwe and nationwide, Malawi.",
+          "address": { "@type": "PostalAddress", "addressLocality": "Lilongwe", "addressRegion": "Nationwide", "addressCountry": "MW" },
           "identifier": "BRN.A6SNWQY",
           "sameAs": ["https://wa.me/265889941700"]
         }) }} />

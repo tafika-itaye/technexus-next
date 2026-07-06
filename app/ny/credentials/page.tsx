@@ -5,7 +5,7 @@ import { useState } from "react";
 const registration = [
   { label: "Dzina Lachilungamo", value: "TechNexus" },
   { label: "Kulembetsa kwa Bizinesi", value: "BRN.A6SNWQY — MSME, Republic ya Malawi" },
-  { label: "Adiresi", value: "Blantyre, Malawi" },
+  { label: "Adiresi", value: "Lilongwe ndi Malawi yonse" },
   { label: "Kulumikizana Kwayamba", value: "+265 889 941 700 · +265 995 753 326" },
   { label: "Imelo", value: "technexus_mw@proton.me" },
   { label: "Chikho cha MANePS", value: "Chogwira — Dongosolo la National Electronic Procurement la Malawi" },

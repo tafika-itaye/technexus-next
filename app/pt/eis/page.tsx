@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import EisClient from "../../eis/EisClient";
 
 export const metadata: Metadata = {
-  title: "EIS Bridge e Software POS | TechNexus",
-  description: "Facturacao electronica certificada pela MRA para o Malawi. Submissao EIS em tempo real, recibos QR, fila offline. Liga ao QuickBooks e Sage. Integracao em 72 horas.",
+  title: "Software EIS + POS Certificado pela MRA | TechNexus",
+  description: "Bridge EIS certificada pela MRA e software POS para empresas no Malawi. Recibos QR, controlo de stock, suporte offline, sincronizacao contabilistica e onboarding nacional.",
   alternates: {
     canonical: "https://www.technexusmw.com/pt/eis",
     languages: {
