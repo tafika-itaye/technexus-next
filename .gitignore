@@ -49,3 +49,4 @@ AUDIT.md
 
 # Quarantined files pending review
 _quarantine/
+*.bak

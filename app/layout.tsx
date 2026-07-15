@@ -1,9 +1,10 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import WhatsAppChat from "./components/WhatsAppChat";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], weight: ["400","500","600","700"], display: "swap" });
 const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["700","800"], display: "swap" });
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           "sameAs": ["https://wa.me/265889941700"]
         }) }} />
       </body>
+    <GoogleAnalytics gaId="G-JZG3NK1DGM" />
     </html>
   );
 }
