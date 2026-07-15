@@ -5,6 +5,7 @@ export const metadata: Metadata = {
 }
 
 import Link from "next/link";
+import CountryFlag from "../components/CountryFlag";
 
 const langServices = [
   { name: "Document Translation", langs: "EN↔PT, EN↔NY, EN↔SW", unit: "per page (250 words)", mwk: "MK 17,340", usd: "$10", wa: "Document%20Translation%0APrice%3A%20%2410" },
@@ -239,7 +240,7 @@ export default function LanguageServicesPage() {
             <tbody>
               {crossBorderReg.map((s, i) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={{ ...TD, fontWeight: 700, color: s.country === "Multi-country" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}>{s.country}</td>
+                  <td style={{ ...TD, fontWeight: 700, color: s.country === "Multi-country" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}><CountryFlag country={s.country} />{s.country}</td>
                   <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
                   <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
                   <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>

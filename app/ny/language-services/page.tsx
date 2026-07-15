@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import CountryFlag from "../../components/CountryFlag";
 
 export const metadata: Metadata = {
   title: "TechNexus Scripts — Ntchito za Zinenero & Uphungu",
@@ -239,7 +240,7 @@ export default function NyLanguageServicesPage() {
             <tbody>
               {crossBorderReg.map((s, i) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={{ ...TD, fontWeight: 700, color: s.country === "Maiko ambiri" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}>{s.country}</td>
+                  <td style={{ ...TD, fontWeight: 700, color: s.country === "Maiko ambiri" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}><CountryFlag country={s.country} />{s.country}</td>
                   <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
                   <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
                   <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>

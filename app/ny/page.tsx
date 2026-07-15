@@ -150,7 +150,7 @@ export default function NyHomePage() {
         />
         <div className="hero-fade-in" style={{ position: "relative" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-            Tekinoloje. Chilankhulo. Zomangamanga.
+            Mnzanu wa tekinoloje ndi ntchito za chilankhulo mu Malawi
           </h2>
           <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
             Hardware ya IT, kupanga software, ntchito za chilankhulo, kupanga PC mwamsonkho, ndi zida za chipatala kwa mabizinesi mu Africa Yakum'mwera ndi Kum'mawa.
@@ -176,11 +176,8 @@ export default function NyHomePage() {
       <div className="eis-spotlight" style={{ padding: "40px 40px" }}>
         <div style={{ maxWidth: "1120px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
           <div style={{ flex: "1 1 480px" }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.4)", borderRadius: "999px", padding: "4px 14px", marginBottom: "12px" }}>
-              <span style={{ color: "#25D366", fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>Otsimikiziridwa ndi MRA</span>
-            </div>
             <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "8px" }}>
-              EIS Bridge &amp; POS — compliance ya ma invoice a elekitironiki mu maola 72.
+              EIS Bridge &amp; POS: compliance ya ma invoice a elekitironiki mu maola 72.
             </h3>
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px", lineHeight: 1.65, maxWidth: "560px", margin: 0 }}>
               Kutumiza kwa MRA nthawi yomweyo, ma risiti a QR osainidwa, mzere wa offline, ndi kugwirizana ndi Sage &amp; QuickBooks. Sungani sisitimu yanu kapena ikani POS yathunthu.
@@ -188,7 +185,7 @@ export default function NyHomePage() {
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <Link href="/ny/eis" className="eis-spotlight-cta" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#25D366", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
-              Onani Mapulani a EIS →
+              Onani Mapulani a EIS
             </Link>
             <Link href="/ny/eis#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)", fontWeight: 600, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
               Pemphani Uphungu

@@ -150,7 +150,7 @@ export default function Home() {
         />
         <div className="hero-fade-in" style={{ position: "relative" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-            Technology. Language. Infrastructure.
+            Your technology and language services partner in Malawi
           </h2>
           <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
             End-to-end IT hardware, software development, language services, custom PC assembly, and medical equipment for businesses across Southern &amp; East Africa.
@@ -176,11 +176,8 @@ export default function Home() {
       <div className="eis-spotlight" style={{ padding: "40px 40px" }}>
         <div style={{ maxWidth: "1120px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
           <div style={{ flex: "1 1 480px" }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.4)", borderRadius: "999px", padding: "4px 14px", marginBottom: "12px" }}>
-              <span style={{ color: "#25D366", fontSize: "11px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>MRA-Certified Integrator</span>
-            </div>
             <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "8px" }}>
-              EIS Bridge &amp; POS — e-invoicing compliance, live in 72 hours.
+              EIS Bridge &amp; POS: e-invoicing compliance within 72 hours.
             </h3>
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px", lineHeight: 1.65, maxWidth: "560px", margin: 0 }}>
               Real-time MRA submission, signed QR receipts, offline queue, and Sage &amp; QuickBooks sync. Keep your current system or deploy a full POS.
@@ -188,7 +185,7 @@ export default function Home() {
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <Link href="/eis" className="eis-spotlight-cta" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#25D366", color: "#fff", fontWeight: 700, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
-              View EIS Packages →
+              View EIS Packages
             </Link>
             <Link href="/eis#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.08)", color: "#fff", border: "1px solid rgba(255,255,255,0.25)", fontWeight: 600, fontSize: "14px", padding: "13px 26px", borderRadius: "8px", textDecoration: "none" }}>
               Book Consultation
@@ -274,10 +271,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-
-
-
-
