@@ -80,7 +80,7 @@ export default function PTSoftwareDevelopmentPage() {
           <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Servicos de Desenvolvimento</h2>
           <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Solucoes de software personalizadas que melhoram o funcionamento das organizacoes.</p>
         </div>
-        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>Precos excluem IVA de 17,5%. Taxa: 1 USD = MK 1.734 (Marco 2026).</p>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>Precos excluem IVA de 17,5%. Taxa: 1 USD = MK 1.734 (Julho 2026).</p>
         <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>

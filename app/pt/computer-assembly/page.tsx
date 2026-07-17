@@ -78,7 +78,7 @@ export default function PtComputerAssemblyPage() {
           Desktops para escritorio e educacao construidos por medida. Plataformas Intel i5, componentes de qualidade, Windows 11 Pro, montados e testados por tecnicos certificados. Precos de volume para escolas, governo e empresas.
         </p>
         <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
-          Taxa: 1 USD = MK 1,734 · Marco 2026 · 10+ unidades: especificacoes personalizadas disponiveis
+          Taxa: 1 USD = MK 1,734 · Julho 2026 · 10+ unidades: especificacoes personalizadas disponiveis
         </div>
       </div>
 

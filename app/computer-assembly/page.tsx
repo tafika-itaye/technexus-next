@@ -72,7 +72,7 @@ export default function ComputerAssemblyPage() {
                 Office and educational desktop PCs built to spec. Intel i5 platforms, quality components, Windows 11 Pro, assembled and QA-tested by certified technicians. Volume pricing for schools, government and enterprise.
               </p>
               <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em" }}>
-                Rate: 1 USD = MK 1,734 · March 2026 · 10+ units: custom specs available
+                Rate: 1 USD = MK 1,734 · July 2026 · 10+ units: custom specs available
               </div>
             </div>
           </div>

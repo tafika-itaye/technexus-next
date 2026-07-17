@@ -77,7 +77,7 @@ export default function NyComputerAssemblyPage() {
           Ma desktop a ofesi ndi maphunziro omangidwa mwamsonkho. Platform ya Intel i5, zinthu zabwino, Windows 11 Pro, omangidwa ndi oyesedwa ndi othandizira olembedwa. Mitengo ya kulamula ochuluka kwa ma sukulu, boma ndi makampani.
         </p>
         <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
-          Mtengo: 1 USD = MK 1,734 · Marichi 2026 · 10+ zinthu: ma spec osintha apezeka
+          Mtengo: 1 USD = MK 1,734 · Julayi 2026 · 10+ zinthu: ma spec osintha apezeka
         </div>
       </div>
 

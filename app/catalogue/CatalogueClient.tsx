@@ -40,44 +40,56 @@ const categories = [
     ],
   },
   {
+    title: "Professional Monitors",
+    desc: "Lenovo ThinkVision ultrawide and ASUS ProArt colour-accurate displays for offices, finance teams and creators.",
+    products: [
+      { sku: "64AEGAT1UK", title: "Lenovo ThinkVision T34WD-40 34\" Curved", specs: "34\" WQHD 3440x1440 · VA · 120Hz · USB-C · 1500R curve", mwk: "MK 1,213,800", usd: "$700", img: "/images/monitors/lenovo_thinkvision_t34wd-40.jpg" },
+      { sku: "64ADGAT1UK", title: "Lenovo ThinkVision P34WD-40 34\" Curved", specs: "34\" WQHD · IPS · USB-C docking · Daisy-chain · P-series", mwk: "MK 1,942,080", usd: "$1,120", img: "/images/monitors/lenovo_thinkvision_p34wd-40.jpg" },
+      { sku: "ASU-PA248QV", title: "ASUS ProArt PA248QV", specs: "24.1\" WUXGA · IPS · 75Hz · 100% sRGB · Calman Verified", mwk: "MK 502,860", usd: "$290", img: "/images/monitors/asus_proart_pa248qv.jpg" },
+      { sku: "ASU-PA278QV", title: "ASUS ProArt PA278QV", specs: "27\" QHD · IPS · 75Hz · 100% sRGB · Calman Verified", mwk: "MK 693,600", usd: "$400", img: "/images/monitors/asus_proart_pa278qv.jpg" },
+      { sku: "ASU-PA27JCV", title: "ASUS ProArt PA27JCV 5K", specs: "27\" 5K 5120x2880 · IPS · 99% DCI-P3 · USB-C PD 96W", mwk: "MK 1,907,400", usd: "$1,100", img: "/images/monitors/asus_proart_pa27jcv.jpg" },
+    ],
+  },
+  {
     title: "Business Laptops",
-    desc: "Lenovo ThinkPad and HP ProBook — warranty-backed business-class notebooks.",
+    desc: "HP ProBook, HP OmniBook and ASUS VivoBook — new-generation notebooks from entry level to premium OLED.",
     products: [
-      { sku: "LEN-TP-E14-C5", title: "Lenovo ThinkPad E14", specs: "Core 5 210H 16GB/512GB · 14\" · DOS", mwk: "MK 1,629,960", usd: "$940", img: "/images/laptops/lenovo_thinkpad_e14_gen6_core5.jpg" },
-      { sku: "LEN-TP-E14-U7", title: "Lenovo ThinkPad E14", specs: "Ultra 7-155H 16GB/512GB · 14\" · WUXGA · DOS", mwk: "MK 1,924,740", usd: "$1,110", img: "/images/laptops/lenovo_thinkpad_e14_ultra7.jpg" },
-      { sku: "LEN-TP-E16-R7", title: "Lenovo ThinkPad E16", specs: "AMD R7-7735HS 16GB/512GB · 16\" · WUXGA IPS · FPR · BL · DOS", mwk: "MK 1,647,300", usd: "$950", img: "/images/laptops/lenovo_thinkpad_e16_ryzen7.jpg" },
-      { sku: "HP-PB440-G11", title: "HP ProBook 440 G11", specs: "Ultra 5 125U 16GB/512GB · 14\" · FHD · FPR · BL · DOS", mwk: "MK 1,803,360", usd: "$1,040", img: "/images/laptops/hp_probook_440_g11.jpg" },
+      { sku: "ASU-VB-X1504-C5", title: "ASUS VivoBook X1504VA", specs: "Core 5 120U 8GB/512GB · 15.6\" FHD · DOS", mwk: "MK 1,161,780", usd: "$670", img: "/images/laptops/asus_vivobook_x1504va.jpg" },
+      { sku: "ASU-VB-X1404-C5", title: "ASUS VivoBook X1404VA", specs: "Core 5 120U 8GB/512GB · 14\" FHD · Win 11", mwk: "MK 1,265,820", usd: "$730", img: "/images/laptops/asus_vivobook_x1404va.jpg" },
+      { sku: "ASU-VB-F1504-C5", title: "ASUS VivoBook F1504VAP", specs: "Core 5 120U 16GB/512GB · 15.6\" FHD · Win 11", mwk: "MK 1,335,180", usd: "$770", img: "/images/laptops/asus_vivobook_f1504vap.jpg" },
+      { sku: "ASU-VB-A1504-I7", title: "ASUS VivoBook A1504VA", specs: "i7-1335U 8GB/512GB · 15.6\" FHD · FPR · BL · DOS", mwk: "MK 1,387,200", usd: "$800", img: "/images/laptops/asus_vivobook_a1504va.jpg" },
+      { sku: "HP-PB440-G11", title: "HP ProBook 440 G11", specs: "Ultra 5 125U 8GB/512GB · 14\" WUXGA · FPR · BL · DOS + Bag", mwk: "MK 1,629,960", usd: "$940", img: "/images/laptops/hp_probook_440_g11.jpg" },
+      { sku: "HP-PB460-G11", title: "HP ProBook 460 G11", specs: "Ultra 7 155U 8GB/512GB · 16\" WUXGA · FPR · BL · DOS + Bag", mwk: "MK 1,994,100", usd: "$1,150", img: "/images/laptops/hp_probook_460_g11.jpg" },
+      { sku: "HP-OB3-16-U5", title: "HP OmniBook 3 16", specs: "Ultra 5 225U 16GB/512GB · 16\" WUXGA Touch · Win 11", mwk: "MK 1,577,940", usd: "$910", img: "/images/laptops/hp_omnibook_3_16.jpg" },
+      { sku: "HP-OBUF-14-U7", title: "HP OmniBook Ultra Flip 14 2-in-1", specs: "Ultra 7 258V 32GB/1TB · 14\" 3K OLED Touch · Pen · Win 11", mwk: "MK 3,450,660", usd: "$1,990", img: "/images/laptops/hp_omnibook_ultra_flip_14.jpg" },
     ],
   },
   {
-    title: "Business Desktops — Tower",
-    desc: "Full-size towers for offices, labs and control rooms.",
+    title: "Business Desktops & All-in-Ones",
+    desc: "HP Elite Tower and Dell Pro AIO — 14th-gen and Core Ultra desktops for offices, schools and institutions.",
     products: [
-      { sku: "LEN-TC-NEO50T-I3", title: "Lenovo ThinkCentre neo 50t Gen5", specs: "i3-14100 8GB/512GB · DOS +KB/Mouse", mwk: "MK 1,196,460", usd: "$690", img: "/images/desktops/tower/lenovo_neo_50t.jpg" },
-      { sku: "LEN-TC-NEO50T-I5", title: "Lenovo ThinkCentre neo 50t Gen5", specs: "i5-13400 8GB/512GB · DOS", mwk: "MK 1,387,200", usd: "$800", img: "/images/desktops/tower/lenovo_neo_50t.jpg" },
-      { sku: "LEN-TC-M70T-I7", title: "Lenovo ThinkCentre M70t TWR", specs: "i7-14700 8GB/512GB · DOS", mwk: "MK 1,768,680", usd: "$1,020", img: "/images/desktops/tower/lenovo_m70t.jpg" },
-      { sku: "HP-290-G9-I5", title: "HP 290 G9 Tower", specs: "Core i5-14400 8GB/512GB No-DVD · DOS", mwk: "MK 1,439,220", usd: "$830", img: "/images/desktops/tower/hp_290_g9.jpg" },
-      { sku: "HP-290-G9-I7", title: "HP 290 G9 Tower", specs: "Core i7-14700 8GB/512GB · DOS", mwk: "MK 1,803,360", usd: "$1,040", img: "/images/desktops/tower/hp_290_g9.jpg" },
-      { sku: "DEL-7020-I3", title: "Dell OptiPlex 7020", specs: "i3-14th Gen 8GB/512GB · DOS", mwk: "MK 1,352,520", usd: "$780", img: "/images/desktops/tower/dell_optiplex_7020.jpg" },
+      { sku: "HP-800G9-I5", title: "HP Elite Tower 800 G9", specs: "i5-14500 16GB DDR5/512GB NVMe · DOS · KB+Mouse · 1yr", mwk: "MK 1,890,060", usd: "$1,090", img: "/images/desktops/tower/hp_elite_tower_800_g9.jpg" },
+      { sku: "HP-800G9-I7", title: "HP Elite Tower 800 G9", specs: "i7-14700 16GB DDR5/512GB NVMe · DOS · KB+Mouse · 1yr", mwk: "MK 2,236,860", usd: "$1,290", img: "/images/desktops/tower/hp_elite_tower_800_g9.jpg" },
+      { sku: "DEL-AIO24-U7-DOS", title: "Dell Pro 24 AIO Plus QB24250", specs: "Ultra 7 265 32GB/1TB · 24\" FHD Touch · DOS", mwk: "MK 3,034,500", usd: "$1,750", img: "/images/desktops/aio/dell_pro_24_aio_plus.jpg" },
+      { sku: "DEL-AIO24-U7-W11", title: "Dell Pro 24 AIO Plus QB24250", specs: "Ultra 7 265 32GB/1TB · 24\" FHD Touch · Win 11", mwk: "MK 3,207,900", usd: "$1,850", img: "/images/desktops/aio/dell_pro_24_aio_plus.jpg" },
+      { sku: "DEL-AIO24-U9-W11P", title: "Dell Pro 24 AIO Plus QB24250", specs: "Ultra 9 285 16GB/1TB · 24\" FHD Touch · Win 11 Pro", mwk: "MK 3,381,300", usd: "$1,950", img: "/images/desktops/aio/dell_pro_24_aio_plus.jpg" },
     ],
   },
   {
-    title: "Business Desktops — Small Form Factor",
-    desc: "Space-efficient SFF desktops for dense office deployments.",
+    title: "Workstation Graphics",
+    desc: "NVIDIA RTX Ada professional GPUs for GIS, CAD, rendering and AI — universities, NGOs and engineering firms.",
     products: [
-      { sku: "LEN-TC-NEO50S-I3", title: "Lenovo ThinkCentre neo 50s SFF Gen4", specs: "i3-13100 4GB/256GB · DOS", mwk: "MK 1,005,720", usd: "$580", img: "/images/desktops/sff/lenovo_neo_50s.jpg" },
-      { sku: "LEN-TC-M70S-I5", title: "Lenovo ThinkCentre M70s SFF", specs: "i5-14400 8GB/512GB · DOS", mwk: "MK 1,473,900", usd: "$850", img: "/images/desktops/sff/lenovo_m70s.jpg" },
-      { sku: "HP-400-SFF-I7", title: "HP Pro 400 G9 SFF", specs: "i7-14700 8GB/512GB · DOS 3yr", mwk: "MK 2,080,800", usd: "$1,200", img: "/images/desktops/sff/hp_pro_400_g9_sff.jpg" },
-      { sku: "HP-800-G9-SFF-I7", title: "HP EliteDesk 800 G9 SFF i7 14th-gen", specs: "16GB/512GB · Win 11 Home", mwk: "MK 2,358,240", usd: "$1,360", img: "/images/desktops/sff/hp_elitedesk_800_g9_sff.jpg" },
-      { sku: "DEL-QCT1250-I5", title: "Dell OptiPlex QCT1250", specs: "i5-14th Gen 8GB/512GB · DOS", mwk: "MK 1,491,240", usd: "$860", img: "/images/desktops/sff/dell_optiplex_7020_sff.jpg" },
+      { sku: "VCNRTXA400-SB", title: "PNY NVIDIA RTX A400", specs: "4GB GDDR6 · Low profile · 4x mDP · Entry workstation", mwk: "MK 364,140", usd: "$210", img: "/images/gpus/pny_rtx_a400.jpg" },
+      { sku: "VCNRTX2000ADA-SB", title: "PNY NVIDIA RTX 2000 Ada", specs: "16GB GDDR6 ECC · 2,816 CUDA · Low profile · 4x mDP", mwk: "MK 1,699,320", usd: "$980", img: "/images/gpus/pny_rtx_2000_ada.jpg" },
+      { sku: "VCNRTX4500ADA-SB", title: "PNY NVIDIA RTX 4500 Ada", specs: "24GB GDDR6 ECC · 7,680 CUDA · 4x DP · CAD/AI workstation", mwk: "MK 4,924,560", usd: "$2,840", img: "/images/gpus/pny_rtx_4500_ada.jpg" },
+      { sku: "VCNRTX5000ADA-SB", title: "PNY NVIDIA RTX 5000 Ada", specs: "32GB GDDR6 ECC · 12,800 CUDA · 4x DP · Rendering/AI", mwk: "MK 9,363,600", usd: "$5,400", img: "/images/gpus/pny_rtx_5000_ada.jpg" },
     ],
   },
   {
-    title: "Business Desktops — Mini PC",
-    desc: "Compact Mini/Tiny PCs for signage, reception and hot-desk setups.",
+    title: "Projection & Presentation",
+    desc: "Laser projectors for lecture halls, conference rooms and auditoriums.",
     products: [
-      { sku: "LEN-TC-NEO30S-I5", title: "Lenovo ThinkCentre neo 30s Gen5", specs: "i5-13420H 8GB/512GB · DOS", mwk: "MK 1,161,780", usd: "$670", img: "/images/desktops/mini/lenovo_neo_30s.jpg" },
-      { sku: "DEL-MINI-U5", title: "Dell OptiPlex Mini Pro QCM1250", specs: "Ultra 5 235T 8GB/512GB BT/WiFi · DOS", mwk: "MK 1,525,920", usd: "$880", img: "/images/desktops/mini/dell_optiplex_mini.jpg" },
+      { sku: "EPS-L790U", title: "Epson PowerLite L790U", specs: "7,300 lumens · WUXGA · Laser 3LCD · 30,000hr · Wi-Fi/LAN/HDBaseT", mwk: "MK 9,519,660", usd: "$5,490", img: "/images/projectors/epson_powerlite_l790u.jpg" },
     ],
   },
 ];
@@ -108,11 +120,11 @@ export default function CataloguePage() {
           IT Catalogue
         </h1>
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 24px", lineHeight: 1.7 }}>
-          Enterprise networking from Mikrotik and business-class laptops and desktops from HP, Lenovo and Dell.
-          All pricing includes Dubai to Malawi air freight.
+          Enterprise networking from Mikrotik, business laptops and desktops from HP, Dell and ASUS,
+          plus professional monitors, workstation graphics and laser projection. All pricing includes Dubai to Malawi air freight.
         </p>
         <div style={{ display: "inline-block", fontSize: "13px", fontWeight: 700, color: "var(--fl-blue)", letterSpacing: "0.03em", marginBottom: "28px" }}>
-          Rate: 1 USD = MK 1,734 · March 2026 · Contact for formal quotations
+          Rate: 1 USD = MK 1,734 · July 2026 · Contact for formal quotations
         </div>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <input
@@ -154,6 +166,19 @@ export default function CataloguePage() {
             </div>
           ))
         )}
+
+        {/* VOLUME / INSTITUTIONAL BANNER */}
+        <div style={{ marginTop: "16px", background: "var(--fl-neutral-90)", borderRadius: "8px", padding: "32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+          <div style={{ maxWidth: "640px" }}>
+            <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "18px", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>Volume & Institutional Orders</h3>
+            <p style={{ fontSize: "13px", color: "#999", lineHeight: 1.6, margin: 0 }}>
+              Schools, government, NGOs and enterprise: custom desktop fleets built to spec with tiered volume discounts up to 12%, QA stress testing and deployment-ready Windows 11 Pro.
+            </p>
+          </div>
+          <Link href="/computer-assembly" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "var(--fl-blue)", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>
+            View Volume Pricing
+          </Link>
+        </div>
       </div>
 
     </div>

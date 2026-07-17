@@ -76,7 +76,7 @@ export default function SoftwareDevelopmentPage() {
           <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Development Services</h2>
           <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Custom software solutions that improve how organisations operate.</p>
         </div>
-        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>All prices exclude 17.5% VAT. Rate: 1 USD = MK 1,734 (March 2026).</p>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>All prices exclude 17.5% VAT. Rate: 1 USD = MK 1,734 (July 2026).</p>
         <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>
