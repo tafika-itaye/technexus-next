@@ -381,7 +381,7 @@ function group(n: number, sep: string): string {
 
 function QuoteBtn({ href, label }: { href: string; label: string }) {
   return (
-    <a href={href} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+    <a href={href} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px", padding: "6px 14px", minHeight: "44px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
       {label}
     </a>
   );
@@ -416,7 +416,7 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
         {/* LANGUAGE SERVICES TABLE */}
         <h2 style={H2}>{t.pricingTitle}</h2>
         <p style={{ fontSize: "14px", color: MUTED, marginBottom: "24px" }}>{t.pricingNote}</p>
-        <div style={{ ...scrollBox, marginBottom: "12px" }}>
+        <div className="ls-price-table" style={{ ...scrollBox, marginBottom: "12px" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "820px" }}>
             <thead>
               <tr>
@@ -453,6 +453,30 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
             </tbody>
           </table>
         </div>
+        <div className="ls-price-cards" style={{ marginBottom: "12px" }}>
+          {PRICED.map((row) => {
+            const label = t.services[row.id];
+            const f = foreign(row.mwk);
+            const pre = row.from ? t.fromWord : "";
+            return (
+              <div key={row.id} style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "14px 16px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", marginBottom: "6px" }}>
+                  <div style={{ fontWeight: 600, fontSize: "14px", color: TEXT }}>{label.name}</div>
+                  <QuoteBtn href={q(label.name)} label={t.quoteLabel} />
+                </div>
+                <div style={{ fontSize: "12px", color: MUTED, marginBottom: "10px" }}>{label.langs} · {label.unit}</div>
+                <div style={{ fontSize: "18px", fontWeight: 700, color: ACCENT, marginBottom: "8px" }}>{pre}MK {group(row.mwk, t.numSep)}</div>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px", fontSize: "12px", color: MUTED }}>
+                  <div>USD {pre}${group(f.USD, t.numSep)}</div>
+                  <div>MZN {pre}{group(f.MZN, t.numSep)}</div>
+                  <div>ZAR {pre}{group(f.ZAR, t.numSep)}</div>
+                  <div>ZMW {pre}{group(f.ZMW, t.numSep)}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
         <p style={{ fontSize: "12px", color: MUTED, lineHeight: 1.6, marginBottom: "4px" }}>{t.currencyNote}</p>
         <p style={{ fontSize: "12px", color: MUTED, lineHeight: 1.6, marginBottom: "40px" }}>{t.certifiedNote}</p>
 
