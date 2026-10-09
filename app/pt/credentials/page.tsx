@@ -8,7 +8,7 @@ const registration = [
   { label: "Nome Legal", value: "TechNexus" },
   { label: "Registo Comercial", value: "BRN.A6SNWQY — MSME, Republica do Malawi" },
   { label: "Morada", value: "Lilongwe e todo o Malawi" },
-  { label: "Contacto Principal", value: "+265 889 941 700 · +265 995 753 326" },
+  { label: "Contacto Principal", value: "+265 889 941 700 · +265 881 879 831" },
   { label: "E-mail", value: "technexus_mw@proton.me" },
   { label: "Estado MANePS", value: "Activo — Sistema Nacional de Procurement Electronico do Malawi" },
   { label: "Registo PPDA", value: "Registado — Autoridade de Procurement Publico e Alienacao de Bens" },
@@ -130,6 +130,32 @@ export default function PtCredentialsPage() {
           <p style={{ fontSize: "0.84rem", color: MUTED, lineHeight: 1.65, margin: 0 }}>
             O Alto Comissariado da Republica de Mocambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou servicos profissionais a Missao durante um periodo prolongado. A Missao elogia a TechNexus pelos seus elevados padroes de profissionalismo, exactidao, fiabilidade e discricao.
           </p>
+        </div>
+
+        {/* MRA CERTIFICATE */}
+        <h2 style={sh}>Certificado de Conformidade MRA</h2>
+        <div style={{ background: "var(--surface)", border: "1px solid " + BORDER, borderRadius: "8px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px", marginBottom: "20px" }}>
+            <p style={{ fontSize: "14px", color: MUTED, lineHeight: 1.7, maxWidth: "560px", margin: 0 }}>
+              O EIS da TechNexus é certificado pela Autoridade Tributária do Malawi como integração fiscal conforme.
+              Certificado W134-CI5P-G35R, emitido a 24/06/2026, válido até 24/06/2027. Verifique marcando *915# gratuitamente.
+            </p>
+            <a
+              href="/certificates/technexus-mra-eis-certificate.pdf"
+              download
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: ACCENT, color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}
+            >
+              ↓ Descarregar Certificado (PDF)
+            </a>
+          </div>
+          <a href="/certificates/technexus-mra-eis-certificate.pdf" target="_blank" rel="noopener" style={{ display: "block" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/certificates/technexus-mra-eis-certificate.png"
+              alt="Certificado de Conformidade da Autoridade Tributária do Malawi da TechNexus, Número de Certificado W134-CI5P-G35R"
+              style={{ width: "100%", maxWidth: "720px", height: "auto", display: "block", margin: "0 auto", border: "1px solid " + BORDER, borderRadius: "6px" }}
+            />
+          </a>
         </div>
 
         <h2 style={sh}>Quadro de Procurement</h2>

@@ -6,7 +6,7 @@ const registration = [
   { label: "Dzina Lachilungamo", value: "TechNexus" },
   { label: "Kulembetsa kwa Bizinesi", value: "BRN.A6SNWQY — MSME, Republic ya Malawi" },
   { label: "Adiresi", value: "Lilongwe ndi Malawi yonse" },
-  { label: "Kulumikizana Kwayamba", value: "+265 889 941 700 · +265 995 753 326" },
+  { label: "Kulumikizana Kwayamba", value: "+265 889 941 700 · +265 881 879 831" },
   { label: "Imelo", value: "technexus_mw@proton.me" },
   { label: "Chikho cha MANePS", value: "Chogwira — Dongosolo la National Electronic Procurement la Malawi" },
   { label: "Kulembetsa PPDA", value: "Wolembedwa — Authority ya Public Procurement ndi Disposal of Assets" },
@@ -128,6 +128,32 @@ export default function NyCredentialsPage() {
           <p style={{ fontSize: "0.84rem", color: MUTED, lineHeight: 1.65, margin: 0 }}>
             High Commission ya Republic ya Mozambique, Lilongwe (February 2026) itsimikizira kuti TechNexus yaperekedwa ntchito zapamwamba ku Mission pa nthawi yayitali. Mission ikutamanda TechNexus chifukwa cha muyeso wake wapamwamba wa kukhala wachikumbu, kulondola, kukhala wodalirika ndi chinsinsi.
           </p>
+        </div>
+
+        {/* MRA CERTIFICATE */}
+        <h2 style={sh}>Satifiketi ya Kuvomerezana ndi MRA</h2>
+        <div style={{ background: "var(--surface)", border: "1px solid " + BORDER, borderRadius: "8px", padding: "24px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px", marginBottom: "20px" }}>
+            <p style={{ fontSize: "14px", color: MUTED, lineHeight: 1.7, maxWidth: "560px", margin: 0 }}>
+              EIS ya TechNexus yavomerezedwa ndi Malawi Revenue Authority ngati fiscal integration yovomerezeka.
+              Satifiketi W134-CI5P-G35R, yoperekedwa pa 24/06/2026, yomwe ikugwira ntchito mpaka 24/06/2027. Tsimikizani poimba *915# kwaulere.
+            </p>
+            <a
+              href="/certificates/technexus-mra-eis-certificate.pdf"
+              download
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: ACCENT, color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}
+            >
+              ↓ Tsitsani Satifiketi (PDF)
+            </a>
+          </div>
+          <a href="/certificates/technexus-mra-eis-certificate.pdf" target="_blank" rel="noopener" style={{ display: "block" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/certificates/technexus-mra-eis-certificate.png"
+              alt="Satifiketi ya Kuvomerezana ya Malawi Revenue Authority ya TechNexus, Satifiketi Nambala W134-CI5P-G35R"
+              style={{ width: "100%", maxWidth: "720px", height: "auto", display: "block", margin: "0 auto", border: "1px solid " + BORDER, borderRadius: "6px" }}
+            />
+          </a>
         </div>
 
         <h2 style={sh}>Njira Zogulira</h2>

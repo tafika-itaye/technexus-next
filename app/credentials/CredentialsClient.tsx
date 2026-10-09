@@ -6,7 +6,7 @@ const registration = [
   ["Legal Name", "TechNexus"],
   ["Business Registration", "BRN.A6SNWQY — MSME, Republic of Malawi"],
   ["Physical Address", "Lilongwe and nationwide, Malawi"],
-  ["Primary Contact", "+265 889 941 700 · +265 995 753 326"],
+  ["Primary Contact", "+265 889 941 700 · +265 881 879 831"],
   ["Email", "technexus_mw@proton.me"],
   ["MANePS Status", "Active — Malawi National Electronic Procurement System"],
   ["PPDA Registration", "Registered — Public Procurement & Disposal of Assets Authority"],
