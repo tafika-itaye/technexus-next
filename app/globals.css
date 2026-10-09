@@ -322,3 +322,14 @@ a[role="button"]:active {
     margin-top: 4px;
   }
 }
+
+/* Product tables (medical-supplies, shared) */
+.prod-scroll { overflow-x: auto; border-radius: 8px; border: 1px solid var(--fl-neutral-8); margin-bottom: 36px; }
+.prod-table { width: 100%; border-collapse: collapse; background: #fff; min-width: 400px; }
+.prod-th { padding: 10px 16px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #595959; border-bottom: 1px solid var(--fl-neutral-8); background: var(--fl-neutral-4); }
+.prod-td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid var(--fl-neutral-8); color: var(--fl-neutral-90); }
+.prod-td-name { font-weight: 600; }
+.prod-td-muted { color: #595959; }
+.prod-td-price { color: var(--fl-blue); font-weight: 600; }
+.prod-table tbody tr:nth-child(even) { background: var(--fl-neutral-2); }
+.wa-quote { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 6px 14px; min-height: 44px; background: #25D366; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none; white-space: nowrap; box-sizing: border-box; }

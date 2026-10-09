@@ -8,8 +8,6 @@ const TEXT = "var(--fl-neutral-90)";
 const MUTED = "#595959";
 const ACCENT = "var(--fl-blue)";
 
-export const TH: React.CSSProperties = { padding: "10px 16px", textAlign: "left" as const, fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.06em", color: MUTED, borderBottom: "1px solid var(--fl-neutral-8)", background: "var(--fl-neutral-4)" };
-export const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", borderBottom: "1px solid var(--fl-neutral-8)", color: TEXT };
 
 export type Locale = "en" | "pt" | "ny";
 export type Row = [string, string, string, string];
@@ -103,7 +101,7 @@ function SectionHead({ title, sub }: { title: string; sub?: string }) {
 function QuoteBtn({ name, price, waBase, waLabel }: { name: string; price: string; waBase: string; waLabel: string }) {
   const wa = waBase + encodeURIComponent(name) + waLabel + encodeURIComponent(price);
   return (
-    <a href={wa} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+    <a href={wa} target="_blank" rel="noopener" className="wa-quote">
       Quote
     </a>
   );
@@ -111,25 +109,25 @@ function QuoteBtn({ name, price, waBase, waLabel }: { name: string; price: strin
 
 function ProdTable({ rows, colProduct, colPack, waBase, waLabel }: { rows: Row[]; colProduct: string; colPack: string; waBase: string; waLabel: string }) {
   return (
-    <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "36px" }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "400px" }}>
+    <div className="prod-scroll">
+      <table className="prod-table">
         <thead>
           <tr>
-            <th scope="col" style={TH}>{colProduct}</th>
-            <th scope="col" style={TH}>{colPack}</th>
-            <th scope="col" style={TH}>MWK</th>
-            <th scope="col" style={TH}>USD</th>
-            <th scope="col" style={TH}>Quote</th>
+            <th scope="col" className="prod-th">{colProduct}</th>
+            <th scope="col" className="prod-th">{colPack}</th>
+            <th scope="col" className="prod-th">MWK</th>
+            <th scope="col" className="prod-th">USD</th>
+            <th scope="col" className="prod-th">Quote</th>
           </tr>
         </thead>
         <tbody>
           {rows.map(([name, pack, mwk, usd], i) => (
-            <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-              <td style={{ ...TD, fontWeight: 600 }}>{name}</td>
-              <td style={{ ...TD, color: MUTED }}>{pack}</td>
-              <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{mwk}</td>
-              <td style={{ ...TD, color: MUTED }}>{usd}</td>
-              <td style={TD}><QuoteBtn name={name} price={usd} waBase={waBase} waLabel={waLabel} /></td>
+            <tr key={i}>
+              <td className="prod-td prod-td-name">{name}</td>
+              <td className="prod-td prod-td-muted">{pack}</td>
+              <td className="prod-td prod-td-price">{mwk}</td>
+              <td className="prod-td prod-td-muted">{usd}</td>
+              <td className="prod-td"><QuoteBtn name={name} price={usd} waBase={waBase} waLabel={waLabel} /></td>
             </tr>
           ))}
         </tbody>
