@@ -16,9 +16,9 @@ const links = [
 ];
 
 const UI = {
-  en: { tagline: "IT Solutions & Equipment Supply", language: "Language", theme: "Toggle theme", dark: "Dark", light: "Light", darkMode: "Dark mode", lightMode: "Light mode", openMenu: "Open menu", closeMenu: "Close menu" },
-  pt: { tagline: "Soluções e Equipamento IT", language: "Idioma", theme: "Alternar tema", dark: "Escuro", light: "Claro", darkMode: "Modo escuro", lightMode: "Modo claro", openMenu: "Abrir menu", closeMenu: "Fechar menu" },
-  ny: { tagline: "Mayankho a IT ndi Zida", language: "Chilankhulo", theme: "Sinthani mawonekedwe", dark: "Mdima", light: "Kuwala", darkMode: "Mawonekedwe amdima", lightMode: "Mawonekedwe owala", openMenu: "Tsegulani menu", closeMenu: "Tsekani menu" },
+  en: { tagline: "IT Solutions & Equipment Supply", language: "Language", theme: "Toggle theme", dark: "Dark", light: "Light", darkMode: "Dark mode", lightMode: "Light mode", openMenu: "Open menu", closeMenu: "Close menu", skip: "Skip to content" },
+  pt: { tagline: "Soluções e Equipamento IT", language: "Idioma", theme: "Alternar tema", dark: "Escuro", light: "Claro", darkMode: "Modo escuro", lightMode: "Modo claro", openMenu: "Abrir menu", closeMenu: "Fechar menu", skip: "Saltar para o conteúdo" },
+  ny: { tagline: "Mayankho a IT ndi Zida", language: "Chilankhulo", theme: "Sinthani mawonekedwe", dark: "Mdima", light: "Kuwala", darkMode: "Mawonekedwe amdima", lightMode: "Mawonekedwe owala", openMenu: "Tsegulani menu", closeMenu: "Tsekani menu", skip: "Pitani ku zomwe zili" },
 } as const;
 
 function getLang(pathname: string): "en" | "pt" | "ny" {
@@ -77,7 +77,9 @@ export default function Nav() {
   );
 
   return (
-    <header style={{ background: "var(--nav-bg)", backdropFilter: "var(--nav-blur)", WebkitBackdropFilter: "var(--nav-blur)", borderBottom: "3px solid var(--accent)", position: "sticky", top: 0, zIndex: 100 }}>
+    <>
+      <a href="#main-content" className="skip-link">{u.skip}</a>
+      <header style={{ background: "var(--nav-bg)", backdropFilter: "var(--nav-blur)", WebkitBackdropFilter: "var(--nav-blur)", borderBottom: "3px solid var(--accent)", position: "sticky", top: 0, zIndex: 100 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", height: "56px", gap: "16px" }}>
 
         {/* LOGO */}
@@ -160,5 +162,6 @@ export default function Nav() {
         </div>
       </nav>
     </header>
+    </>
   );
 }

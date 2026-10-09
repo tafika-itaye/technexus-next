@@ -87,12 +87,12 @@ export default function ComputerAssemblyPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF }}>
             <thead>
               <tr>
-                <th style={TH}>Image</th>
-                <th style={TH}>#</th>
-                <th style={TH}>Component</th>
-                <th style={TH}>Specification</th>
-                <th style={TH}>MWK</th>
-                <th style={TH}>USD</th>
+                <th scope="col" style={TH}>Image</th>
+                <th scope="col" style={TH}>#</th>
+                <th scope="col" style={TH}>Component</th>
+                <th scope="col" style={TH}>Specification</th>
+                <th scope="col" style={TH}>MWK</th>
+                <th scope="col" style={TH}>USD</th>
               </tr>
             </thead>
             <tbody>
@@ -133,11 +133,11 @@ export default function ComputerAssemblyPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF }}>
             <thead>
               <tr>
-                <th style={TH}>Quantity</th>
-                <th style={TH}>Discount</th>
-                <th style={TH}>MWK / Unit</th>
-                <th style={TH}>USD / Unit</th>
-                <th style={TH}>Quote</th>
+                <th scope="col" style={TH}>Quantity</th>
+                <th scope="col" style={TH}>Discount</th>
+                <th scope="col" style={TH}>MWK / Unit</th>
+                <th scope="col" style={TH}>USD / Unit</th>
+                <th scope="col" style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>
@@ -165,11 +165,11 @@ export default function ComputerAssemblyPage() {
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF }}>
             <thead>
               <tr>
-                <th style={TH}>Image</th>
-                <th style={TH}>Upgrade</th>
-                <th style={TH}>Change</th>
-                <th style={TH}>Add (USD)</th>
-                <th style={TH}>Quote</th>
+                <th scope="col" style={TH}>Image</th>
+                <th scope="col" style={TH}>Upgrade</th>
+                <th scope="col" style={TH}>Change</th>
+                <th scope="col" style={TH}>Add (USD)</th>
+                <th scope="col" style={TH}>Quote</th>
               </tr>
             </thead>
             <tbody>

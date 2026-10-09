@@ -115,11 +115,11 @@ function ProdTable({ rows, colProduct, colPack, waBase, waLabel }: { rows: Row[]
       <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "400px" }}>
         <thead>
           <tr>
-            <th style={TH}>{colProduct}</th>
-            <th style={TH}>{colPack}</th>
-            <th style={TH}>MWK</th>
-            <th style={TH}>USD</th>
-            <th style={TH}>Quote</th>
+            <th scope="col" style={TH}>{colProduct}</th>
+            <th scope="col" style={TH}>{colPack}</th>
+            <th scope="col" style={TH}>MWK</th>
+            <th scope="col" style={TH}>USD</th>
+            <th scope="col" style={TH}>Quote</th>
           </tr>
         </thead>
         <tbody>

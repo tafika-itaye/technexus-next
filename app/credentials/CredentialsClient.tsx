@@ -168,17 +168,17 @@ export default function CredentialsPage() {
           <form onSubmit={sendForm} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
               <div>
-                <label style={lbl}>Name *</label>
-                <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" required style={inp} />
+                <label htmlFor="cred-name" style={lbl}>Name *</label>
+                <input id="cred-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your name" required style={inp} />
               </div>
               <div>
-                <label style={lbl}>Organisation</label>
-                <input type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Company / NGO / Institution" style={inp} />
+                <label htmlFor="cred-org" style={lbl}>Organisation</label>
+                <input id="cred-org" type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Company / NGO / Institution" style={inp} />
               </div>
             </div>
             <div>
-              <label style={lbl}>Email or WhatsApp *</label>
-              <input type="text" value={contact} onChange={e => setContact(e.target.value)} placeholder="+265 ... or your@email.com" required style={inp} />
+              <label htmlFor="cred-contact" style={lbl}>Email or WhatsApp *</label>
+              <input id="cred-contact" type="text" value={contact} onChange={e => setContact(e.target.value)} placeholder="+265 ... or your@email.com" required style={inp} />
             </div>
             <div>
               <label htmlFor="cred-service" style={lbl}>Service Required *</label>
@@ -197,8 +197,8 @@ export default function CredentialsPage() {
               </select>
             </div>
             <div>
-              <label style={lbl}>Message *</label>
-              <textarea value={msg} onChange={e => setMsg(e.target.value)} rows={4} placeholder="Describe your requirement, quantity, location or any specific details..." required style={{ ...inp, resize: "vertical" }} />
+              <label htmlFor="cred-message" style={lbl}>Message *</label>
+              <textarea id="cred-message" value={msg} onChange={e => setMsg(e.target.value)} rows={4} placeholder="Describe your requirement, quantity, location or any specific details..." required style={{ ...inp, resize: "vertical" }} />
             </div>
             <button type="submit" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "#25D366", color: "var(--fl-neutral-90)", border: "none", borderRadius: "8px", fontSize: "14px", fontWeight: 700, cursor: "pointer" }}>
               Send via WhatsApp

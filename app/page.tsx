@@ -253,8 +253,8 @@ export default function Home() {
               </select>
             </div>
             <div style={{ gridColumn: "1 / -1" }}>
-              <label style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Message *</label>
-              <textarea value={msg} onChange={e => setMsg(e.target.value)} rows={3} placeholder="Describe your requirement or ask a question..." style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px", resize: "vertical" }} />
+              <label htmlFor="qe-message" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Message *</label>
+              <textarea id="qe-message" value={msg} onChange={e => setMsg(e.target.value)} rows={3} placeholder="Describe your requirement or ask a question..." style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px", resize: "vertical" }} />
             </div>
             <div style={{ gridColumn: "1 / -1" }}>
               <button onClick={sendQE} type="button" style={{ background: "#25D366", color: "#fff", border: "none", borderRadius: "var(--radius)", padding: "12px 28px", fontSize: "14px", fontWeight: 600, cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>

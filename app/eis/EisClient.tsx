@@ -650,14 +650,14 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                 <h3 style={{ fontFamily: "var(--font-syne, 'Inter', system-ui, sans-serif)", fontSize: "18px", fontWeight: 700, color: INK, marginBottom: "24px" }}>{t.formTitle}</h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                   {[
-                    { label: t.fBiz, value: bizName, setter: setBizName, placeholder: t.fBizPh, type: "text" },
-                    { label: t.fContact, value: contactName, setter: setContactName, placeholder: t.fContactPh, type: "text" },
-                    { label: t.fPhone, value: phone, setter: setPhone, placeholder: "+265 ...", type: "tel" },
-                  ].map(({ label, value, setter, placeholder, type }) => (
+                    { id: "eis-biz", label: t.fBiz, value: bizName, setter: setBizName, placeholder: t.fBizPh, type: "text" },
+                    { id: "eis-contact", label: t.fContact, value: contactName, setter: setContactName, placeholder: t.fContactPh, type: "text" },
+                    { id: "eis-phone", label: t.fPhone, value: phone, setter: setPhone, placeholder: "+265 ...", type: "tel" },
+                  ].map(({ id, label, value, setter, placeholder, type }) => (
                     <div key={label}>
-                      <label style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{label}</label>
+                      <label htmlFor={id} style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{label}</label>
                       <input
-                        type={type}
+                        id={id} type={type}
                         value={value}
                         onChange={e => setter(e.target.value)}
                         placeholder={placeholder}
@@ -666,17 +666,17 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                     </div>
                   ))}
                   <div>
-                    <label style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{t.fPlan}</label>
-                    <select value={selectedPlan} onChange={e => setSelectedPlan(e.target.value)} style={{ ...inputStyle, appearance: "none" as const }}>
+                    <label htmlFor="eis-plan" style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{t.fPlan}</label>
+                    <select id="eis-plan" value={selectedPlan} onChange={e => setSelectedPlan(e.target.value)} style={{ ...inputStyle, appearance: "none" as const }}>
                       <option value="">{t.fPlanPh}</option>
                       {plans.map(p => <option key={p.name}>{p.name}</option>)}
                       <option>{t.fNotSure}</option>
                     </select>
                   </div>
                   <div>
-                    <label style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{t.fNotes}</label>
+                    <label htmlFor="eis-notes" style={{ fontSize: "12px", fontWeight: 600, color: BODY, display: "block", marginBottom: "6px" }}>{t.fNotes}</label>
                     <textarea
-                      value={notes}
+                      id="eis-notes" value={notes}
                       onChange={e => setNotes(e.target.value)}
                       placeholder={t.fNotesPh}
                       rows={3}

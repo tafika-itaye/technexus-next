@@ -420,15 +420,15 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "820px" }}>
             <thead>
               <tr>
-                <th style={TH}>{t.colService}</th>
-                <th style={TH}>{t.colLangs}</th>
-                <th style={TH}>{t.colUnit}</th>
-                <th style={TH}>MWK</th>
-                <th style={TH}>USD</th>
-                <th style={TH}>MZN</th>
-                <th style={TH}>ZAR</th>
-                <th style={TH}>ZMW</th>
-                <th style={TH}>{t.colQuote}</th>
+                <th scope="col" style={TH}>{t.colService}</th>
+                <th scope="col" style={TH}>{t.colLangs}</th>
+                <th scope="col" style={TH}>{t.colUnit}</th>
+                <th scope="col" style={TH}>MWK</th>
+                <th scope="col" style={TH}>USD</th>
+                <th scope="col" style={TH}>MZN</th>
+                <th scope="col" style={TH}>ZAR</th>
+                <th scope="col" style={TH}>ZMW</th>
+                <th scope="col" style={TH}>{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
@@ -502,10 +502,10 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
             <thead>
               <tr>
-                <th style={TH}>{t.colService}</th>
-                <th style={TH}>{t.colDesc}</th>
-                <th style={TH}>{t.colFromMwk}</th>
-                <th style={TH}>{t.colQuote}</th>
+                <th scope="col" style={TH}>{t.colService}</th>
+                <th scope="col" style={TH}>{t.colDesc}</th>
+                <th scope="col" style={TH}>{t.colFromMwk}</th>
+                <th scope="col" style={TH}>{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
@@ -530,10 +530,10 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
             <thead>
               <tr>
-                <th style={TH}>{t.colService}</th>
-                <th style={TH}>{t.colDesc}</th>
-                <th style={TH}>{t.colFromMwk}</th>
-                <th style={TH}>{t.colQuote}</th>
+                <th scope="col" style={TH}>{t.colService}</th>
+                <th scope="col" style={TH}>{t.colDesc}</th>
+                <th scope="col" style={TH}>{t.colFromMwk}</th>
+                <th scope="col" style={TH}>{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
@@ -555,11 +555,11 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>
               <tr>
-                <th style={TH}>{t.colCountry}</th>
-                <th style={TH}>{t.colService}</th>
-                <th style={TH}>{t.colDesc}</th>
-                <th style={TH}>{t.colFromMwk}</th>
-                <th style={TH}>{t.colQuote}</th>
+                <th scope="col" style={TH}>{t.colCountry}</th>
+                <th scope="col" style={TH}>{t.colService}</th>
+                <th scope="col" style={TH}>{t.colDesc}</th>
+                <th scope="col" style={TH}>{t.colFromMwk}</th>
+                <th scope="col" style={TH}>{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
