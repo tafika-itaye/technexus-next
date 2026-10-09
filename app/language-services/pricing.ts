@@ -11,7 +11,7 @@
 export const RATES = {
   asOf: "8 October 2026",
   asOfPt: "8 de Outubro de 2026",
-  asOfNy: "8 October 2026", // TODO(TJ): Chichewa date wording if preferred
+  asOfNy: "8 Okutobala 2026",
   perUnit: { USD: 1734, MZN: 29.5, ZAR: 96.3236, ZMW: 68.2925 },
 } as const;
 

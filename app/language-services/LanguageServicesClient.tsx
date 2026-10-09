@@ -261,17 +261,12 @@ const STR: Record<LsLang, Dict> = {
 
   ny: {
     heroTitle: "TechNexus Scripts — Ntchito za Zinenero ndi Uphungu",
-    // TODO(TJ): Chichewa for the hero sub tail "across Southern and Eastern Africa"
-    // (old copy read "m'Africa Yekha ndi Yschodnia" — Yschodnia is Polish, not Chichewa).
-    heroSub: "Kumasulira, kulemba, subtitulo, kutanthauzira ndi maphunziro a chilankhulo mwachilungamo. Ntchito ya mabungwe a zadiplomasiya, ma NGO, zaumoyo ndi makasitomala apacheka [EN: across Southern and Eastern Africa — awaiting Chichewa].",
+    heroSub: "Kumasulira, kulemba, subtitulo, kutanthauzira ndi maphunziro a chilankhulo mwachilungamo. Ntchito ya mabungwe a zadiplomasiya, ma NGO, zaumoyo ndi makasitomala apacheka ku Afirika wa Kumwera ndi Kummawa.",
     tagline: "Chingerezi · Chiputukezi · Chichewa · Kiswahili · HIPAA/GDPR",
     pricingTitle: "Ntchito za Zinenero ndi Mitengo",
-    // VAT part reused; second sentence is new wording — TODO(TJ): Chichewa for "Volume and framework rates on request."
-    pricingNote: "Mitengo siyikuphatikiza VAT ya 17.5%. [EN: Volume and framework rates on request — awaiting Chichewa.]",
-    // TODO(TJ): Chichewa for the currency note.
-    currencyNote: "[EN: Clients in Malawi are invoiced in kwacha. Other currencies are approximate equivalents at the rates of " + RATES.asOfNy + ". — awaiting Chichewa]",
-    // TODO(TJ): Chichewa for the certified-includes note.
-    certifiedNote: "[EN: Certified translation includes translation, revision, signature, stamp, one printed copy and a PDF. — awaiting Chichewa]",
+    pricingNote: "Mitengo siyikuphatikiza VAT ya 17.5%. Mitengo ya maoda ambiri ndi ya mapangano a framework imaperekedwa mukapempha.",
+    currencyNote: "Makasitomala a ku Malawi amalandira ma invoice mu kwacha. Ndalama zina ndi ziwerengero zoyandikira malinga ndi mitengo ya pa " + RATES.asOfNy + ".",
+    certifiedNote: "Kumasulira kovomerezeka kumaphatikiza kumasulira, kuwunikanso, siginecha, chidindo, kopi imodzi yosindikizidwa ndi PDF.",
     colService: "Ntchito",
     colLangs: "Zilankhulo",
     colUnit: "Muyeso",
@@ -290,21 +285,19 @@ const STR: Record<LsLang, Dict> = {
     },
     fromWord: "kuyambira ",
     numSep: ".",
-    // TODO(TJ): Chichewa for the whole Personal Documents block (title + 5 lines).
-    personalTitle: "Personal Documents [awaiting Chichewa]",
+    personalTitle: "Madokumento a Paokha",
     personalLines: [
-      "[EN] Certified translation: MK 16,000 per page of 250 words.",
-      "[EN] Minimum order: MK 30,000. Several documents fit in one order.",
-      "[EN] Express, under 48 hours: +50%.",
-      "[EN] Interpreting by call, by appointment: MK 30,000 per 15 minutes.",
-      "[EN] For individuals and their own documents: certificates, medical reports, hospital invoices. Paid in advance.",
+      "Kumasulira kovomerezeka: MK 16.000 pa tsamba la mawu 250.",
+      "Oda yochepera: MK 30.000. Madokumento angapo angalowe mu oda imodzi.",
+      "Mwachangu, mkati mwa maola 48: +50%.",
+      "Kutanthauzira pa foni, mwa kukonzekera: MK 30.000 pa mphindi 15.",
+      "Kwa anthu paokha ndi madokumento awo: ma satifiketi, malipoti a zaumoyo, ma invoice a chipatala. Kulipira patsogolo.",
     ],
     pairsTitle: "Zilankhulo Zomwe Timagwira Nazo",
     pairs: [
       { pair: "Chingerezi ndi Chiputukezi", body: "Madokumento, ma kontrakiti, makalata, zoyimba za zaumoyo, zamilandu. Makasitomala a zadiplomasiya ndi mabungwe." },
       { pair: "Chingerezi ndi Chichewa", body: "Zaumoyo za khomo, mafalidwe a boma, ziphunzitso, madokumento a ntchito ya bwalo ya ma NGO." },
-      // TODO(TJ): Chichewa for "Eastern Africa" (old copy read "Africa Wschodnia" — Polish).
-      { pair: "Chingerezi ndi Kiswahili", body: "Malonda a mipaka, mafalidwe a ma NGO a [EN: Eastern Africa — awaiting Chichewa], midia ndi kufalitsa." },
+      { pair: "Chingerezi ndi Kiswahili", body: "Malonda a mipaka, mafalidwe a ma NGO a Afirika wa Kummawa, midia ndi kufalitsa." },
       { pair: "Chiputukezi ndi Chichewa", body: "Njira ya Malawi-Mozambique: madokumento a malire, mgwirizano wa malonda, zinthu za konsuleti." },
     ],
     sectorsTitle: "Mbumba Yothandizidwa",
@@ -331,8 +324,7 @@ const STR: Record<LsLang, Dict> = {
       { name: "Kuyankha Tender Wokhonsa", desc: "Ma tender a mtengo, RFQ, madokumento osavuta a mapulo", mwk: "MK 200.000" },
       { name: "Kuyankha Tender Wovuta", desc: "Mapulo akuluakulu, mapulo azaukadaulo ndi azachuma, RFP", mwk: "MK 450.000" },
       { name: "Kuwunika kwa Kutsatira Malamulo", desc: "Kuwunika madokumento womaliza kuti apeze zolakwika, mafunde opanda, zosoweka", mwk: "MK 75.000" },
-      // TODO(TJ): Chichewa for "Standard translation rate applies."
-      { name: "Kumasulira Madokumento a Tender", desc: "Kumasulira madokumento a tender: Chingerezi, Chiputukezi, Chichewa, Kiswahili", mwk: "[EN: Standard translation rate applies — awaiting Chichewa]" },
+      { name: "Kumasulira Madokumento a Tender", desc: "Kumasulira madokumento a tender: Chingerezi, Chiputukezi, Chichewa, Kiswahili", mwk: "Mtengo wamba wa kumasulira umagwira ntchito." },
     ],
     regTitle: "Kulembetsa Bizinesi ndi Kutsatira Malamulo",
     regIntro: "Timakonzekera ndi kutumiza madokumento a kulembetsa bizinesi, layisensi ndi kutsatira malamulo m'malo mwanu. Kulembetsa kuno ku Malawi ndi kunja kwa dziko ku Zambia, Mozambique ndi South Africa.",
@@ -362,8 +354,7 @@ const STR: Record<LsLang, Dict> = {
     crossNoteBody: "Mitengo ya boma, ya ma agent akudziko ndi ya kutsimikizira madokumento imapatulidwa pa mtengo weniweni. Timapeleka quotation yoonekeratu usanachite cholipira chilichonse. Nthawi zosiyanasiyana pa dziko: Malawi masiku 5-10, Zambia 10-15, Mozambique 15-25, South Africa 10-20.",
     howTitle: "Momwe Mungalumikizanire",
     howBody: "Tumizani dokumento lanu la cholinga kapena zofunikira zanu kudzera pa WhatsApp kapena imelo. Titsimikizira kuchuluka kwa ntchito, nthawi yokwanirira, ndi kutumiza mtengo mu maola 24. Nthawi yotsatira: tsiku 1-3 la bizinesi pa dokumento; tsiku 5-25 la bizinesi pa ntchito za kulembetsa. Mgwirizano wa chinsinsi uperekedwa momufunira.",
-    // TODO(TJ): Chichewa for "Send a photo of the document on WhatsApp. Quote in 24 hours."
-    howExtra: "[EN: Send a photo of the document on WhatsApp. Quote in 24 hours. — awaiting Chichewa]",
+    howExtra: "Tumizani chithunzi cha dokumento pa WhatsApp. Quotation mu maola 24.",
     cta: "Pemphani Quotation",
     waBase: "https://wa.me/265889941700?text=Moni%20TechNexus%2C%20ndikufuna%20quotation%20ya%3A%0A",
     quoteLabel: "Pemphani",
