@@ -82,7 +82,7 @@ export default function Nav() {
 
         {/* LOGO */}
         <Link href={lang === "pt" ? "/pt" : lang === "ny" ? "/ny" : "/"} style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none", flexShrink: 0 }}>
-          <Image src="/Products_logos/technexuslogo1.webp" alt="TechNexus logo" width={44} height={44} priority style={{ borderRadius: "50%", objectFit: "cover" }} />
+          <Image src="/Products_logos/technexuslogo1-88.webp" alt="TechNexus logo" width={44} height={44} style={{ borderRadius: "50%", objectFit: "cover" }} />
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1rem", color: "#fff" }}>TechNexus</div>
             <div style={{ fontSize: "10px", color: "var(--fl-neutral-40)", textTransform: "uppercase", letterSpacing: "0.06em" }}>{u.tagline}</div>
