@@ -62,7 +62,8 @@ export default function ComputerAssemblyPage() {
     <div style={{ background: BG, minHeight: "100vh" }}>
 
           {/* HERO */}
-          <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/circuit_board_hero.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}>
+          <div style={{ position: "relative", overflow: "hidden", padding: "64px 40px 48px", textAlign: "center", background: "#0a0a0a" }}>
+            <img src="/circuit_board_hero.jpg" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)" }} />
             <div style={{ position: "relative" }}>
               <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>

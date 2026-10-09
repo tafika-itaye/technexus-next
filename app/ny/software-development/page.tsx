@@ -62,7 +62,8 @@ export default function NySoftwareDevelopmentPage() {
   return (
     <div style={{ background: BG, minHeight: "100vh" }}>
 
-      <div style={{ position: "relative", padding: "64px 40px 48px", textAlign: "center", backgroundImage: "url(/index_main/software_dev_1-1200.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <div style={{ position: "relative", overflow: "hidden", padding: "64px 40px 48px", textAlign: "center", background: "#0a0a0a" }}>
+        <img src="/index_main/software_dev_1-1200.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
         <div style={{ position: "relative" }}>
           <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
