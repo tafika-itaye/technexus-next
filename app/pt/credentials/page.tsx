@@ -10,38 +10,38 @@ const registration = [
   { label: "Morada", value: "Lilongwe e todo o Malawi" },
   { label: "Contacto Principal", value: "+265 889 941 700 · +265 881 879 831" },
   { label: "E-mail", value: "technexus_mw@proton.me" },
-  { label: "Estado MANePS", value: "Activo — Sistema Nacional de Procurement Electronico do Malawi" },
-  { label: "Registo PPDA", value: "Registado — Autoridade de Procurement Publico e Alienacao de Bens" },
+  { label: "Estado MANePS", value: "Activo — Sistema Nacional de Procurement Electrónico do Malawi" },
+  { label: "Registo PPDA", value: "Registado — Autoridade de Procurement Público e Alienação de Bens" },
   { label: "Conformidade MRA", value: "Autoridade Tributaria do Malawi — conforme em termos fiscais" },
-  { label: "Mercados de Actuacao", value: "Malawi, Zambia, Mocambique, Africa do Sul, China (fornecimento)" },
+  { label: "Mercados de Actuação", value: "Malawi, Zâmbia, Moçambique, África do Sul, China (fornecimento)" },
   { label: "Taxa IVA", value: "17,5% (em vigor desde Janeiro de 2026)" },
 ];
 
 const services = [
   { title: "Fornecimento Hardware ICT", body: "HP, Dell, Lenovo, Samsung, Synology, APC, Canon. Laptops, desktops, NAS, UPS, impressoras, redes." },
-  { title: "Desenvolvimento de Software", body: "ASP.NET Core, Blazor, PostgreSQL. Sistemas empresariais, aplicacoes web, plataformas hospitalares." },
-  { title: "Servicos Linguisticos", body: "Traducao, transcricao, legendagem, interpretacao. Ingles, Portugues, Chichewa, Swahili." },
-  { title: "Montagem de PC", body: "Construcoes desktop personalizadas. Intel i5, Windows 11 Pro, testado. Precos de volume para instituicoes." },
-  { title: "Material Medico", body: "EPI, diagnostico, instrumentos, mobiliario hospitalar, auxiliares de mobilidade, farmaceuticos. Fontes SADC." },
-  { title: "Servicos IT Geridos", body: "Redes, infraestrutura de servidores, helpdesk, integracao de sistemas. Com SLA." },
+  { title: "Desenvolvimento de Software", body: "ASP.NET Core, Blazor, PostgreSQL. Sistemas empresariais, aplicações web, plataformas hospitalares." },
+  { title: "Serviços Linguisticos", body: "Tradução, transcrição, legendagem, interpretação. Inglês, Português, Chichewa, Swahili." },
+  { title: "Montagem de PC", body: "Construções desktop personalizadas. Intel i5, Windows 11 Pro, testado. Preços de volume para instituições." },
+  { title: "Material Médico", body: "EPI, diagnóstico, instrumentos, mobiliario hospitalar, auxiliares de mobilidade, farmacêuticos. Fontes SADC." },
+  { title: "Serviços IT Geridos", body: "Redes, infraestrutura de servidores, helpdesk, integração de sistemas. Com SLA." },
 ];
 
 const procurement = [
-  { title: "Sector Publico", body: "Todo o procurement publico conduzido ao abrigo da Lei de Gestao das Financas Publicas (2022). Trilhas de auditoria completas. Elegivel para concursos electronicos MANePS." },
-  { title: "Sector Privado", body: "Condicoes comerciais standard. Faturas pro-forma, faturas fiscais, notas de entrega e recibos emitidos." },
-  { title: "Parceiros de Desenvolvimento", body: "Experiencia com missoes diplomaticas, ONGs internacionais e programas financiados por doadores." },
-  { title: "Transfronteirico", body: "Operacoes no Malawi, Zambia, Mocambique e Africa do Sul. Facturacao em USD e MWK." },
+  { title: "Sector Público", body: "Todo o procurement público conduzido ao abrigo da Lei de Gestão das Financas Públicas (2022). Trilhas de auditoria completas. Elegível para concursos electrónicos MANePS." },
+  { title: "Sector Privado", body: "Condições comerciais standard. Faturas pro-forma, faturas fiscais, notas de entrega e recibos emitidos." },
+  { title: "Parceiros de Desenvolvimento", body: "Experiência com missoes diplomáticas, ONGs internacionais e programas financiados por doadores." },
+  { title: "Transfronteirico", body: "Operações no Malawi, Zâmbia, Moçambique e África do Sul. Facturação em USD e MWK." },
 ];
 
 const serviceOptions = [
   "IT Hardware / Catalogo",
   "Montagem de PC",
   "Desenvolvimento de Software",
-  "Servicos Linguisticos",
-  "Material Medico",
-  "Consultoria de Concursos / Pre-Qualificacao",
+  "Serviços Linguisticos",
+  "Material Médico",
+  "Consultoria de Concursos / Pre-Qualificação",
   "Consultoria de Registo de Empresas",
-  "Servicos IT Geridos",
+  "Serviços IT Geridos",
   "Outro",
 ];
 
@@ -63,9 +63,9 @@ export default function PtCredentialsPage() {
     if (!name.trim() || !contact.trim()) return;
     let t = "TechNexus Enquiry (PT)";
     t += "%0ANome: " + encodeURIComponent(name);
-    if (org) t += "%0AOrganizacao: " + encodeURIComponent(org);
+    if (org) t += "%0AOrganiza%C3%A7%C3%A3o: " + encodeURIComponent(org);
     t += "%0AContacto: " + encodeURIComponent(contact);
-    if (service) t += "%0AServico: " + encodeURIComponent(service);
+    if (service) t += "%0AServi%C3%A7o: " + encodeURIComponent(service);
     if (msg) t += "%0AMensagem: " + encodeURIComponent(msg);
     window.open("https://wa.me/265889941700?text=" + t, "_blank");
   }
@@ -80,7 +80,7 @@ export default function PtCredentialsPage() {
       <div style={{ background: "var(--accent)", padding: "48px 40px 36px", textAlign: "center" }}>
         <h1 style={{ fontFamily: "var(--font-syne)", fontWeight: 800, fontSize: "clamp(1.6rem, 4vw, 2.4rem)", color: "#fff", marginBottom: "12px" }}>Credenciais da Empresa e Contacto</h1>
         <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.95rem", maxWidth: "620px", margin: "0 auto 20px", lineHeight: 1.65 }}>
-          Detalhes de registo, quadro de conformidade, referencias diplomaticas e formulario de contacto directo. Disponivel para concursos publicos, contratos do sector privado e procurement de parceiros de desenvolvimento.
+          Detalhes de registo, quadro de conformidade, referências diplomáticas e formulário de contacto directo. Disponível para concursos públicos, contratos do sector privado e procurement de parceiros de desenvolvimento.
         </p>
         <div style={{ display: "inline-block", background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: "20px", padding: "6px 18px", fontSize: "0.78rem", color: "#fff", fontWeight: 600, letterSpacing: "0.04em" }}>
           MANePS Activo · Registado PPDA · Conforme MRA · BRN.A6SNWQY
@@ -114,7 +114,7 @@ export default function PtCredentialsPage() {
           </table>
         </div>
 
-        <h2 style={sh}>Portefolio de Servicos</h2>
+        <h2 style={sh}>Portefolio de Serviços</h2>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1px", background: BORDER, border: "1px solid " + BORDER, borderRadius: "8px", overflow: "hidden" }}>
           {services.map((s, i) => (
             <div key={i} style={{ padding: "20px", background: BG }}>
@@ -124,11 +124,11 @@ export default function PtCredentialsPage() {
           ))}
         </div>
 
-        <h2 style={sh}>Referencia Diplomatica</h2>
+        <h2 style={sh}>Referência Diplomática</h2>
         <div style={{ background: SURF2, border: "1px solid " + BORDER, borderLeft: "4px solid var(--fl-blue)", borderRadius: "8px", padding: "24px 28px" }}>
-          <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Alto Comissariado de Mocambique — Lilongwe</h3>
+          <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Alto Comissariado de Moçambique — Lilongwe</h3>
           <p style={{ fontSize: "0.84rem", color: MUTED, lineHeight: 1.65, margin: 0 }}>
-            O Alto Comissariado da Republica de Mocambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou servicos profissionais a Missao durante um periodo prolongado. A Missao elogia a TechNexus pelos seus elevados padroes de profissionalismo, exactidao, fiabilidade e discricao.
+            O Alto Comissariado da Republica de Moçambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou serviços profissionais a Missão durante um período prolongado. A Missão elogia a TechNexus pelos seus elevados padrões de profissionalismo, exactidao, fiabilidade e discrição.
           </p>
         </div>
 
@@ -169,7 +169,7 @@ export default function PtCredentialsPage() {
         </div>
 
         <h2 style={{ ...sh, marginTop: "48px" }}>Enviar uma Consulta</h2>
-        <p style={{ fontSize: "0.88rem", color: MUTED, marginBottom: "24px" }}>Preencha o formulario abaixo ou contacte-nos directamente via WhatsApp.</p>
+        <p style={{ fontSize: "0.88rem", color: MUTED, marginBottom: "24px" }}>Preencha o formulário abaixo ou contacte-nos directamente via WhatsApp.</p>
         <div style={{ background: SURF2, border: "1px solid " + BORDER, borderRadius: "8px", padding: "28px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
             <div>
@@ -177,8 +177,8 @@ export default function PtCredentialsPage() {
               <input id="pt-cred-name" type="text" placeholder="O seu nome" value={name} onChange={e => setName(e.target.value)} style={inp} autoComplete="name" />
             </div>
             <div>
-              <label htmlFor="pt-cred-org" style={{ fontSize: "0.78rem", color: MUTED, display: "block", marginBottom: "4px" }}>Organizacao</label>
-              <input id="pt-cred-org" type="text" placeholder="Empresa / ONG / Instituicao" value={org} onChange={e => setOrg(e.target.value)} style={inp} autoComplete="organization" />
+              <label htmlFor="pt-cred-org" style={{ fontSize: "0.78rem", color: MUTED, display: "block", marginBottom: "4px" }}>Organização</label>
+              <input id="pt-cred-org" type="text" placeholder="Empresa / ONG / Instituição" value={org} onChange={e => setOrg(e.target.value)} style={inp} autoComplete="organization" />
             </div>
           </div>
           <div style={{ marginBottom: "16px" }}>
@@ -186,7 +186,7 @@ export default function PtCredentialsPage() {
             <input id="pt-cred-contact" type="text" placeholder="+265 ... ou o@seu.email.com" value={contact} onChange={e => setContact(e.target.value)} style={inp} autoComplete="email" />
           </div>
           <div style={{ marginBottom: "16px" }}>
-            <label htmlFor="pt-cred-service" style={{ fontSize: "0.78rem", color: MUTED, display: "block", marginBottom: "4px" }}>Servico Pretendido *</label>
+            <label htmlFor="pt-cred-service" style={{ fontSize: "0.78rem", color: MUTED, display: "block", marginBottom: "4px" }}>Serviço Pretendido *</label>
             <select id="pt-cred-service" value={service} onChange={e => setService(e.target.value)} style={{ ...inp, cursor: "pointer" }}>
               <option value="">— Selecionar —</option>
               {serviceOptions.map(o => <option key={o}>{o}</option>)}
@@ -194,7 +194,7 @@ export default function PtCredentialsPage() {
           </div>
           <div style={{ marginBottom: "20px" }}>
             <label htmlFor="pt-cred-msg" style={{ fontSize: "0.78rem", color: MUTED, display: "block", marginBottom: "4px" }}>Mensagem *</label>
-            <textarea id="pt-cred-msg" rows={4} placeholder="Descreva o seu requisito, quantidade, localizacao ou detalhes especificos..." value={msg} onChange={e => setMsg(e.target.value)} style={{ ...inp, resize: "vertical" }} />
+            <textarea id="pt-cred-msg" rows={4} placeholder="Descreva o seu requisito, quantidade, localização ou detalhes específicos..." value={msg} onChange={e => setMsg(e.target.value)} style={{ ...inp, resize: "vertical" }} />
           </div>
           <button onClick={submitEnquiry} type="button" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "11px 24px", background: "#25D366", color: "#fff", border: "none", borderRadius: "8px", fontSize: "0.88rem", fontWeight: 700, cursor: "pointer" }}>
             Enviar via WhatsApp

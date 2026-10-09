@@ -21,7 +21,7 @@ const categories = [
   },
   {
     title: "Switches Geridos",
-    desc: "Switches geridos Layer-2/3 — gigabit, agregacao 10G/40G e distribuicao PoE.",
+    desc: "Switches geridos Layer-2/3 — gigabit, agregação 10G/40G e distribuição PoE.",
     products: [
       { sku: "MT-CRS354-48G-4S+2Q+RM", title: "Mikrotik CRS354-48G Managed Switch", specs: "48x GbE · 4x SFP+ · 2x QSFP+ · Layer 3 · Rack", mwk: "MK 1,491,240", usd: "$860", img: "/images/networking/switches/mikrotik_crs354-48g-4s+2q+rm.jpg" },
       { sku: "MT-CRS354-48P-4S+2Q+RM", title: "Mikrotik CRS354-48P PoE Switch", specs: "48x GbE PoE · 4x SFP+ · 2x QSFP+ · Layer 3 · Rack", mwk: "MK 2,202,180", usd: "$1,270", img: "/images/networking/switches/mikrotik_crs354-48p.jpg" },
@@ -34,7 +34,7 @@ const categories = [
   },
   {
     title: "Transceivers SFP+",
-    desc: "Modulos de fibra e cobre 10G para switches Mikrotik, HP, Dell ou Cisco.",
+    desc: "Módulos de fibra e cobre 10G para switches Mikrotik, HP, Dell ou Cisco.",
     products: [
       { sku: "MT-S+85DLC03D", title: "Mikrotik S+85DLC03D SFP+ Transceiver", specs: "10GBASE-SR · 850nm multi-mode · 300m · LC", mwk: "MK 86,700", usd: "$50", img: "/images/networking/transceivers/mikrotik_s+85dlc03d.jpg" },
       { sku: "MT-S+RJ10", title: "Mikrotik S+RJ10 SFP+ Copper Module", specs: "10G RJ45 · Cat6a · 30m", mwk: "MK 173,400", usd: "$100", img: "/images/networking/transceivers/mikrotik_s+rj10.jpg" },
@@ -53,7 +53,7 @@ const categories = [
   },
   {
     title: "Laptops Empresariais",
-    desc: "HP ProBook, HP OmniBook e ASUS VivoBook — notebooks de nova geracao, do nivel de entrada ao OLED premium.",
+    desc: "HP ProBook, HP OmniBook e ASUS VivoBook — notebooks de nova geração, do nível de entrada ao OLED premium.",
     products: [
       { sku: "ASU-VB-X1504-C5", title: "ASUS VivoBook X1504VA", specs: "Core 5 120U 8GB/512GB · 15.6\" FHD · DOS", mwk: "MK 1,161,780", usd: "$670", img: "/images/laptops/asus_vivobook_x1504va.jpg" },
       { sku: "ASU-VB-X1404-C5", title: "ASUS VivoBook X1404VA", specs: "Core 5 120U 8GB/512GB · 14\" FHD · Win 11", mwk: "MK 1,265,820", usd: "$730", img: "/images/laptops/asus_vivobook_x1404va.jpg" },
@@ -67,7 +67,7 @@ const categories = [
   },
   {
     title: "Desktops Empresariais e All-in-One",
-    desc: "HP Elite Tower e Dell Pro AIO — desktops 14a geracao e Core Ultra para escritorios, escolas e instituicoes.",
+    desc: "HP Elite Tower e Dell Pro AIO — desktops 14a geração e Core Ultra para escritorios, escolas e instituições.",
     products: [
       { sku: "HP-800G9-I5", title: "HP Elite Tower 800 G9", specs: "i5-14500 16GB DDR5/512GB NVMe · DOS · KB+Rato · 1 ano", mwk: "MK 1,890,060", usd: "$1,090", img: "/images/desktops/tower/hp_elite_tower_800_g9.jpg" },
       { sku: "HP-800G9-I7", title: "HP Elite Tower 800 G9", specs: "i7-14700 16GB DDR5/512GB NVMe · DOS · KB+Rato · 1 ano", mwk: "MK 2,236,860", usd: "$1,290", img: "/images/desktops/tower/hp_elite_tower_800_g9.jpg" },
@@ -87,7 +87,7 @@ const categories = [
     ],
   },
   {
-    title: "Projecao e Apresentacao",
+    title: "Projecção e Apresentação",
     desc: "Projetores laser para salas de aula, salas de conferencia e auditorios.",
     products: [
       { sku: "EPS-L790U", title: "Epson PowerLite L790U", specs: "7,300 lumens · WUXGA · Laser 3LCD · 30,000h · Wi-Fi/LAN/HDBaseT", mwk: "MK 9,519,660", usd: "$5,490", img: "/images/projectors/epson_powerlite_l790u.jpg" },
@@ -120,7 +120,7 @@ export default function PtCataloguePage() {
         </h1>
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 24px", lineHeight: 1.7 }}>
           Networking empresarial Mikrotik, laptops e desktops HP, Dell e ASUS,
-          alem de monitores profissionais, placas graficas workstation e projecao laser. Todos os precos incluem frete aereo Dubai para Malawi.
+          além de monitores profissionais, placas graficas workstation e projecção laser. Todos os preços incluem frete aereo Dubai para Malawi.
         </p>
         <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px", marginBottom: "28px" }}>
           Taxa: 1 USD = MK 1,734 · Julho 2026 · Contacte para orcamentos formais
@@ -170,16 +170,16 @@ export default function PtCataloguePage() {
           <div style={{ maxWidth: "640px" }}>
             <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "18px", fontWeight: 700, color: "#fff", marginBottom: "6px" }}>Encomendas de Volume e Institucionais</h3>
             <p style={{ fontSize: "13px", color: "#999", lineHeight: 1.6, margin: 0 }}>
-              Escolas, governo, ONGs e empresas: frotas de desktops construidas por medida com descontos de volume ate 12%, testes de QA e Windows 11 Pro pronto a usar.
+              Escolas, governo, ONGs e empresas: frotas de desktops construídas por medida com descontos de volume até 12%, testes de QA e Windows 11 Pro pronto a usar.
             </p>
           </div>
           <Link href="/pt/computer-assembly" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "var(--fl-blue)", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap" }}>
-            Ver Precos de Volume
+            Ver Preços de Volume
           </Link>
         </div>
 
         <div style={{ marginTop: "48px", background: "var(--fl-neutral-90)", borderRadius: "8px", padding: "24px 28px", fontSize: "0.84rem", color: "#999", lineHeight: 1.65 }}>
-          Todos os produtos sao adquiridos atraves de distribuidores certificados. Os precos incluem frete aereo Dubai para Malawi e sao validos durante 30 dias; o IVA (17,5%) e adicional, salvo isencao. Descontos por volume disponiveis para escolas, governo, ONGs e empresas. Contacte a TechNexus para orcamentos formais, especificacoes e prazos de entrega.
+          Todos os produtos são adquiridos através de distribuidores certificados. Os preços incluem frete aereo Dubai para Malawi e são validos durante 30 dias; o IVA (17,5%) e adicional, salvo isenção. Descontos por volume disponíveis para escolas, governo, ONGs e empresas. Contacte a TechNexus para orcamentos formais, especificações e prazos de entrega.
         </div>
       </div>
 

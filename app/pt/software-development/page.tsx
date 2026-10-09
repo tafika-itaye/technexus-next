@@ -2,7 +2,7 @@
 
 export const metadata: Metadata = {
   title: "TechNexus — Desenvolvimento de Software & Consultoria IT",
-  description: "TechNexus desenvolvimento de software, aplicacoes web, sistemas empresariais. ASP.NET Core, Blazor. Malawi.",
+  description: "TechNexus desenvolvimento de software, aplicações web, sistemas empresariais. ASP.NET Core, Blazor. Malawi.",
   alternates: {
     canonical: "https://www.technexusmw.com/pt/software-development",
     languages: {
@@ -21,41 +21,41 @@ const MUTED = "#595959";
 const ACCENT = "var(--fl-blue)";
 const TH: React.CSSProperties = { padding: "10px 16px", textAlign: "left" as const, fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.06em", color: MUTED, borderBottom: "1px solid var(--fl-neutral-8)", background: "var(--fl-neutral-4)" };
 const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", borderBottom: "1px solid var(--fl-neutral-8)", color: TEXT };
-const WA = "https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20para%3A%0A";
+const WA = "https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20or%C3%A7amento%20para%3A%0A";
 
 const services = [
-  { name: "Desenvolvimento de Software Empresarial", featured: true, desc: "Sistemas de missao critica — equipa dedicada, SLA 24/7, auditorias de seguranca, conformidade, implementacoes em larga escala", mwk: "MK 26.010.000+", usd: "$15,000+" },
-  { name: "Desenvolvimento de Software Personalizado", featured: false, desc: "Aplicacoes empresariais por medida — ASP.NET Core, Blazor Server, PostgreSQL, cloud-native", mwk: "MK 7.000.000+", usd: "$3,700+" },
-  { name: "Desenvolvimento de Aplicacao Web", featured: false, desc: "Aplicacoes web responsivas, portais, dashboards, desenvolvimento de API", mwk: "MK 2.850.000+", usd: "$1,500+" },
-  { name: "Desenvolvimento de App Movel", featured: false, desc: "Aplicacoes Android e multiplataforma", mwk: "MK 5.700.000+", usd: "$3,000+" },
-  { name: "Manutencao e Suporte de Software", featured: false, desc: "Suporte continuo, correccao de erros, actualizacoes, resposta SLA", mwk: "MK 2.080.000+/mes", usd: "$1,200+/mes" },
-  { name: "Servicos Cloud e Integracao", featured: false, desc: "Azure, DigitalOcean, on-premise. Migracao, implementacao, monitorizacao", mwk: "MK 3.800.000+", usd: "$2,000+" },
-  { name: "Analise de Dados e BI", featured: false, desc: "Dashboards de relatorios, acompanhamento de KPIs, suporte a decisao baseado em dados", mwk: "MK 2.850.000+", usd: "$1,500+" },
+  { name: "Desenvolvimento de Software Empresarial", featured: true, desc: "Sistemas de missão critica — equipa dedicada, SLA 24/7, auditorias de seguranca, conformidade, implementações em larga escala", mwk: "MK 26.010.000+", usd: "$15,000+" },
+  { name: "Desenvolvimento de Software Personalizado", featured: false, desc: "Aplicações empresariais por medida — ASP.NET Core, Blazor Server, PostgreSQL, cloud-native", mwk: "MK 7.000.000+", usd: "$3,700+" },
+  { name: "Desenvolvimento de Aplicação Web", featured: false, desc: "Aplicações web responsivas, portais, dashboards, desenvolvimento de API", mwk: "MK 2.850.000+", usd: "$1,500+" },
+  { name: "Desenvolvimento de App Móvel", featured: false, desc: "Aplicações Android e multiplataforma", mwk: "MK 5.700.000+", usd: "$3,000+" },
+  { name: "Manutenção e Suporte de Software", featured: false, desc: "Suporte continuo, correcção de erros, actualizações, resposta SLA", mwk: "MK 2.080.000+/mes", usd: "$1,200+/mes" },
+  { name: "Serviços Cloud e Integração", featured: false, desc: "Azure, DigitalOcean, on-premise. Migração, implementação, monitorização", mwk: "MK 3.800.000+", usd: "$2,000+" },
+  { name: "Análise de Dados e BI", featured: false, desc: "Dashboards de relatórios, acompanhamento de KPIs, suporte a decisão baseado em dados", mwk: "MK 2.850.000+", usd: "$1,500+" },
   { name: "Design UI/UX", featured: false, desc: "Pesquisa de utilizadores, wireframes, mockups, prototipos interactivos", mwk: "MK 1.900.000+", usd: "$1,000+" },
-  { name: "Consultoria IT e Gestao de Projectos", featured: false, desc: "Analise de requisitos, arquitectura, seleccao de fornecedores, supervisao de projectos", mwk: "Orcamento personalizado", usd: "Personalizado" },
+  { name: "Consultoria IT e Gestão de Projectos", featured: false, desc: "Análise de requisitos, arquitectura, selecção de fornecedores, supervisao de projectos", mwk: "Orcamento personalizado", usd: "Personalizado" },
 ];
 
 const stack = [
   { title: "Backend", body: "ASP.NET Core 8, C#, Entity Framework Core, REST APIs" },
   { title: "Frontend", body: "Blazor Server, Razor Pages, HTML5/CSS3, JavaScript" },
-  { title: "Base de Dados", body: "PostgreSQL 16, SQL Server, SQLite (movel)" },
+  { title: "Base de Dados", body: "PostgreSQL 16, SQL Server, SQLite (móvel)" },
   { title: "Cloud e DevOps", body: "Microsoft Azure, DigitalOcean, Docker, Git, pipelines CI/CD" },
   { title: "Infraestrutura", body: "Windows Server 2022, Ubuntu Server, Nginx, IIS" },
-  { title: "Seguranca", body: "ASP.NET Identity, autenticacao por funcoes, SSL/TLS, encriptacao em repouso" },
+  { title: "Seguranca", body: "ASP.NET Identity, autenticação por funções, SSL/TLS, encriptação em repouso" },
 ];
 
 const healthcare = [
-  { title: "Operacoes Hospitalares", body: "Service desk e ticketing, gestao de SLA, rastreio de activos, encaminhamento automatico, relatorios departamentais." },
-  { title: "Conformidade e Qualidade", body: "Gestao de politicas, controlo de versoes, atestacao de pessoal, relatorios de incidentes, exportacao COHSASA." },
-  { title: "Infraestrutura", body: "Projectos LAN/WAN, instalacao de sala de servidores, migracao para cloud, integracao de sistemas, sistemas POS." },
-  { title: "Sistemas de Procurement", body: "Monitorizacao de activos, gestao de inventario, gestao de fornecedores, relatorios de conformidade." },
+  { title: "Operações Hospitalares", body: "Service desk e ticketing, gestão de SLA, rastreio de activos, encaminhamento automático, relatórios departamentais." },
+  { title: "Conformidade e Qualidade", body: "Gestão de politicas, controlo de versões, atestação de pessoal, relatórios de incidentes, exportação COHSASA." },
+  { title: "Infraestrutura", body: "Projectos LAN/WAN, instalação de sala de servidores, migração para cloud, integração de sistemas, sistemas POS." },
+  { title: "Sistemas de Procurement", body: "Monitorização de activos, gestão de inventário, gestão de fornecedores, relatórios de conformidade." },
 ];
 
 const team = [
-  { role: "Fundador e Director Geral", body: "Mais de 15 anos de experiencia em desenvolvimento de software empresarial." },
-  { role: "Programador Senior e Arquitecto Tecnico", body: "Engenheiro full-stack. Especialista em C#, .NET Core, Angular, React, Azure, CI/CD." },
-  { role: "Analista de Negocios e Sistemas", body: "Certificado ISC2 CC. MSc em Sistemas de Informacao de Gestao. Especialista em ITSM, ERP, Power BI e analise de dados." },
-  { role: "Gestora de Negocios e Liaisons com Clientes", body: "Responsavel pela gestao de contratos, conformidade de procurement, vendas e coordenacao de stakeholders." },
+  { role: "Fundador e Director Geral", body: "Mais de 15 anos de experiência em desenvolvimento de software empresarial." },
+  { role: "Programador Senior e Arquitecto Técnico", body: "Engenheiro full-stack. Especialista em C#, .NET Core, Angular, React, Azure, CI/CD." },
+  { role: "Analista de Negócios e Sistemas", body: "Certificado ISC2 CC. MSc em Sistemas de Informação de Gestão. Especialista em ITSM, ERP, Power BI e análise de dados." },
+  { role: "Gestora de Negócios e Liaisons com Clientes", body: "Responsável pela gestão de contratos, conformidade de procurement, vendas e coordenação de stakeholders." },
 ];
 
 export default function PTSoftwareDevelopmentPage() {
@@ -69,7 +69,7 @@ export default function PTSoftwareDevelopmentPage() {
           Desenvolvimento de Software &amp; Consultoria IT
         </h1>
         <p style={{ color: "#999", fontSize: "15px", maxWidth: "640px", margin: "0 auto 20px", lineHeight: 1.7 }}>
-          Aplicacoes empresariais personalizadas, sistemas web e plataformas digitais. Desenvolvido em C#, .NET Core, Blazor e PostgreSQL. Do conceito a implementacao.
+          Aplicações empresariais personalizadas, sistemas web e plataformas digitais. Desenvolvido em C#, .NET Core, Blazor e PostgreSQL. Do conceito a implementação.
         </p>
         <div style={{ display: "inline-block", background: "rgba(0,120,212,0.15)", border: "1px solid var(--fl-blue)", borderRadius: "999px", padding: "6px 20px", color: "var(--fl-blue)", fontSize: "13px" }}>
           ASP.NET Core · Blazor · PostgreSQL · Azure · Full-Stack
@@ -79,16 +79,16 @@ export default function PTSoftwareDevelopmentPage() {
       <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
 
         <div style={{ borderLeft: "4px solid " + ACCENT, paddingLeft: "16px", marginBottom: "6px" }}>
-          <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Servicos de Desenvolvimento</h2>
-          <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Solucoes de software personalizadas que melhoram o funcionamento das organizacoes.</p>
+          <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Serviços de Desenvolvimento</h2>
+          <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Soluções de software personalizadas que melhoram o funcionamento das organizações.</p>
         </div>
-        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>Precos excluem IVA de 17,5%. Taxa: 1 USD = MK 1.734 (Julho 2026).</p>
+        <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>Preços excluem IVA de 17,5%. Taxa: 1 USD = MK 1.734 (Julho 2026).</p>
         <div style={{ overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
             <thead>
               <tr>
-                <th style={TH}>Servico</th>
-                <th style={TH}>Descricao</th>
+                <th style={TH}>Serviço</th>
+                <th style={TH}>Descrição</th>
                 <th style={TH}>A partir de (MWK)</th>
                 <th style={TH}>A partir de (USD)</th>
                 <th style={TH}>Quote</th>
@@ -104,7 +104,7 @@ export default function PTSoftwareDevelopmentPage() {
                   <td style={{ ...TD, color: ACCENT, fontWeight: 600, whiteSpace: "nowrap" as const }}>{s.mwk}</td>
                   <td style={{ ...TD, color: MUTED, whiteSpace: "nowrap" as const }}>{s.usd}</td>
                   <td style={TD}>
-                    <a href={WA + encodeURIComponent(s.name) + "%0APreco%3A%20" + encodeURIComponent(s.usd)} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+                    <a href={WA + encodeURIComponent(s.name) + "%0APre%C3%A7o%3A%20" + encodeURIComponent(s.usd)} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "6px 14px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
                       Quote
                     </a>
                   </td>
@@ -127,8 +127,8 @@ export default function PTSoftwareDevelopmentPage() {
         </div>
 
         <div style={{ borderLeft: "4px solid " + ACCENT, paddingLeft: "16px", marginBottom: "6px" }}>
-          <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Capacidades para Saude e Instituicoes</h2>
-          <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Experiencia directa na construcao de sistemas para operacoes hospitalares e instituicoes governamentais.</p>
+          <h2 style={{ fontFamily: "var(--font-syne)", fontSize: "20px", fontWeight: 700, color: TEXT, margin: 0 }}>Capacidades para Saúde e Instituições</h2>
+          <p style={{ fontSize: "13px", color: MUTED, margin: "4px 0 0" }}>Experiência directa na construção de sistemas para operações hospitalares e instituições governamentais.</p>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px,1fr))", gap: "16px", marginBottom: "48px", marginTop: "20px" }}>
           {healthcare.map(s => (
@@ -153,20 +153,20 @@ export default function PTSoftwareDevelopmentPage() {
 
         <div style={{ background: SURF, border: "1px solid " + BORDER, borderLeft: "4px solid " + ACCENT, borderRadius: "8px", padding: "24px", marginBottom: "20px" }}>
           <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "16px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Credenciais e Registo</h3>
-          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>Totalmente registado no MANePS (Sistema Nacional de Procurement Electronico do Malawi). Todos os contratos conduzidos ao abrigo da Lei de Gestao das Financas Publicas (2022). Trilhas de auditoria completas em cada projecto. Disponivel para concursos publicos, contratos do sector privado e procurement de parceiros de desenvolvimento.</p>
+          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>Totalmente registado no MANePS (Sistema Nacional de Procurement Electrónico do Malawi). Todos os contratos conduzidos ao abrigo da Lei de Gestão das Financas Públicas (2022). Trilhas de auditoria completas em cada projecto. Disponível para concursos públicos, contratos do sector privado e procurement de parceiros de desenvolvimento.</p>
         </div>
 
         <div style={{ background: SURF, border: "1px solid " + BORDER, borderLeft: "4px solid " + ACCENT, borderRadius: "8px", padding: "24px", marginBottom: "32px" }}>
-          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "16px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Referencia Diplomatica</h3>
-          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>O Alto Comissariado da Republica de Mocambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou servicos profissionais a Missao durante um periodo prolongado. A Missao elogia a TechNexus pelos seus elevados padroes de profissionalismo, exactidao, fiabilidade e discricao.</p>
+          <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "16px", fontWeight: 700, color: TEXT, marginBottom: "10px" }}>Referência Diplomática</h3>
+          <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.7 }}>O Alto Comissariado da Republica de Moçambique, Lilongwe (Fevereiro de 2026) confirma que a TechNexus prestou serviços profissionais a Missão durante um período prolongado. A Missão elogia a TechNexus pelos seus elevados padrões de profissionalismo, exactidao, fiabilidade e discrição.</p>
         </div>
 
         <div style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "32px" }}>
           <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "18px", fontWeight: 700, color: TEXT, marginBottom: "12px" }}>Iniciar um Projecto</h3>
           <p style={{ fontSize: "14px", color: MUTED, lineHeight: 1.7, marginBottom: "20px" }}>
-            Envie-nos os seus requisitos via WhatsApp ou email. Respondemos em 24 horas com uma chamada de enquadramento e entregamos um orcamento a preco fixo em 5 dias uteis.
+            Envie-nos os seus requisitos via WhatsApp ou email. Respondemos em 24 horas com uma chamada de enquadramento e entregamos um orcamento a preço fixo em 5 dias úteis.
           </p>
-          <a href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20orcamento%20da%20pagina%20Software%20Dev." target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
+          <a href="https://wa.me/265889941700?text=Hi%20TechNexus%2C%20gostaria%20de%20um%20or%C3%A7amento%20da%20p%C3%A1gina%20Software%20Dev." target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "12px 24px", background: "#25D366", color: "#fff", borderRadius: "8px", fontSize: "14px", fontWeight: 700, textDecoration: "none" }}>
             Iniciar Projecto
           </a>
         </div>

@@ -1,14 +1,267 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.technexusmw.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.technexusmw.com/catalogue</loc><priority>0.9</priority></url>
-  <url><loc>https://www.technexusmw.com/computer-assembly</loc><priority>0.8</priority></url>
-  <url><loc>https://www.technexusmw.com/software-development</loc><priority>0.8</priority></url>
-  <url><loc>https://www.technexusmw.com/language-services</loc><priority>0.8</priority></url>
-  <url><loc>https://www.technexusmw.com/medical-supplies</loc><priority>0.8</priority></url>
-  <url><loc>https://www.technexusmw.com/eis</loc><priority>0.9</priority></url>
-  <url><loc>https://www.technexusmw.com/credentials</loc><priority>0.7</priority></url>
-  <url><loc>https://www.technexusmw.com/demos</loc><priority>0.6</priority></url>
-  <url><loc>https://www.technexusmw.com/privacy</loc><priority>0.3</priority></url>
-  <url><loc>https://www.technexusmw.com/terms</loc><priority>0.3</priority></url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.technexusmw.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/catalogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/catalogue/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/catalogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/catalogue/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/catalogue/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/catalogue/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/catalogue/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/eis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/eis/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/eis/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/eis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/eis/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/eis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/eis/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/eis/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/eis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/eis/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/eis/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/eis/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/eis/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/eis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/eis/"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/computer-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/computer-assembly/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/computer-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/computer-assembly/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/computer-assembly/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/computer-assembly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/computer-assembly/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/software-development/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/software-development/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/software-development/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/software-development/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/software-development/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/software-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/software-development/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/language-services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/language-services/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/language-services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/language-services/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/language-services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/language-services/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/language-services/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/medical-supplies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/medical-supplies/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/medical-supplies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/medical-supplies/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/medical-supplies/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/medical-supplies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/medical-supplies/"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/credentials/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/credentials/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/credentials/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/credentials/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/credentials/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/credentials/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/credentials/"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/demos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/demos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/demos/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/demos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/demos/"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/demos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/demos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/demos/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/demos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/demos/"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/demos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/demos/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/demos/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/demos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/demos/"/>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/privacy/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/privacy/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/privacy/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/terms/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/pt/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/terms/"/>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.technexusmw.com/ny/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.technexusmw.com/terms/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.technexusmw.com/pt/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ny" href="https://www.technexusmw.com/ny/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.technexusmw.com/terms/"/>
+    <priority>0.3</priority>
+  </url>
 </urlset>

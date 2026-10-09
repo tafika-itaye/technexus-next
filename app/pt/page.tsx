@@ -6,10 +6,10 @@ const services = [
   {
     href: "/pt/catalogue",
     img: "/index_main/server_rack_1-800.webp",
-    alt: "Hardware ICT, Escritorio & Infraestrutura",
+    alt: "Hardware ICT, Escritório & Infraestrutura",
     label: "Catalogo IT",
-    title: "Hardware ICT, Escritorio & Infraestrutura",
-    body: "Hardware certificado HP, Dell, Lenovo, Samsung, Synology, APC, Canon. Laptops, desktops, NAS, UPS, impressoras, componentes, perifericos e acessorios.",
+    title: "Hardware ICT, Escritório & Infraestrutura",
+    body: "Hardware certificado HP, Dell, Lenovo, Samsung, Synology, APC, Canon. Laptops, desktops, NAS, UPS, impressoras, componentes, periféricos e acessórios.",
     cta: "Ver Catalogo",
   },
   {
@@ -18,34 +18,34 @@ const services = [
     alt: "Montagem de Desktop Personalizado",
     label: "Montagem PC",
     title: "Montagem de Desktop Personalizado",
-    body: "Desktops para escritorio e educacao construidos por medida. Intel i5, componentes de qualidade, Windows 11 Pro, montados e testados.",
-    cta: "Ver Configuracoes",
+    body: "Desktops para escritório e educação construídos por medida. Intel i5, componentes de qualidade, Windows 11 Pro, montados e testados.",
+    cta: "Ver Configurações",
   },
   {
     href: "/pt/software-development",
     img: "/index_main/software_dev_1-800.webp",
-    alt: "Software & Aplicacoes Web Personalizadas",
+    alt: "Software & Aplicações Web Personalizadas",
     label: "Software",
-    title: "Software & Aplicacoes Web Personalizadas",
-    body: "Aplicacoes web, sistemas de gestao, solucoes de base de dados e software desktop Windows. Construido em C#, SQL e tecnologias web modernas.",
+    title: "Software & Aplicações Web Personalizadas",
+    body: "Aplicações web, sistemas de gestão, soluções de base de dados e software desktop Windows. Construído em C#, SQL e tecnologias web modernas.",
     cta: "Solicitar Orcamento",
   },
   {
     href: "/pt/language-services",
     img: "/index_main/african_woman_interpreter_1.webp",
     alt: "TechNexus Scripts",
-    label: "Servicos Linguisticos",
+    label: "Serviços Linguisticos",
     title: "TechNexus Scripts",
-    body: "Traducao, transcricao, legendagem, interpretacao e formacao linguistica. Ingles, Portugues, Chichewa, Swahili.",
-    cta: "Ver Servicos",
+    body: "Tradução, transcrição, legendagem, interpretação e formação linguistica. Inglês, Português, Chichewa, Swahili.",
+    cta: "Ver Serviços",
   },
   {
     href: "/pt/medical-supplies",
     img: "/index_main/medical_equipment_1.webp",
-    alt: "Equipamento & Consumiveis de Saude",
-    label: "Material Medico",
-    title: "Equipamento & Consumiveis de Saude",
-    body: "Material medico certificado atraves de parceiros SADC verificados. EPI, diagnostico, instrumentos, mobiliario hospitalar.",
+    alt: "Equipamento & Consumíveis de Saúde",
+    label: "Material Médico",
+    title: "Equipamento & Consumíveis de Saúde",
+    body: "Material médico certificado através de parceiros SADC verificados. EPI, diagnóstico, instrumentos, mobiliario hospitalar.",
     cta: "Ver Catalogo",
   },
   {
@@ -54,16 +54,16 @@ const services = [
     alt: "Conformidade EIS",
     label: "Conformidade EIS",
     title: "EIS Bridge & Software POS",
-    body: "Facturacao electronica certificada pela MRA. Submissao EIS em tempo real, recibos QR, fila offline. Liga ao QuickBooks e Sage. Integracao em 72 horas.",
+    body: "Facturação electrónica certificada pela MRA. Submissão EIS em tempo real, recibos QR, fila offline. Liga ao QuickBooks e Sage. Integração em 72 horas.",
     cta: "Ver Pacotes",
   },
   {
     href: "/pt/credentials",
     img: "/index_main/server_rack_2-800.webp",
-    alt: "Credenciais da Empresa & Formulario de Contacto",
+    alt: "Credenciais da Empresa & Formulário de Contacto",
     label: "Credenciais & Contacto",
-    title: "Credenciais da Empresa & Formulario de Contacto",
-    body: "Detalhes de registo, quadro de conformidade, referencias diplomaticas e formulario de contacto directo. Registado MANePS.",
+    title: "Credenciais da Empresa & Formulário de Contacto",
+    body: "Detalhes de registo, quadro de conformidade, referências diplomáticas e formulário de contacto directo. Registado MANePS.",
     cta: "Ver Credenciais",
   },
 ];
@@ -98,8 +98,8 @@ export default function PtHomePage() {
   function sendQE() {
     if (!name.trim()) return;
     let t = "Pedido TechNexus\nNome: " + name.trim();
-    if (org.trim()) t += "\nOrganizacao: " + org.trim();
-    if (service && service !== "Seleccione um servico") t += "\nServico: " + service;
+    if (org.trim()) t += "\nOrganização: " + org.trim();
+    if (service && service !== "Seleccione um serviço") t += "\nServiço: " + service;
     if (msg.trim()) t += "\nMensagem: " + msg.trim();
     window.open("https://wa.me/265889941700?text=" + encodeURIComponent(t), "_blank");
   }
@@ -150,15 +150,15 @@ export default function PtHomePage() {
         />
         <div className="hero-fade-in" style={{ position: "relative" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
-            O seu parceiro de tecnologia e servicos linguisticos no Malawi
+            O seu parceiro de tecnologia e serviços linguisticos no Malawi
           </h2>
           <p style={{ color: "var(--fl-neutral-40)", fontSize: "16px", maxWidth: "600px", margin: "0 auto 24px", lineHeight: 1.7 }}>
-            Hardware IT completo, desenvolvimento de software, servicos linguisticos, montagem de PCs por medida e equipamento medico para empresas na Africa Austral e Oriental.
+            Hardware IT completo, desenvolvimento de software, serviços linguisticos, montagem de PCs por medida e equipamento médico para empresas na África Austral e Oriental.
           </p>
           <div style={{ maxWidth: "480px", margin: "0 auto" }}>
             <input
               type="text"
-              placeholder="Pesquisar servicos..."
+              placeholder="Pesquisar serviços..."
               value={query}
               onChange={e => setQuery(e.target.value)}
               style={{ width: "100%", padding: "12px 20px", borderRadius: "8px", border: "1px solid #2a2a3a", background: "#1a1a2e", color: "#fff", fontSize: "15px", outline: "none" }}
@@ -177,10 +177,10 @@ export default function PtHomePage() {
         <div style={{ maxWidth: "1120px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap", position: "relative", zIndex: 1 }}>
           <div style={{ flex: "1 1 480px" }}>
             <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "8px" }}>
-              EIS Bridge &amp; POS: conformidade de facturacao electronica em 72 horas.
+              EIS Bridge &amp; POS: conformidade de facturação electrónica em 72 horas.
             </h3>
             <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "14px", lineHeight: 1.65, maxWidth: "560px", margin: 0 }}>
-              Submissao MRA em tempo real, recibos QR assinados, fila offline e sincronizacao com Sage &amp; QuickBooks. Mantenha o seu sistema actual ou instale um POS completo.
+              Submissão MRA em tempo real, recibos QR assinados, fila offline e sincronização com Sage &amp; QuickBooks. Mantenha o seu sistema actual ou instale um POS completo.
             </p>
           </div>
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
@@ -225,7 +225,7 @@ export default function PtHomePage() {
       {/* QUICK ENQUIRY */}
       <div style={{ background: "var(--surface)", padding: "64px 40px", borderTop: "1px solid var(--border)" }}>
         <div style={{ maxWidth: "640px", margin: "0 auto" }}>
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "22px", fontWeight: 700, marginBottom: "8px" }}>Pedido Rapido</h3>
+          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "22px", fontWeight: 700, marginBottom: "8px" }}>Pedido Rápido</h3>
           <p style={{ color: "var(--muted)", fontSize: "14px", marginBottom: "24px" }}>Preencha abaixo e responderemos via WhatsApp dentro de 24 horas.</p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }} className="form-grid-2">
             <div>
@@ -233,22 +233,22 @@ export default function PtHomePage() {
               <input id="qe-name" type="text" value={name} onChange={e => setName(e.target.value)} placeholder="O seu nome" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
             </div>
             <div>
-              <label htmlFor="qe-org" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Organizacao</label>
-              <input id="qe-org" type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Empresa / ONG / Instituicao" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
+              <label htmlFor="qe-org" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Organização</label>
+              <input id="qe-org" type="text" value={org} onChange={e => setOrg(e.target.value)} placeholder="Empresa / ONG / Instituição" style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }} />
             </div>
             <div style={{ gridColumn: "1 / -1" }}>
-              <label htmlFor="qe-service" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Servico *</label>
+              <label htmlFor="qe-service" style={{ fontSize: "12px", fontWeight: 600, color: "var(--muted)", display: "block", marginBottom: "6px" }}>Serviço *</label>
               <select id="qe-service" value={service} onChange={e => setService(e.target.value)} style={{ width: "100%", padding: "10px 14px", border: "1px solid var(--border)", borderRadius: "var(--radius)", fontSize: "14px" }}>
-                <option>Seleccione um servico</option>
+                <option>Seleccione um serviço</option>
                 <option>Hardware IT / Catalogo</option>
                 <option>Montagem PC</option>
                 <option>Desenvolvimento de Software</option>
-                <option>Servicos Linguisticos</option>
-                <option>Material Medico</option>
+                <option>Serviços Linguisticos</option>
+                <option>Material Médico</option>
                 <option>Conformidade EIS</option>
-                <option>Consultoria de Concursos / Pre-Qualificacao</option>
+                <option>Consultoria de Concursos / Pre-Qualificação</option>
                 <option>Consultoria de Registo de Empresas</option>
-                <option>Servicos Geridos de IT</option>
+                <option>Serviços Geridos de IT</option>
                 <option>Outro</option>
               </select>
             </div>
@@ -261,7 +261,7 @@ export default function PtHomePage() {
                 Enviar via WhatsApp
               </button>
               <p style={{ marginTop: "10px", fontSize: "11px", color: "var(--muted)" }}>
-                Os seus dados sao utilizados apenas para responder a este pedido. Nao partilhamos a sua informacao com terceiros.
+                Os seus dados são utilizados apenas para responder a este pedido. Não partilhamos a sua informação com terceiros.
                 Consulte a nossa <Link href="/pt/privacy" style={{ color: "var(--muted)", textDecoration: "underline" }}>Politica de Privacidade</Link>.
               </p>
             </div>
