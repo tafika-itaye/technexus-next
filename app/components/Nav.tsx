@@ -15,6 +15,12 @@ const links = [
   { href: "/credentials",          en: "Credentials",       pt: "Credenciais",            ny: "Umboni" },
 ];
 
+const UI = {
+  en: { tagline: "IT Solutions & Equipment Supply", language: "Language", theme: "Toggle theme", dark: "Dark", light: "Light", darkMode: "Dark mode", lightMode: "Light mode", openMenu: "Open menu", closeMenu: "Close menu" },
+  pt: { tagline: "Soluções e Equipamento IT", language: "Idioma", theme: "Alternar tema", dark: "Escuro", light: "Claro", darkMode: "Modo escuro", lightMode: "Modo claro", openMenu: "Abrir menu", closeMenu: "Fechar menu" },
+  ny: { tagline: "Mayankho a IT ndi Zida", language: "Chilankhulo", theme: "Sinthani mawonekedwe", dark: "Mdima", light: "Kuwala", darkMode: "Mawonekedwe amdima", lightMode: "Mawonekedwe owala", openMenu: "Tsegulani menu", closeMenu: "Tsekani menu" },
+} as const;
+
 function getLang(pathname: string): "en" | "pt" | "ny" {
   if (pathname.startsWith("/pt")) return "pt";
   if (pathname.startsWith("/ny")) return "ny";
@@ -41,6 +47,7 @@ export default function Nav() {
 
   const lang = getLang(pathname);
   const base = getBasePath(pathname);
+  const u = UI[lang];
 
   useEffect(() => {
     const saved = localStorage.getItem("tn-theme");
@@ -78,7 +85,7 @@ export default function Nav() {
           <Image src="/Products_logos/technexuslogo1.webp" alt="TechNexus logo" width={44} height={44} priority style={{ borderRadius: "50%", objectFit: "cover" }} />
           <div>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "1rem", color: "#fff" }}>TechNexus</div>
-            <div style={{ fontSize: "10px", color: "var(--fl-neutral-40)", textTransform: "uppercase", letterSpacing: "0.06em" }}>IT Solutions &amp; Equipment Supply</div>
+            <div style={{ fontSize: "10px", color: "var(--fl-neutral-40)", textTransform: "uppercase", letterSpacing: "0.06em" }}>{u.tagline}</div>
           </div>
         </Link>
 
@@ -93,8 +100,8 @@ export default function Nav() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.115 1.535 5.845L.057 23.704a.5.5 0 0 0 .614.666l6.062-1.594A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.42l-.37-.218-3.83 1.006 1.022-3.724-.24-.386A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
             WhatsApp
           </a>
-          <button onClick={toggleTheme} aria-label="Toggle theme" style={{ background: "none", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", color: "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", cursor: "pointer", lineHeight: 1 }}>
-            {dark ? "Light" : "Dark"}
+          <button onClick={toggleTheme} aria-label={u.theme} style={{ background: "none", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", color: "var(--fl-neutral-40)", fontSize: "13px", padding: "4px 10px", cursor: "pointer", lineHeight: 1 }}>
+            {dark ? u.light : u.dark}
           </button>
         </div>
 
@@ -105,7 +112,7 @@ export default function Nav() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.115 1.535 5.845L.057 23.704a.5.5 0 0 0 .614.666l6.062-1.594A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.518-5.166-1.42l-.37-.218-3.83 1.006 1.022-3.724-.24-.386A9.943 9.943 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           </a>
           {/* Hamburger */}
-          <button aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", gap: "5px", padding: "6px" }}>
+          <button aria-label={open ? u.closeMenu : u.openMenu} aria-expanded={open} onClick={() => setOpen(!open)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", gap: "5px", padding: "6px" }}>
             <span style={{ display: "block", width: "22px", height: "2px", background: open ? "transparent" : "#fff", transition: "all 0.2s", transform: open ? "rotate(45deg) translate(5px,5px)" : "none" }} />
             <span style={{ display: "block", width: "22px", height: "2px", background: "#fff", transition: "all 0.2s", transform: open ? "rotate(45deg)" : "none", marginTop: open ? "-7px" : "0" }} />
             <span style={{ display: "block", width: "22px", height: "2px", background: open ? "transparent" : "#fff", transition: "all 0.2s", transform: open ? "rotate(-45deg) translate(5px,-5px)" : "none" }} />
@@ -114,7 +121,7 @@ export default function Nav() {
 
         {/* DESKTOP hamburger (hidden on mobile, shown on desktop) */}
         <button
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? u.closeMenu : u.openMenu}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
           className="ham-btn"
@@ -141,13 +148,13 @@ export default function Nav() {
           {/* Mobile-only: language + theme inside the drawer */}
           <div className="nav-mobile-drawer-controls">
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "12px", color: "var(--fl-neutral-40)", fontWeight: 600 }}>Language:</span>
+              <span style={{ fontSize: "12px", color: "var(--fl-neutral-40)", fontWeight: 600 }}>{u.language}:</span>
               <Link href={buildLink(base, "en")} style={{ padding: "4px 10px", fontSize: "12px", fontWeight: 700, textDecoration: "none", background: lang === "en" ? "var(--accent)" : "transparent", color: lang === "en" ? "#fff" : "var(--fl-neutral-40)", border: "1px solid var(--fl-neutral-60)", borderRadius: "4px" }}>EN</Link>
               <Link href={buildLink(base, "pt")} style={{ padding: "4px 10px", fontSize: "12px", fontWeight: 700, textDecoration: "none", background: lang === "pt" ? "var(--accent)" : "transparent", color: lang === "pt" ? "#fff" : "var(--fl-neutral-40)", border: "1px solid var(--fl-neutral-60)", borderRadius: "4px" }}>PT</Link>
               <Link href={buildLink(base, "ny")} style={{ padding: "4px 10px", fontSize: "12px", fontWeight: 700, textDecoration: "none", background: lang === "ny" ? "var(--accent)" : "transparent", color: lang === "ny" ? "#fff" : "var(--fl-neutral-40)", border: "1px solid var(--fl-neutral-60)", borderRadius: "4px" }}>NY</Link>
             </div>
             <button onClick={toggleTheme} style={{ background: "none", border: "1px solid var(--fl-neutral-60)", borderRadius: "6px", color: "var(--fl-neutral-40)", fontSize: "13px", padding: "6px 14px", cursor: "pointer" }}>
-              {dark ? "Light mode" : "Dark mode"}
+              {dark ? u.lightMode : u.darkMode}
             </button>
           </div>
         </div>

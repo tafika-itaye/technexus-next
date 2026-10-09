@@ -3,9 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const COPY = {
-  en: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", credentials: "Credentials", cert: "MRA Certificate" },
-  pt: { rights: "Todos os direitos reservados.", privacy: "Privacidade", terms: "Termos", credentials: "Credenciais", cert: "Certificado MRA" },
-  ny: { rights: "Ufulu wonse ndi wosungidwa.", privacy: "Chinsinsi", terms: "Malamulo", credentials: "Umboni", cert: "Satifiketi ya MRA" },
+  en: { rights: "All rights reserved.", privacy: "Privacy", terms: "Terms", credentials: "Credentials", cert: "MRA Certificate", location: "Lilongwe and Blantyre, Malawi.", ppda: "PPDA Registered", mra: "MRA Compliant" },
+  pt: { rights: "Todos os direitos reservados.", privacy: "Privacidade", terms: "Termos", credentials: "Credenciais", cert: "Certificado MRA", location: "Lilongwe e Blantyre, Malawi.", ppda: "Registado PPDA", mra: "Conforme MRA" },
+  ny: { rights: "Ufulu wonse ndi wosungidwa.", privacy: "Chinsinsi", terms: "Malamulo", credentials: "Umboni", cert: "Satifiketi ya MRA", location: "Lilongwe ndi Blantyre, Malawi.", ppda: "Wolembedwa PPDA", mra: "Wovomerezeka ndi MRA" },
 };
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
     <footer style={{ background: "var(--fl-neutral-90)", borderTop: "1px solid #2a2a2a", padding: "32px 40px", marginTop: "auto" }}>
       <div style={{ maxWidth: "1120px", margin: "0 auto", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
         <div style={{ fontSize: "13px", color: "var(--fl-neutral-40)" }}>
-          &copy; 2026 TechNexus MW. {t.rights} Lilongwe and nationwide, Malawi.
+          &copy; 2026 TechNexus MW. {t.rights} {t.location}
         </div>
         <div style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
           {[
@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
         </div>
         <div style={{ fontSize: "12px", color: "var(--fl-neutral-60)" }}>
-          PPDA Registered &nbsp;|&nbsp; BRN.A6SNWQY &nbsp;|&nbsp; MRA Compliant
+          {t.ppda} &nbsp;|&nbsp; BRN.A6SNWQY &nbsp;|&nbsp; {t.mra}
         </div>
       </div>
     </footer>

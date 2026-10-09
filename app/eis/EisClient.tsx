@@ -22,8 +22,9 @@ const PLAN_META = [
   { name: "Tablet POS",                setup: "MWK 350,000",        monthly: "MWK 60,000",        popular: false, hardware: true,  note: false },
   { name: "Retail Kiosk POS",          setup: "MWK 600,000",        monthly: "MWK 75,000",        popular: true,  hardware: true,  note: false },
   { name: "EIS Bridge & Integration",  setup: "From MWK 500,000",   monthly: "MWK 75,000",        popular: false, hardware: false, note: true  },
-  { name: "Multi-Branch / Enterprise", setup: "From MWK 5,600,000", monthly: "From MWK 500,000",  popular: false, hardware: false, note: false },
 ];
+
+const MB = { setup: "From MWK 5,600,000", monthly: "From MWK 500,000" };
 
 const STR: Record<EisLang, {
   heroTitle1: string; heroTitle2: string; heroSub: string; ctaConsult: string; ctaCompare: string;
@@ -31,7 +32,7 @@ const STR: Record<EisLang, {
   pricingEyebrow: string; pricingTitle: string; pricingLede: string; askUs: string;
   setupFee: string; monthlyLabel: string; perMonth: string; mostPopular: string; whatsIncluded: string;
   enquirePlan: string; customQuote: string;
-  integrations: string; integrationsNote: string; integrationsTitle: string; integrationsLede: string; hardwareNote: string; setupNote: string; addonsTitle: string; addonsLede: string; addons: [string, string][];
+  integrations: string; integrationsNote: string; integrationsTitle: string; integrationsLede: string; hardwareNote: string; setupNote: string; addonsTitle: string; addonsLede: string; addons: [string, string][]; mbTitle: string; mbDesc: string;
   perks: [string, string][];
   valueEyebrow: string; valueTitle: string; valueBody: string;
   pillars: { title: string; body: string }[];
@@ -65,6 +66,7 @@ const STR: Record<EisLang, {
     hardwareNote: "Hardware quoted separately", setupNote: "*Setup depends on the complexity of your existing system.",
     pricingLede: "Two ways to get compliant: take an MRA-ready till, or connect the system you already run. Hardware is quoted separately.",
     addonsTitle: "Optional services", addonsLede: "Charged separately, quoted on request.",
+    mbTitle: "Multi-Branch / Enterprise", mbDesc: "Running several sites or need custom integration? We scope a multi-branch rollout with accounting sync and SLA support.",
     addons: [
       ["EIS portal registration", "We register your business on the MRA EIS portal."],
       ["Barcode and product registration", "Product barcodes and catalogue set up for your stock."],
@@ -121,8 +123,6 @@ const STR: Record<EisLang, {
         features: ["All-in-one touch terminal","Customer display and cash drawer","Stock protection and cashier roles","MRA EIS receipts with QR","Accounting sync"] },
       { desc: "Keep your current POS or accounting system. We connect it to MRA EIS. Sage, QuickBooks, Pastel, Odoo or custom.",
         features: ["Connects your existing system","MRA EIS submission and QR receipts","Sage, QuickBooks, Pastel, Odoo, custom","Monitoring and support"] },
-      { desc: "For multi-branch operators and custom rollouts across sites.",
-        features: ["Multi-branch POS","Accounting sync","Custom integration","SLA support"] },
     ],
   },
 
@@ -143,6 +143,7 @@ const STR: Record<EisLang, {
     hardwareNote: "Hardware orçamentado à parte", setupNote: "*A instalação depende da complexidade do seu sistema.",
     pricingLede: "Duas formas de ficar conforme: leve uma caixa pronta para a MRA, ou ligue o sistema que já usa. O hardware é orçamentado à parte.",
     addonsTitle: "Serviços opcionais", addonsLede: "Cobrados à parte, orçamentados a pedido.",
+    mbTitle: "Multi-filial / Empresa", mbDesc: "Tem várias lojas ou precisa de integração personalizada? Definimos um rollout multi-filial com sincronização contabilística e suporte SLA.",
     addons: [
       ["Registo no portal EIS", "Registamos a sua empresa no portal EIS da MRA."],
       ["Registo de códigos de barras e produtos", "Códigos de barras e catálogo de produtos configurados para o seu stock."],
@@ -199,8 +200,6 @@ const STR: Record<EisLang, {
         features: ["Terminal táctil tudo-em-um","Ecrã para o cliente e gaveta de dinheiro","Protecção de stock e perfis de caixa","Recibos EIS da MRA com QR","Sincronização contabilística"] },
       { desc: "Mantenha o seu POS ou sistema contabilístico actual. Nós ligamo-lo ao EIS da MRA. Sage, QuickBooks, Pastel, Odoo ou personalizado.",
         features: ["Liga o seu sistema existente","Submissão EIS da MRA e recibos QR","Sage, QuickBooks, Pastel, Odoo, personalizado","Monitorização e suporte"] },
-      { desc: "Para operadores multi-filial e rollouts personalizados em vários locais.",
-        features: ["POS multi-filial","Sincronização contabilística","Integração personalizada","Suporte SLA"] },
     ],
   },
 
@@ -221,6 +220,7 @@ const STR: Record<EisLang, {
     hardwareNote: "Hardware quoted separately", setupNote: "*Setup imatengera complexity ya sisitimu yanu.",
     pricingLede: "Njira ziwiri zokhalira compliant: tengani till yokonzeka ya MRA, kapena lumikizani sisitimu yomwe mukugwiritsa kale ntchito. Hardware quoted separately.",
     addonsTitle: "Ntchito zowonjezera", addonsLede: "Zimalipiritsidwa padera, quoted pa pempho.",
+    mbTitle: "Multi-Branch / Enterprise", mbDesc: "Muli ndi malo angapo kapena mukufuna custom integration? Timakonza multi-branch rollout ndi accounting sync ndi SLA support.",
     addons: [
       ["Registration pa EIS portal", "Timalembetsa bizinesi yanu pa MRA EIS portal."],
       ["Barcode ndi product registration", "Ma barcode a zinthu ndi catalogue yokonzedwa ya stock yanu."],
@@ -277,8 +277,6 @@ const STR: Record<EisLang, {
         features: ["All-in-one touch terminal","Customer display ndi cash drawer","Stock protection ndi cashier roles","MRA EIS receipts ndi QR","Accounting sync"] },
       { desc: "Sungani POS kapena accounting system yanu ya tsopano. Timayilumikiza ku MRA EIS. Sage, QuickBooks, Pastel, Odoo kapena custom.",
         features: ["Imalumikiza sisitimu yanu","MRA EIS submission ndi QR receipts","Sage, QuickBooks, Pastel, Odoo, custom","Monitoring ndi support"] },
-      { desc: "Kwa multi-branch operators ndi custom rollouts pa malo osiyanasiyana.",
-        features: ["Multi-branch POS","Accounting sync","Custom integration","SLA support"] },
     ],
   },
 };
@@ -456,6 +454,17 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div style={{ marginTop: "20px", border: `1px solid ${BDR}`, borderRadius: "12px", background: LIGHT, padding: "24px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "24px", flexWrap: "wrap" }}>
+            <div style={{ flex: "1 1 420px" }}>
+              <h3 style={{ fontFamily: "var(--font-syne, 'Inter', system-ui, sans-serif)", fontSize: "18px", fontWeight: 700, color: INK, marginBottom: "6px" }}>{t.mbTitle}</h3>
+              <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.6, margin: "0 0 10px" }}>{t.mbDesc}</p>
+              <div style={{ fontSize: "13px", fontWeight: 600, color: BODY }}>{t.setupFee}: {MB.setup} &middot; {t.monthlyLabel}: {MB.monthly} {t.perMonth}</div>
+            </div>
+            <a href={"https://wa.me/265889941700?text=" + encodeURIComponent("Hi TechNexus, I would like to enquire about the Multi-Branch / Enterprise package")} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: G, color: WHITE, fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "7px", textDecoration: "none", whiteSpace: "nowrap" as const }}>
+              {t.customQuote}
+            </a>
           </div>
 
           <p style={{ fontSize: "12px", color: MUTED, marginTop: "14px" }}>{t.setupNote}</p>

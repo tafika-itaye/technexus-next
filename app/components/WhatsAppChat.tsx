@@ -12,16 +12,18 @@ const COPY = {
     placeholder: "Type a message…",
     send: "Send on WhatsApp",
     open: "Chat with us",
-    note: "Opens WhatsApp in a new tab — this page stays open.",
+    note: "Opens WhatsApp in a new tab, this page stays open.",
+    closeChat: "Close chat",
   },
   pt: {
     title: "TechNexus",
     subtitle: "Normalmente responde em minutos",
-    greeting: "Ola! Como podemos ajudar? Escreva a sua mensagem abaixo e responderemos no WhatsApp.",
+    greeting: "Olá! Como podemos ajudar? Escreva a sua mensagem abaixo e responderemos no WhatsApp.",
     placeholder: "Escreva uma mensagem…",
     send: "Enviar no WhatsApp",
     open: "Fale connosco",
-    note: "Abre o WhatsApp num novo separador — esta pagina permanece aberta.",
+    note: "Abre o WhatsApp num novo separador, esta página permanece aberta.",
+    closeChat: "Fechar conversa",
   },
   ny: {
     title: "TechNexus",
@@ -30,7 +32,8 @@ const COPY = {
     placeholder: "Lembani uthenga…",
     send: "Tumizani pa WhatsApp",
     open: "Lankhulani nafe",
-    note: "Imatsegula WhatsApp mu tabu yatsopano — tsamba lino limakhalabe lotseguka.",
+    note: "Imatsegula WhatsApp mu tabu yatsopano, tsamba lino limakhalabe lotseguka.",
+    closeChat: "Tsekani chat",
   },
 };
 
@@ -130,7 +133,7 @@ export default function WhatsAppChat() {
             </div>
             <button
               onClick={() => setOpen(false)}
-              aria-label="Close chat"
+              aria-label={t.closeChat}
               style={{ background: "none", border: "none", color: "#fff", fontSize: "22px", cursor: "pointer", padding: "4px 8px", lineHeight: 1 }}
             >
               ×
