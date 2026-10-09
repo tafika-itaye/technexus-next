@@ -333,3 +333,12 @@ a[role="button"]:active {
 .prod-td-price { color: var(--fl-blue); font-weight: 600; }
 .prod-table tbody tr:nth-child(even) { background: var(--fl-neutral-2); }
 .wa-quote { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 6px 14px; min-height: 44px; background: #25D366; color: #fff; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none; white-space: nowrap; box-sizing: border-box; }
+
+.prod-td-num { white-space: nowrap; }
+.prod-td-sm { font-size: 12px; }
+.ls-card { background: #fff; border: 1px solid var(--fl-neutral-8); border-radius: 8px; padding: 14px 16px; }
+.ls-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+.ls-card-name { font-weight: 600; font-size: 14px; color: var(--fl-neutral-90); }
+.ls-card-sub { font-size: 12px; color: #595959; margin-bottom: 10px; }
+.ls-card-price { font-size: 18px; font-weight: 700; color: var(--fl-blue); margin-bottom: 8px; }
+.ls-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; font-size: 12px; color: #595959; }

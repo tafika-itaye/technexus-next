@@ -369,9 +369,6 @@ const MUTED = "#595959";
 const ACCENT = "var(--fl-blue)";
 const TEAL = "var(--fl-teal)";
 
-const TH: React.CSSProperties = { padding: "10px 16px", textAlign: "left", fontSize: "11px", fontWeight: 600, textTransform: "uppercase" as const, letterSpacing: "0.06em", color: MUTED, borderBottom: "1px solid var(--fl-neutral-8)", background: "var(--fl-neutral-4)" };
-const TD: React.CSSProperties = { padding: "10px 16px", fontSize: "13px", borderBottom: "1px solid var(--fl-neutral-8)", color: TEXT };
-const TNUM: React.CSSProperties = { ...TD, whiteSpace: "nowrap" as const };
 const H2: React.CSSProperties = { fontFamily: "var(--font-syne)", fontSize: "22px", fontWeight: 700, color: TEXT, marginBottom: "6px" };
 const scrollBox: React.CSSProperties = { overflowX: "auto", borderRadius: "8px", border: "1px solid " + BORDER, marginBottom: "48px" };
 
@@ -381,7 +378,7 @@ function group(n: number, sep: string): string {
 
 function QuoteBtn({ href, label }: { href: string; label: string }) {
   return (
-    <a href={href} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px", padding: "6px 14px", minHeight: "44px", background: "#25D366", color: "#fff", borderRadius: "6px", fontSize: "12px", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}>
+    <a href={href} target="_blank" rel="noopener" className="wa-quote">
       {label}
     </a>
   );
@@ -417,18 +414,18 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
         <h2 style={H2}>{t.pricingTitle}</h2>
         <p style={{ fontSize: "14px", color: MUTED, marginBottom: "24px" }}>{t.pricingNote}</p>
         <div className="ls-price-table" style={{ ...scrollBox, marginBottom: "12px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "820px" }}>
+          <table className="prod-table" style={{ minWidth: "820px" }}>
             <thead>
               <tr>
-                <th scope="col" style={TH}>{t.colService}</th>
-                <th scope="col" style={TH}>{t.colLangs}</th>
-                <th scope="col" style={TH}>{t.colUnit}</th>
-                <th scope="col" style={TH}>MWK</th>
-                <th scope="col" style={TH}>USD</th>
-                <th scope="col" style={TH}>MZN</th>
-                <th scope="col" style={TH}>ZAR</th>
-                <th scope="col" style={TH}>ZMW</th>
-                <th scope="col" style={TH}>{t.colQuote}</th>
+                <th scope="col" className="prod-th">{t.colService}</th>
+                <th scope="col" className="prod-th">{t.colLangs}</th>
+                <th scope="col" className="prod-th">{t.colUnit}</th>
+                <th scope="col" className="prod-th">MWK</th>
+                <th scope="col" className="prod-th">USD</th>
+                <th scope="col" className="prod-th">MZN</th>
+                <th scope="col" className="prod-th">ZAR</th>
+                <th scope="col" className="prod-th">ZMW</th>
+                <th scope="col" className="prod-th">{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
@@ -437,16 +434,16 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
                 const f = foreign(row.mwk);
                 const pre = row.from ? t.fromWord : "";
                 return (
-                  <tr key={row.id} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                    <td style={{ ...TD, fontWeight: 600 }}>{label.name}</td>
-                    <td style={{ ...TD, color: MUTED }}>{label.langs}</td>
-                    <td style={{ ...TD, color: MUTED }}>{label.unit}</td>
-                    <td style={{ ...TNUM, color: ACCENT, fontWeight: 600 }}>{pre}MK {group(row.mwk, t.numSep)}</td>
-                    <td style={{ ...TNUM, color: MUTED }}>{pre}${group(f.USD, t.numSep)}</td>
-                    <td style={{ ...TNUM, color: MUTED }}>{pre}{group(f.MZN, t.numSep)}</td>
-                    <td style={{ ...TNUM, color: MUTED }}>{pre}{group(f.ZAR, t.numSep)}</td>
-                    <td style={{ ...TNUM, color: MUTED }}>{pre}{group(f.ZMW, t.numSep)}</td>
-                    <td style={TD}><QuoteBtn href={q(label.name)} label={t.quoteLabel} /></td>
+                  <tr key={row.id}>
+                    <td className="prod-td prod-td-name">{label.name}</td>
+                    <td className="prod-td prod-td-muted">{label.langs}</td>
+                    <td className="prod-td prod-td-muted">{label.unit}</td>
+                    <td className="prod-td prod-td-num prod-td-price">{pre}MK {group(row.mwk, t.numSep)}</td>
+                    <td className="prod-td prod-td-num prod-td-muted">{pre}${group(f.USD, t.numSep)}</td>
+                    <td className="prod-td prod-td-num prod-td-muted">{pre}{group(f.MZN, t.numSep)}</td>
+                    <td className="prod-td prod-td-num prod-td-muted">{pre}{group(f.ZAR, t.numSep)}</td>
+                    <td className="prod-td prod-td-num prod-td-muted">{pre}{group(f.ZMW, t.numSep)}</td>
+                    <td className="prod-td"><QuoteBtn href={q(label.name)} label={t.quoteLabel} /></td>
                   </tr>
                 );
               })}
@@ -459,14 +456,14 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
             const f = foreign(row.mwk);
             const pre = row.from ? t.fromWord : "";
             return (
-              <div key={row.id} style={{ background: SURF, border: "1px solid " + BORDER, borderRadius: "8px", padding: "14px 16px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "12px", marginBottom: "6px" }}>
-                  <div style={{ fontWeight: 600, fontSize: "14px", color: TEXT }}>{label.name}</div>
+              <div key={row.id} className="ls-card">
+                <div className="ls-card-head">
+                  <div className="ls-card-name">{label.name}</div>
                   <QuoteBtn href={q(label.name)} label={t.quoteLabel} />
                 </div>
-                <div style={{ fontSize: "12px", color: MUTED, marginBottom: "10px" }}>{label.langs} · {label.unit}</div>
-                <div style={{ fontSize: "18px", fontWeight: 700, color: ACCENT, marginBottom: "8px" }}>{pre}MK {group(row.mwk, t.numSep)}</div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px", fontSize: "12px", color: MUTED }}>
+                <div className="ls-card-sub">{label.langs} · {label.unit}</div>
+                <div className="ls-card-price">{pre}MK {group(row.mwk, t.numSep)}</div>
+                <div className="ls-card-grid">
                   <div>USD {pre}${group(f.USD, t.numSep)}</div>
                   <div>MZN {pre}{group(f.MZN, t.numSep)}</div>
                   <div>ZAR {pre}{group(f.ZAR, t.numSep)}</div>
@@ -523,22 +520,22 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
         <p style={{ fontSize: "14px", color: MUTED, marginBottom: "8px" }}>{t.tenderSub}</p>
         <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px", lineHeight: 1.7 }}>{t.tenderIntro}</p>
         <div style={scrollBox}>
-          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
+          <table className="prod-table" style={{ minWidth: "480px" }}>
             <thead>
               <tr>
-                <th scope="col" style={TH}>{t.colService}</th>
-                <th scope="col" style={TH}>{t.colDesc}</th>
-                <th scope="col" style={TH}>{t.colFromMwk}</th>
-                <th scope="col" style={TH}>{t.colQuote}</th>
+                <th scope="col" className="prod-th">{t.colService}</th>
+                <th scope="col" className="prod-th">{t.colDesc}</th>
+                <th scope="col" className="prod-th">{t.colFromMwk}</th>
+                <th scope="col" className="prod-th">{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
               {t.tender.map((s, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
-                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
-                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
-                  <td style={TD}><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
+                <tr key={i}>
+                  <td className="prod-td prod-td-name">{s.name}</td>
+                  <td className="prod-td prod-td-muted prod-td-sm">{s.desc}</td>
+                  <td className="prod-td prod-td-price">{s.mwk}</td>
+                  <td className="prod-td"><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
                 </tr>
               ))}
             </tbody>
@@ -551,22 +548,22 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
 
         <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "17px", fontWeight: 700, color: TEAL, marginBottom: "16px" }}>{t.localRegTitle}</h3>
         <div style={{ ...scrollBox, marginBottom: "32px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "480px" }}>
+          <table className="prod-table" style={{ minWidth: "480px" }}>
             <thead>
               <tr>
-                <th scope="col" style={TH}>{t.colService}</th>
-                <th scope="col" style={TH}>{t.colDesc}</th>
-                <th scope="col" style={TH}>{t.colFromMwk}</th>
-                <th scope="col" style={TH}>{t.colQuote}</th>
+                <th scope="col" className="prod-th">{t.colService}</th>
+                <th scope="col" className="prod-th">{t.colDesc}</th>
+                <th scope="col" className="prod-th">{t.colFromMwk}</th>
+                <th scope="col" className="prod-th">{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
               {t.localReg.map((s, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
-                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
-                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
-                  <td style={TD}><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
+                <tr key={i}>
+                  <td className="prod-td prod-td-name">{s.name}</td>
+                  <td className="prod-td prod-td-muted prod-td-sm">{s.desc}</td>
+                  <td className="prod-td prod-td-price">{s.mwk}</td>
+                  <td className="prod-td"><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
                 </tr>
               ))}
             </tbody>
@@ -576,24 +573,24 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
         <h3 style={{ fontFamily: "var(--font-syne)", fontSize: "17px", fontWeight: 700, color: "#4CAF50", marginBottom: "8px" }}>{t.crossTitle}</h3>
         <p style={{ fontSize: "13px", color: MUTED, marginBottom: "16px", lineHeight: 1.7 }}>{t.crossIntro}</p>
         <div style={{ ...scrollBox, marginBottom: "24px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", background: SURF, minWidth: "520px" }}>
+          <table className="prod-table" style={{ minWidth: "520px" }}>
             <thead>
               <tr>
-                <th scope="col" style={TH}>{t.colCountry}</th>
-                <th scope="col" style={TH}>{t.colService}</th>
-                <th scope="col" style={TH}>{t.colDesc}</th>
-                <th scope="col" style={TH}>{t.colFromMwk}</th>
-                <th scope="col" style={TH}>{t.colQuote}</th>
+                <th scope="col" className="prod-th">{t.colCountry}</th>
+                <th scope="col" className="prod-th">{t.colService}</th>
+                <th scope="col" className="prod-th">{t.colDesc}</th>
+                <th scope="col" className="prod-th">{t.colFromMwk}</th>
+                <th scope="col" className="prod-th">{t.colQuote}</th>
               </tr>
             </thead>
             <tbody>
               {t.cross.map((s, i) => (
-                <tr key={i} style={{ background: i % 2 === 0 ? SURF : "var(--fl-neutral-2)" }}>
-                  <td style={{ ...TD, fontWeight: 700, color: s.key === "Multi-country" ? MUTED : "var(--fl-amber)", whiteSpace: "nowrap" as const }}><CountryFlag country={s.key} />{s.country}</td>
-                  <td style={{ ...TD, fontWeight: 600 }}>{s.name}</td>
-                  <td style={{ ...TD, color: MUTED, fontSize: "12px" }}>{s.desc}</td>
-                  <td style={{ ...TD, color: ACCENT, fontWeight: 600 }}>{s.mwk}</td>
-                  <td style={TD}><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
+                <tr key={i}>
+                  <td className="prod-td prod-td-num" style={{ fontWeight: 700, color: s.key === "Multi-country" ? MUTED : "var(--fl-amber)" }}><CountryFlag country={s.key} />{s.country}</td>
+                  <td className="prod-td prod-td-name">{s.name}</td>
+                  <td className="prod-td prod-td-muted prod-td-sm">{s.desc}</td>
+                  <td className="prod-td prod-td-price">{s.mwk}</td>
+                  <td className="prod-td"><QuoteBtn href={q(s.name)} label={t.quoteLabel} /></td>
                 </tr>
               ))}
             </tbody>
