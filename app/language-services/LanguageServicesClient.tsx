@@ -395,7 +395,7 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
     <div style={{ background: BG, minHeight: "100vh" }}>
 
       {/* HERO */}
-      <div style={{ position: "relative", overflow: "hidden", padding: "64px 40px 48px", textAlign: "center", background: "#0a0a0a" }}>
+      <div style={{ position: "relative", overflow: "hidden", padding: "64px var(--page-pad) 48px", textAlign: "center", background: "#0a0a0a" }}>
         <img src="/index_main/language_services_hero-1200.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.55)" }} />
         <div style={{ position: "relative" }}>
@@ -411,7 +411,7 @@ export default function LanguageServicesClient({ lang = "en" }: { lang?: LsLang 
         </div>
       </div>
 
-      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 40px" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px var(--page-pad)" }}>
 
         {/* LANGUAGE SERVICES TABLE */}
         <h2 style={H2}>{t.pricingTitle}</h2>

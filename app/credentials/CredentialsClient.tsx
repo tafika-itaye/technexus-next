@@ -80,7 +80,7 @@ export default function CredentialsPage() {
       </div>
 
       {/* CONTENT */}
-      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 40px 96px" }}>
+      <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "0 var(--page-pad) 96px" }}>
 
         {/* REGISTRATION TABLE */}
         <h2 style={sh}>Registration &amp; Compliance</h2>

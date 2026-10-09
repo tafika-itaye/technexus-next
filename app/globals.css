@@ -165,7 +165,6 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   :root { --page-pad: 16px; }
 
-  .ham-btn { display: flex !important; }
   .nav-phone { display: none; }
   .nav-links {
     display: none;
@@ -307,7 +306,6 @@ a[role="button"]:active {
 
 @media (max-width: 768px) {
   .nav-desktop-controls { display: none !important; }
-  .ham-btn { display: none !important; }
   .nav-mobile-controls { display: flex !important; }
   .nav-mobile-drawer-controls {
     display: flex;
