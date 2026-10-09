@@ -10,6 +10,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/computer-assembly",
       "pt": "https://www.technexusmw.com/pt/computer-assembly",
       "ny": "https://www.technexusmw.com/ny/computer-assembly",
+      "x-default": "https://www.technexusmw.com/computer-assembly",
     },
   },
 };

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/terms",
       "pt": "https://www.technexusmw.com/pt/terms",
       "ny": "https://www.technexusmw.com/ny/terms",
+      "x-default": "https://www.technexusmw.com/terms",
     },
   },
 };

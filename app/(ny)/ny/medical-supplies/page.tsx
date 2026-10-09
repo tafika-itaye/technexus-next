@@ -11,6 +11,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/medical-supplies",
       "pt": "https://www.technexusmw.com/pt/medical-supplies",
       "ny": "https://www.technexusmw.com/ny/medical-supplies",
+      "x-default": "https://www.technexusmw.com/medical-supplies",
     },
   },
 };

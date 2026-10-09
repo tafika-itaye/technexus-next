@@ -10,6 +10,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/language-services",
       "pt": "https://www.technexusmw.com/pt/language-services",
       "ny": "https://www.technexusmw.com/ny/language-services",
+      "x-default": "https://www.technexusmw.com/language-services",
     },
   },
 };

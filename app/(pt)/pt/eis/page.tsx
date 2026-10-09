@@ -10,6 +10,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/eis",
       "pt": "https://www.technexusmw.com/pt/eis",
       "ny": "https://www.technexusmw.com/ny/eis",
+      "x-default": "https://www.technexusmw.com/eis",
     },
   },
 };

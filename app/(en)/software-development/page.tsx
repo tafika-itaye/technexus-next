@@ -1,5 +1,14 @@
 import type { Metadata } from "next"
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.technexusmw.com/software-development",
+    languages: {
+      "en": "https://www.technexusmw.com/software-development",
+      "pt": "https://www.technexusmw.com/pt/software-development",
+      "ny": "https://www.technexusmw.com/ny/software-development",
+      "x-default": "https://www.technexusmw.com/software-development",
+    },
+  },
   title: "Software Development | TechNexus",
   description: "Bespoke business applications, web systems and digital platforms built in C#, .NET Core, Blazor and PostgreSQL. From concept to deployment across Southern Africa.",
 }

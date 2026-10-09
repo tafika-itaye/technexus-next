@@ -1,4 +1,18 @@
-﻿const TEXT = "var(--fl-neutral-90)";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.technexusmw.com/terms",
+    languages: {
+      "en": "https://www.technexusmw.com/terms",
+      "pt": "https://www.technexusmw.com/pt/terms",
+      "ny": "https://www.technexusmw.com/ny/terms",
+      "x-default": "https://www.technexusmw.com/terms",
+    },
+  },
+};
+
+const TEXT = "var(--fl-neutral-90)";
 const MUTED = "#595959";
 const SURF = "#ffffff";
 const BORDER = "var(--fl-neutral-8)";

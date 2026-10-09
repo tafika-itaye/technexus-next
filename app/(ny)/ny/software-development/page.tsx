@@ -9,6 +9,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/software-development",
       "pt": "https://www.technexusmw.com/pt/software-development",
       "ny": "https://www.technexusmw.com/ny/software-development",
+      "x-default": "https://www.technexusmw.com/software-development",
     },
   },
 };

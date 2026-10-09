@@ -1,5 +1,14 @@
 import type { Metadata } from "next"
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://www.technexusmw.com/computer-assembly",
+    languages: {
+      "en": "https://www.technexusmw.com/computer-assembly",
+      "pt": "https://www.technexusmw.com/pt/computer-assembly",
+      "ny": "https://www.technexusmw.com/ny/computer-assembly",
+      "x-default": "https://www.technexusmw.com/computer-assembly",
+    },
+  },
   title: "Custom PC Assembly | TechNexus",
   description: "Custom desktop PCs built to spec. Intel i5, Windows 11 Pro, QA-tested. Volume pricing for schools, government and enterprise in Malawi.",
 }

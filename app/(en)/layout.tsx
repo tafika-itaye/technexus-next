@@ -7,7 +7,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.technexusmw.com"),
   title: "TechNexus — IT Solutions, Language Services & Equipment Supply",
   description: "Pan-African supplier of IT hardware, custom PC assembly, software development, language services and medical equipment. PPDA registered. Lilongwe and Blantyre, Malawi.",
-  alternates: { canonical: "https://www.technexusmw.com" },
+  alternates: {
+    canonical: "https://www.technexusmw.com",
+    languages: {
+      "en": "https://www.technexusmw.com",
+      "pt": "https://www.technexusmw.com/pt",
+      "ny": "https://www.technexusmw.com/ny",
+      "x-default": "https://www.technexusmw.com",
+    },
+  },
   openGraph: { siteName: "TechNexus", locale: "en_GB", type: "website", images: [{ url: "/Products_logos/technexuslogo1.webp", width: 400, height: 400 }] },
 };
 

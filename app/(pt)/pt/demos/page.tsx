@@ -10,6 +10,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/demos",
       "pt": "https://www.technexusmw.com/pt/demos",
       "ny": "https://www.technexusmw.com/ny/demos",
+      "x-default": "https://www.technexusmw.com/demos",
     },
   },
 };

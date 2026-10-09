@@ -9,6 +9,7 @@ export const metadata: Metadata = {
       "en": "https://www.technexusmw.com/privacy",
       "pt": "https://www.technexusmw.com/pt/privacy",
       "ny": "https://www.technexusmw.com/ny/privacy",
+      "x-default": "https://www.technexusmw.com/privacy",
     },
   },
 };
