@@ -19,18 +19,19 @@ type PlanCopy = { desc: string; features: string[] };
 
 /* Canonical pricing — single source of truth for all languages */
 const PLAN_META = [
-  { name: "Bridge Only",              setup: "MWK 350,000",       monthly: "MWK 75,000",        popular: false },
-  { name: "Counter POS Business",     setup: "MWK 1,875,000",     monthly: "MWK 190,000",       popular: true  },
-  { name: "Multi-Branch / Enterprise", setup: "From MWK 5,600,000", monthly: "From MWK 500,000", popular: false },
+  { name: "Tablet POS",                setup: "MWK 350,000",        monthly: "MWK 60,000",        popular: false, hardware: true,  note: false },
+  { name: "Retail Kiosk POS",          setup: "MWK 600,000",        monthly: "MWK 75,000",        popular: true,  hardware: true,  note: false },
+  { name: "EIS Bridge & Integration",  setup: "From MWK 500,000",   monthly: "MWK 75,000",        popular: false, hardware: false, note: true  },
+  { name: "Multi-Branch / Enterprise", setup: "From MWK 5,600,000", monthly: "From MWK 500,000",  popular: false, hardware: false, note: false },
 ];
 
 const STR: Record<EisLang, {
   heroTitle1: string; heroTitle2: string; heroSub: string; ctaConsult: string; ctaCompare: string;
   trust: string[];
-  pricingEyebrow: string; pricingTitle: string; askUs: string;
+  pricingEyebrow: string; pricingTitle: string; pricingLede: string; askUs: string;
   setupFee: string; monthlyLabel: string; perMonth: string; mostPopular: string; whatsIncluded: string;
   enquirePlan: string; customQuote: string;
-  integrations: string; integrationsNote: string;
+  integrations: string; integrationsNote: string; integrationsTitle: string; integrationsLede: string; hardwareNote: string; setupNote: string; addonsTitle: string; addonsLede: string; addons: [string, string][];
   perks: [string, string][];
   valueEyebrow: string; valueTitle: string; valueBody: string;
   pillars: { title: string; body: string }[];
@@ -50,19 +51,28 @@ const STR: Record<EisLang, {
   en: {
     heroTitle1: "Stay compliant.",
     heroTitle2: "Keep trading.",
-    heroSub: "MRA-certified EIS bridge and POS software packages for Malawi businesses. QR receipts, stock control, offline support, accounting sync, and nationwide onboarding.",
+    heroSub: "MRA-certified POS and integration for Malawi businesses. Take a ready-to-trade till, or keep the system you run and we connect it to MRA. QR receipts, stock control, offline support, accounting sync. Hardware supplied, quoted separately.",
     ctaConsult: "Book an Assessment",
     ctaCompare: "Compare Packages",
-    trust: ["MRA-certified bridge", "POS and stock control", "Accounting sync", "Lilongwe and nationwide support"],
+    trust: ["MRA-certified POS and bridge", "POS and stock control", "Accounting sync", "Lilongwe and Blantyre support"],
     pricingEyebrow: "MRA-certified EIS + POS solution",
     pricingTitle: "Choose the setup\nthat fits the client.",
     askUs: "Book a compliance and systems assessment",
     setupFee: "Setup fee", monthlyLabel: "Monthly", perMonth: "/ mo", mostPopular: "Most Popular", whatsIncluded: "What's included",
     enquirePlan: "Enquire about this plan", customQuote: "Request a custom quote",
     integrations: "Accounting sync", integrationsNote: "Sage, QuickBooks, Pastel, Odoo and ERP integration are scoped after assessment.",
+    integrationsTitle: "Integration specialists", integrationsLede: "Keep your system. We make it MRA-compliant.",
+    hardwareNote: "Hardware quoted separately", setupNote: "*Setup depends on the complexity of your existing system.",
+    pricingLede: "Two ways to get compliant: take an MRA-ready till, or connect the system you already run. Hardware is quoted separately.",
+    addonsTitle: "Optional services", addonsLede: "Charged separately, quoted on request.",
+    addons: [
+      ["EIS portal registration", "We register your business on the MRA EIS portal."],
+      ["Barcode and product registration", "Product barcodes and catalogue set up for your stock."],
+      ["Tax counsel", "General tax and compliance guidance for your business."],
+    ],
     perks: [
-      ["Software only", "No tills, tablets or printers are included in these packages."],
-      ["Nationwide onboarding", "Lilongwe-based coordination with support across Malawi."],
+      ["We supply the hardware too", "POS terminals, customer displays, cash drawers and printers, quoted separately."],
+      ["Lilongwe and Blantyre onboarding", "On-site setup and training, with support across Malawi."],
     ],
     valueEyebrow: "Compliance | POS | Inventory | Accounting sync",
     valueTitle: "Stay compliant. Run with control.",
@@ -83,8 +93,8 @@ const STR: Record<EisLang, {
     faqSub: "Can't find what you need? Message us on WhatsApp and we'll respond the same day.",
     faqAsk: "Ask on WhatsApp", faqWa: "Hi%20TechNexus%2C%20I%20have%20a%20question%20about%20EIS",
     faqs: [
-      { q: "Is this a hardware product?", a: "No. This is software and integration only. Tills, tablets, printers and other devices are not included in these packages." },
-      { q: "Can I keep my existing POS or accounting software?", a: "Yes. Bridge Only is for businesses that already have a POS or accounting system and need MRA EIS connectivity, QR receipts, submission records and monitoring." },
+      { q: "Do you supply the hardware?", a: "Yes. We supply POS terminals, customer-facing displays, cash drawers and printers, quoted separately from the software. The Bridge option needs no new hardware, it connects the system you already run." },
+      { q: "Can I keep my existing POS or accounting software?", a: "Yes. EIS Bridge & Integration is for businesses that already have a POS or accounting system and need MRA EIS connectivity, QR receipts, submission records and monitoring." },
       { q: "What happens when the internet goes down?", a: "Allowed sales can queue locally and sync later when connectivity returns, so the business can keep trading within the supported offline process." },
       { q: "What does the monthly fee cover?", a: "Monitoring, support follow-up and the software services attached to the selected package. Data migration, accounting integration and custom workflows are scoped separately." },
     ],
@@ -105,31 +115,42 @@ const STR: Record<EisLang, {
     fPrivacy1: "Your details are used only to respond to this enquiry. We do not share your information with third parties.",
     fPrivacyLink: "Privacy Policy", privacyHref: "/privacy", credentialsHref: "/credentials",
     plans: [
-      { desc: "Keep your existing POS or accounting system. We add the MRA EIS connection.",
-        features: ["Existing POS connection","Software activation","QR receipts"] },
-      { desc: "Full POS for retail counters: sales, stock protection, cashier control and reporting.",
-        features: ["Counter POS","Stock protection","Cashier roles","Inventory & reports"] },
-      { desc: "For multi-branch operators and custom software rollouts.",
-        features: ["Multi-branch","Accounting sync","SLA support"] },
+      { desc: "An MRA-ready till on an Android tablet. For small shops, counters and sellers on the move. Hardware quoted separately.",
+        features: ["Full POS on a tablet","MRA EIS receipts with QR","Stock and sales reports","Offline queue","Android app on Play Store, coming soon"] },
+      { desc: "A front-shop till: all-in-one touch terminal with a customer display and cash drawer. Hardware quoted separately.",
+        features: ["All-in-one touch terminal","Customer display and cash drawer","Stock protection and cashier roles","MRA EIS receipts with QR","Accounting sync"] },
+      { desc: "Keep your current POS or accounting system. We connect it to MRA EIS. Sage, QuickBooks, Pastel, Odoo or custom.",
+        features: ["Connects your existing system","MRA EIS submission and QR receipts","Sage, QuickBooks, Pastel, Odoo, custom","Monitoring and support"] },
+      { desc: "For multi-branch operators and custom rollouts across sites.",
+        features: ["Multi-branch POS","Accounting sync","Custom integration","SLA support"] },
     ],
   },
 
   pt: {
     heroTitle1: "Mantenha a conformidade.",
     heroTitle2: "Continue a vender.",
-    heroSub: "Bridge EIS certificado pela MRA e pacotes de software POS para empresas no Malawi. Recibos QR, controlo de stock, suporte offline, sincronizacao contabilistica e onboarding nacional.",
+    heroSub: "POS e integração certificados pela MRA para empresas no Malawi. Leve uma caixa pronta a vender, ou mantenha o sistema que já tem e nós ligamo-lo à MRA. Recibos QR, controlo de stock, suporte offline, sincronização contabilística. Hardware fornecido, orçamentado à parte.",
     ctaConsult: "Marcar Avaliacao",
     ctaCompare: "Comparar Pacotes",
-    trust: ["Bridge certificado pela MRA", "POS e controlo de stock", "Sincronizacao contabilistica", "Suporte em Lilongwe e nacional"],
+    trust: ["POS e bridge certificados pela MRA", "POS e controlo de stock", "Sincronização contabilística", "Suporte em Lilongwe e Blantyre"],
     pricingEyebrow: "Solucao EIS + POS certificada pela MRA",
     pricingTitle: "Escolha a configuracao\ncerta para o cliente.",
     askUs: "Marcar avaliacao de conformidade e sistemas",
     setupFee: "Taxa de instalacao", monthlyLabel: "Mensalidade", perMonth: "/ mes", mostPopular: "Mais Popular", whatsIncluded: "O que esta incluido",
     enquirePlan: "Informar-me sobre este plano", customQuote: "Solicitar orcamento personalizado",
-    integrations: "Sincronizacao contabilistica", integrationsNote: "Sage, QuickBooks, Pastel, Odoo e integracoes ERP sao definidas depois da avaliacao.",
+    integrations: "Sincronização contabilística", integrationsNote: "Sage, QuickBooks, Pastel, Odoo e integrações ERP são definidas depois da avaliação.",
+    integrationsTitle: "Especialistas em integração", integrationsLede: "Mantenha o seu sistema. Nós tornamo-lo conforme com a MRA.",
+    hardwareNote: "Hardware orçamentado à parte", setupNote: "*A instalação depende da complexidade do seu sistema.",
+    pricingLede: "Duas formas de ficar conforme: leve uma caixa pronta para a MRA, ou ligue o sistema que já usa. O hardware é orçamentado à parte.",
+    addonsTitle: "Serviços opcionais", addonsLede: "Cobrados à parte, orçamentados a pedido.",
+    addons: [
+      ["Registo no portal EIS", "Registamos a sua empresa no portal EIS da MRA."],
+      ["Registo de códigos de barras e produtos", "Códigos de barras e catálogo de produtos configurados para o seu stock."],
+      ["Aconselhamento fiscal", "Orientação geral de impostos e conformidade para o seu negócio."],
+    ],
     perks: [
-      ["Apenas software", "Terminais, tablets e impressoras nao estao incluidos nestes pacotes."],
-      ["Onboarding nacional", "Coordenacao a partir de Lilongwe com suporte em todo o Malawi."],
+      ["Também fornecemos o hardware", "Terminais POS, ecrãs para o cliente, gavetas de dinheiro e impressoras, orçamentados à parte."],
+      ["Instalação em Lilongwe e Blantyre", "Instalação e formação no local, com suporte em todo o Malawi."],
     ],
     valueEyebrow: "Conformidade | POS | Inventario | Sincronizacao contabilistica",
     valueTitle: "Mantenha a conformidade. Trabalhe com controlo.",
@@ -150,8 +171,8 @@ const STR: Record<EisLang, {
     faqSub: "Nao encontra o que precisa? Envie-nos mensagem no WhatsApp e respondemos no mesmo dia.",
     faqAsk: "Perguntar no WhatsApp", faqWa: "Ola%20TechNexus%2C%20tenho%20uma%20pergunta%20sobre%20o%20EIS",
     faqs: [
-      { q: "Isto e um produto de hardware?", a: "Nao. Isto e apenas software e integracao. Terminais, tablets, impressoras e outros dispositivos nao estao incluidos nestes pacotes." },
-      { q: "Posso manter o meu POS ou software contabilistico actual?", a: "Sim. O plano Bridge Only e para empresas que ja tem POS ou sistema contabilistico e precisam de ligacao EIS da MRA, recibos QR, registos de submissao e monitorizacao." },
+      { q: "Fornecem o hardware?", a: "Sim. Fornecemos terminais POS, ecrãs para o cliente, gavetas de dinheiro e impressoras, orçamentados à parte do software. A opção Bridge não precisa de hardware novo, liga o sistema que já usa." },
+      { q: "Posso manter o meu POS ou software contabilístico actual?", a: "Sim. O plano EIS Bridge & Integration é para empresas que já têm POS ou sistema contabilístico e precisam de ligação EIS da MRA, recibos QR, registos de submissão e monitorização." },
       { q: "O que acontece quando a internet falha?", a: "Vendas permitidas podem ficar em fila local e sincronizar depois quando a conectividade voltar, para que a empresa continue a vender dentro do processo offline suportado." },
       { q: "O que cobre a mensalidade?", a: "Monitorizacao, acompanhamento de suporte e os servicos de software do pacote escolhido. Migracao de dados, integracao contabilistica e fluxos personalizados sao definidos separadamente." },
     ],
@@ -172,31 +193,42 @@ const STR: Record<EisLang, {
     fPrivacy1: "Os seus dados sao utilizados apenas para responder a este pedido. Nao partilhamos a sua informacao com terceiros.",
     fPrivacyLink: "Politica de Privacidade", privacyHref: "/pt/privacy", credentialsHref: "/pt/credentials",
     plans: [
-      { desc: "Mantenha o seu POS ou sistema contabilistico actual. Nos adicionamos a ligacao EIS da MRA.",
-        features: ["Ligacao ao POS existente","Activacao de software","Recibos QR"] },
-      { desc: "POS completo para retalho de balcao: vendas, proteccao de stock, controlo de caixas e relatorios.",
-        features: ["POS de balcao","Proteccao de stock","Perfis de caixa","Inventario e relatorios"] },
-      { desc: "Para operadores multi-filial e rollouts de software personalizados.",
-        features: ["Multi-filial","Sincronizacao contabilistica","Suporte SLA"] },
+      { desc: "Uma caixa pronta para a MRA num tablet Android. Para lojas pequenas, balcões e vendedores em movimento. Hardware orçamentado à parte.",
+        features: ["POS completo num tablet","Recibos EIS da MRA com QR","Stock e relatórios de vendas","Fila offline","Aplicação Android na Play Store, em breve"] },
+      { desc: "Uma caixa de loja: terminal táctil tudo-em-um com ecrã para o cliente e gaveta de dinheiro. Hardware orçamentado à parte.",
+        features: ["Terminal táctil tudo-em-um","Ecrã para o cliente e gaveta de dinheiro","Protecção de stock e perfis de caixa","Recibos EIS da MRA com QR","Sincronização contabilística"] },
+      { desc: "Mantenha o seu POS ou sistema contabilístico actual. Nós ligamo-lo ao EIS da MRA. Sage, QuickBooks, Pastel, Odoo ou personalizado.",
+        features: ["Liga o seu sistema existente","Submissão EIS da MRA e recibos QR","Sage, QuickBooks, Pastel, Odoo, personalizado","Monitorização e suporte"] },
+      { desc: "Para operadores multi-filial e rollouts personalizados em vários locais.",
+        features: ["POS multi-filial","Sincronização contabilística","Integração personalizada","Suporte SLA"] },
     ],
   },
 
   ny: {
     heroTitle1: "Khalani mu compliance.",
     heroTitle2: "Pitirizani kugulitsa.",
-    heroSub: "Bridge ya EIS yotsimikiziridwa ndi MRA ndi mapaketi a POS software kwa mabizinesi a ku Malawi. Ma risiti a QR, stock control, offline support, accounting sync, ndi onboarding m'dziko lonse.",
+    heroSub: "POS ndi integration yotsimikiziridwa ndi MRA kwa mabizinesi a ku Malawi. Tengani till yokonzeka kugulitsa, kapena sungani sisitimu yomwe muli nayo ndipo timayilumikiza ku MRA. Ma risiti a QR, stock control, offline support, accounting sync. Hardware timapereka, quoted separately.",
     ctaConsult: "Pemphani Assessment",
     ctaCompare: "Yerekezerani Mapulani",
-    trust: ["Bridge yotsimikiziridwa ndi MRA", "POS ndi stock control", "Accounting sync", "Thandizo ku Lilongwe ndi Malawi yonse"],
+    trust: ["POS ndi bridge yotsimikiziridwa ndi MRA", "POS ndi stock control", "Accounting sync", "Thandizo ku Lilongwe ndi Blantyre"],
     pricingEyebrow: "Solushoni ya EIS + POS yotsimikiziridwa ndi MRA",
     pricingTitle: "Sankhani setup\nyoyenera client.",
     askUs: "Book compliance ndi systems assessment",
     setupFee: "Mtengo woyambira", monthlyLabel: "Pamwezi", perMonth: "/ mwezi", mostPopular: "Yotchuka Kwambiri", whatsIncluded: "Zomwe zili mkati",
     enquirePlan: "Funsani za pulani iyi", customQuote: "Pemphani mtengo wapadera",
     integrations: "Accounting sync", integrationsNote: "Sage, QuickBooks, Pastel, Odoo ndi ERP integration zimawunikidwa pambuyo pa assessment.",
+    integrationsTitle: "Akatswiri a integration", integrationsLede: "Sungani sisitimu yanu. Timayipanga kuti igwirizane ndi MRA.",
+    hardwareNote: "Hardware quoted separately", setupNote: "*Setup imatengera complexity ya sisitimu yanu.",
+    pricingLede: "Njira ziwiri zokhalira compliant: tengani till yokonzeka ya MRA, kapena lumikizani sisitimu yomwe mukugwiritsa kale ntchito. Hardware quoted separately.",
+    addonsTitle: "Ntchito zowonjezera", addonsLede: "Zimalipiritsidwa padera, quoted pa pempho.",
+    addons: [
+      ["Registration pa EIS portal", "Timalembetsa bizinesi yanu pa MRA EIS portal."],
+      ["Barcode ndi product registration", "Ma barcode a zinthu ndi catalogue yokonzedwa ya stock yanu."],
+      ["Tax counsel", "Uphungu wa misonkho ndi compliance ya bizinesi yanu."],
+    ],
     perks: [
-      ["Software yokha", "Tills, tablets kapena printers sizili mu mapaketi awa."],
-      ["Onboarding nationwide", "Coordination kuchokera ku Lilongwe ndi support ku Malawi yonse."],
+      ["Timaperekanso hardware", "POS terminals, customer displays, cash drawers ndi printers, quoted separately."],
+      ["Onboarding ku Lilongwe ndi Blantyre", "Kuyika ndi training pa site, ndi support ku Malawi yonse."],
     ],
     valueEyebrow: "Compliance | POS | Inventory | Accounting sync",
     valueTitle: "Khalani mu compliance. Yendetsani ndi control.",
@@ -217,8 +249,8 @@ const STR: Record<EisLang, {
     faqSub: "Simukupeza zomwe mukufuna? Titumizireni uthenga pa WhatsApp ndipo tikuyankhani tsiku lomwelo.",
     faqAsk: "Funsani pa WhatsApp", faqWa: "Moni%20TechNexus%2C%20ndili%20ndi%20funso%20la%20EIS",
     faqs: [
-      { q: "Kodi iyi ndi hardware product?", a: "Ayi. Iyi ndi software ndi integration yokha. Tills, tablets, printers ndi devices zina sizili mu mapaketi awa." },
-      { q: "Kodi ndingasunge POS kapena accounting software yanga?", a: "Inde. Bridge Only ndi ya mabizinesi omwe ali kale ndi POS kapena accounting system ndipo akufuna MRA EIS connectivity, QR receipts, submission records ndi monitoring." },
+      { q: "Kodi mumapereka hardware?", a: "Inde. Timapereka POS terminals, customer displays, cash drawers ndi printers, quoted separately ndi software. Bridge option sifuna hardware yatsopano, imangolumikiza sisitimu yomwe muli nayo kale." },
+      { q: "Kodi ndingasunge POS kapena accounting software yanga?", a: "Inde. EIS Bridge & Integration ndi ya mabizinesi omwe ali kale ndi POS kapena accounting system ndipo akufuna MRA EIS connectivity, QR receipts, submission records ndi monitoring." },
       { q: "Chimachitika ndi chiyani intaneti ikasowa?", a: "Allowed sales zitha kusungidwa local ndi kusync pambuyo pake intaneti ikabwerera, kuti bizinesi ipitirize kugulitsa pa offline process yomwe imathandizidwa." },
       { q: "Mtengo wa pamwezi umakwirira chiyani?", a: "Monitoring, support follow-up ndi software services za package yosankhidwa. Data migration, accounting integration ndi custom workflows zimawunikidwa payokha." },
     ],
@@ -239,12 +271,14 @@ const STR: Record<EisLang, {
     fPrivacy1: "Zidziwitso zanu zimagwiritsidwa ntchito pokuyankhani nokha. Sitigawana zidziwitso zanu ndi ena.",
     fPrivacyLink: "Ndondomeko ya Chinsinsi", privacyHref: "/ny/privacy", credentialsHref: "/ny/credentials",
     plans: [
-      { desc: "Sungani POS kapena accounting system yanu ya tsopano. Ife timawonjezera MRA EIS connection.",
-        features: ["Existing POS connection","Software activation","QR receipts"] },
-      { desc: "Full POS ya counter retail: sales, stock protection, cashier control ndi reports.",
-        features: ["Counter POS","Stock protection","Cashier roles","Inventory & reports"] },
-      { desc: "Kwa multi-branch operators ndi custom software rollouts.",
-        features: ["Multi-branch","Accounting sync","SLA support"] },
+      { desc: "Till yokonzeka ya MRA pa tablet ya Android. Kwa masitolo ang'onoang'ono, ma counter ndi ogulitsa oyenda. Hardware quoted separately.",
+        features: ["POS yonse pa tablet","MRA EIS receipts ndi QR","Stock ndi sales reports","Offline queue","Android app pa Play Store, ikubwera"] },
+      { desc: "Till ya pa sitolo: all-in-one touch terminal ndi customer display ndi cash drawer. Hardware quoted separately.",
+        features: ["All-in-one touch terminal","Customer display ndi cash drawer","Stock protection ndi cashier roles","MRA EIS receipts ndi QR","Accounting sync"] },
+      { desc: "Sungani POS kapena accounting system yanu ya tsopano. Timayilumikiza ku MRA EIS. Sage, QuickBooks, Pastel, Odoo kapena custom.",
+        features: ["Imalumikiza sisitimu yanu","MRA EIS submission ndi QR receipts","Sage, QuickBooks, Pastel, Odoo, custom","Monitoring ndi support"] },
+      { desc: "Kwa multi-branch operators ndi custom rollouts pa malo osiyanasiyana.",
+        features: ["Multi-branch POS","Accounting sync","Custom integration","SLA support"] },
     ],
   },
 };
@@ -279,7 +313,7 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
     ...meta,
     desc: t.plans[i].desc,
     features: t.plans[i].features,
-    wa: encodeURIComponent(`Hi TechNexus, I want to enquire about the ${meta.name} EIS plan`),
+    wa: encodeURIComponent(`Hi TechNexus, I would like to enquire about the ${meta.name} package`),
   }));
 
   const [titleLine1, titleLine2] = t.pricingTitle.split("\n");
@@ -352,6 +386,8 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
             </a>
           </div>
 
+          <p style={{ fontSize: "15px", color: BODY, lineHeight: 1.65, maxWidth: "720px", marginTop: "-24px", marginBottom: "40px" }}>{t.pricingLede}</p>
+
           <div className="pricing-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "20px", alignItems: "start" }}>
             {plans.map((plan) => (
               <div
@@ -378,7 +414,7 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                   <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.6, marginBottom: "20px", minHeight: "52px" }}>{plan.desc}</p>
                   <div style={{ padding: "16px", background: plan.popular ? GL : LIGHT, borderRadius: "8px", marginBottom: "0" }}>
                     <div style={{ fontSize: "11px", fontWeight: 600, color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "4px" }}>{t.setupFee}</div>
-                    <div style={{ fontSize: "20px", fontWeight: 800, color: plan.popular ? G : INK, letterSpacing: "-0.02em", marginBottom: "10px" }}>{plan.setup}</div>
+                    <div style={{ fontSize: "20px", fontWeight: 800, color: plan.popular ? G : INK, letterSpacing: "-0.02em", marginBottom: "10px" }}>{plan.setup}{plan.note ? "*" : ""}</div>
                     <div style={{ borderTop: `1px solid ${plan.popular ? "rgba(27,127,58,0.2)" : BDR}`, paddingTop: "10px" }}>
                       <div style={{ fontSize: "11px", fontWeight: 600, color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "4px" }}>{t.monthlyLabel}</div>
                       <div style={{ fontSize: "16px", fontWeight: 700, color: plan.popular ? G : BODY }}>{plan.monthly} {t.perMonth}</div>
@@ -386,6 +422,7 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                   </div>
                 </div>
                 <div style={{ padding: "0 24px 24px", flex: 1, display: "flex", flexDirection: "column" }}>
+                  {plan.hardware && <div style={{ fontSize: "11px", fontWeight: 700, color: G, marginBottom: "10px" }}>{t.hardwareNote}</div>}
                   <div style={{ fontSize: "11px", fontWeight: 600, color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "12px", marginTop: "4px" }}>{t.whatsIncluded}</div>
                   <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px", flex: 1 }}>
                     {plan.features.map((f) => (
@@ -421,7 +458,14 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
             ))}
           </div>
 
-          <div style={{ marginTop: "36px", display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap", padding: "20px 24px", background: LIGHT, borderRadius: "10px", border: `1px solid ${BDR}` }}>
+          <p style={{ fontSize: "12px", color: MUTED, marginTop: "14px" }}>{t.setupNote}</p>
+
+          <div style={{ marginTop: "56px", marginBottom: "20px" }}>
+            <div style={eyebrow}>{t.integrationsTitle}</div>
+            <h2 style={{ ...sectionTitle, fontSize: "clamp(22px, 3vw, 32px)", maxWidth: "640px" }}>{t.integrationsLede}</h2>
+          </div>
+
+          <div style={{ marginTop: "0", display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap", padding: "20px 24px", background: LIGHT, borderRadius: "10px", border: `1px solid ${BDR}` }}>
             <div style={{ fontSize: "12px", fontWeight: 600, color: MUTED, textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap" as const }}>{t.integrations}</div>
             <div style={{ width: "1px", height: "20px", background: BDR }} />
             {["Sage", "QuickBooks", "Pastel", "Odoo", "ERP"].map(name => (
@@ -440,6 +484,19 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                 <p style={{ fontSize: "12px", color: MUTED, lineHeight: 1.6, margin: 0 }}>{pb}</p>
               </div>
             ))}
+          </div>
+
+          <div style={{ marginTop: "40px" }}>
+            <div style={eyebrow}>{t.addonsTitle}</div>
+            <p style={{ fontSize: "13px", color: MUTED, marginBottom: "20px" }}>{t.addonsLede}</p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1px", background: BDR, border: `1px solid ${BDR}`, borderRadius: "10px", overflow: "hidden" }}>
+              {t.addons.map(([an, ab]) => (
+                <div key={an} style={{ background: WHITE, padding: "20px 22px" }}>
+                  <div style={{ fontSize: "13px", fontWeight: 700, color: INK, marginBottom: "4px" }}>{an}</div>
+                  <p style={{ fontSize: "12px", color: MUTED, lineHeight: 1.6, margin: 0 }}>{ab}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -533,7 +590,7 @@ export default function EisClient({ lang = "en" }: { lang?: EisLang }) {
                 {[
                   { label: t.infoLabels.wa, val: "+265 889 941 700" },
                   { label: t.infoLabels.email, val: "technexus_mw@proton.me" },
-                  { label: t.infoLabels.loc, val: "Lilongwe and nationwide, Malawi" },
+                  { label: t.infoLabels.loc, val: "Lilongwe & Blantyre, Malawi" },
                   { label: t.infoLabels.web, val: "www.technexusmw.com" },
                 ].map(({ label, val }) => (
                   <div key={label} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
