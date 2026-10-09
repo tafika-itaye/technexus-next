@@ -3,7 +3,7 @@ import EisClient from "@/app/components/EisClient";
 
 export const metadata: Metadata = {
   title: "EIS + POS Software Yotsimikiziridwa ndi MRA | TechNexus",
-  description: "Bridge ya EIS yotsimikiziridwa ndi MRA ndi POS software kwa mabizinesi a ku Malawi. QR receipts, stock control, offline support, accounting sync ndi nationwide onboarding.",
+  description: "Bridge ya EIS yotsimikiziridwa ndi MRA ndi POS software kwa mabizinesi a ku Malawi. QR receipts, stock control, offline support, accounting sync ndi onboarding m'dziko lonse.",
   alternates: {
     canonical: "https://www.technexusmw.com/ny/eis",
     languages: {
