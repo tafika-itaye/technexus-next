@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next"
 import EisClient from "@/app/components/EisClient"
+import { STR } from "@/app/components/eisContent";
 
 export const metadata: Metadata = {
   alternates: {
@@ -16,5 +17,5 @@ export const metadata: Metadata = {
 }
 
 export default function EISPage() {
-  return <EisClient />
+  return <EisClient t={STR.en} />;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import EisClient from "@/app/components/EisClient";
+import { STR } from "@/app/components/eisContent";
 
 export const metadata: Metadata = {
   title: "EIS + POS Software Yotsimikiziridwa ndi MRA | TechNexus",
@@ -16,5 +17,5 @@ export const metadata: Metadata = {
 };
 
 export default function NyEISPage() {
-  return <EisClient lang="ny" />;
+  return <EisClient t={STR.ny} />;
 }

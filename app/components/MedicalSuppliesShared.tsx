@@ -1,6 +1,3 @@
-"use client";
-import React from "react";
-
 const BG = "var(--fl-neutral-2)";
 const SURF = "#ffffff";
 const BORDER = "var(--fl-neutral-8)";
