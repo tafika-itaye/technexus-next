@@ -113,7 +113,7 @@ export default function PtCataloguePage() {
     <div style={{ background: "var(--fl-neutral-2)", minHeight: "100vh" }}>
 
       <div style={{ background: "var(--fl-neutral-90)", padding: "64px 40px 48px", textAlign: "center", position: "relative", overflow: "hidden", isolation: "isolate" }}>
-        <img src="/index_main/server_rack_1-1200.webp" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }} />
+        <img src="/index_main/server_rack_1-1200.webp" srcSet="/index_main/server_rack_1-400.webp 400w, /index_main/server_rack_1-800.webp 800w, /index_main/server_rack_1-1200.webp 1200w" sizes="100vw" alt="" aria-hidden="true" fetchPriority="high" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }} />
         <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.62)", zIndex: -1 }} />
         <h1 style={{ fontFamily: "var(--font-syne)", fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", marginBottom: "16px" }}>
           Catalogo IT
