@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LanguageServicesClient from "./LanguageServicesClient";
+import LanguageServicesClient from "@/app/components/LanguageServicesClient";
 
 export const metadata: Metadata = {
   title: "Language Services | TechNexus Scripts",

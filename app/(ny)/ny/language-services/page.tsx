@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import LanguageServicesClient from "../../language-services/LanguageServicesClient";
+import LanguageServicesClient from "@/app/components/LanguageServicesClient";
 
 export const metadata: Metadata = {
   title: "TechNexus Scripts — Ntchito za Zinenero ndi Uphungu",

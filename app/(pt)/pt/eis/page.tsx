@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import EisClient from "../../eis/EisClient";
+import EisClient from "@/app/components/EisClient";
 
 export const metadata: Metadata = {
   title: "Software EIS + POS Certificado pela MRA | TechNexus",

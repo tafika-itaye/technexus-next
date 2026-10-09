@@ -1,4 +1,4 @@
-import CountryFlag from "../components/CountryFlag";
+import CountryFlag from "./CountryFlag";
 import { RATES, PRICED, foreign, type PricedId } from "./pricing";
 
 export type LsLang = "en" | "pt" | "ny";
