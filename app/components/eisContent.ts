@@ -3,12 +3,12 @@ export type EisLang = "en" | "pt" | "ny";
 type PlanCopy = { desc: string; features: string[] };
 
 export type EisStrings = {
-  heroTitle1: string; heroTitle2: string; heroSub: string; ctaConsult: string; ctaCompare: string;
+  heroTitle1: string; heroTitle2: string; heroSub: string; ctaConsult: string; ctaCompare: string; heroImgAlt: string;
   trust: string[];
   pricingEyebrow: string; pricingTitle: string; pricingLede: string; askUs: string;
   setupFee: string; monthlyLabel: string; perMonth: string; mostPopular: string; whatsIncluded: string;
   enquirePlan: string; customQuote: string;
-  integrations: string; integrationsNote: string; integrationsTitle: string; integrationsLede: string; hardwareNote: string; setupNote: string; addonsTitle: string; addonsLede: string; addons: [string, string][]; mbTitle: string; mbDesc: string;
+  integrations: string; integrationsNote: string; integrationsTitle: string; integrationsLede: string; hardwareNote: string; setupNote: string; addonsTitle: string; addonsLede: string; addons: [string, string][]; mbTitle: string; mbDesc: string; hardwareTitle: string; hardwareShots: [string, string, string];
   perks: [string, string][];
   valueEyebrow: string; valueTitle: string; valueBody: string;
   pillars: { title: string; body: string }[];
@@ -33,6 +33,7 @@ export const STR: Record<EisLang, EisStrings> = {
     heroSub: "MRA-certified POS and integration for Malawi businesses. Take a ready-to-trade till, or keep the system you run and we connect it to MRA. QR receipts, stock control, offline support, accounting sync. Hardware supplied, quoted separately.",
     ctaConsult: "Book an Assessment",
     ctaCompare: "Compare Packages",
+    heroImgAlt: "Two shop owners behind the counter of their grocery store",
     trust: ["MRA-certified POS and bridge", "POS and stock control", "Accounting sync", "Lilongwe and Blantyre support"],
     pricingEyebrow: "MRA-certified EIS + POS solution",
     pricingTitle: "Choose the setup\nthat fits the client.",
@@ -42,6 +43,7 @@ export const STR: Record<EisLang, EisStrings> = {
     integrations: "Accounting sync", integrationsNote: "Sage, QuickBooks, Pastel, Odoo and ERP integration are scoped after assessment.",
     integrationsTitle: "Integration specialists", integrationsLede: "Keep your system. We make it MRA-compliant.",
     hardwareNote: "Hardware quoted separately", setupNote: "*Setup depends on the complexity of your existing system.",
+    hardwareTitle: "Hardware we supply", hardwareShots: ["Tablet POS", "Counter terminal", "Receipt printer"],
     pricingLede: "Two ways to get compliant: take an MRA-ready till, or connect the system you already run. Hardware is quoted separately.",
     addonsTitle: "Optional services", addonsLede: "Charged separately, quoted on request.",
     mbTitle: "Multi-Branch / Enterprise", mbDesc: "Running several sites or need custom integration? We scope a multi-branch rollout with accounting sync and SLA support.",
@@ -110,6 +112,7 @@ export const STR: Record<EisLang, EisStrings> = {
     heroSub: "POS e integração certificados pela MRA para empresas no Malawi. Leve uma caixa pronta a vender, ou mantenha o sistema que já tem e nós ligamo-lo à MRA. Recibos QR, controlo de stock, suporte offline, sincronização contabilística. Hardware fornecido, orçamentado à parte.",
     ctaConsult: "Marcar Avaliação",
     ctaCompare: "Comparar Pacotes",
+    heroImgAlt: "Dois donos de loja ao balcão da sua mercearia",
     trust: ["POS e bridge certificados pela MRA", "POS e controlo de stock", "Sincronização contabilística", "Suporte em Lilongwe e Blantyre"],
     pricingEyebrow: "Solução EIS + POS certificada pela MRA",
     pricingTitle: "Escolha a configuração\ncerta para o cliente.",
@@ -119,6 +122,7 @@ export const STR: Record<EisLang, EisStrings> = {
     integrations: "Sincronização contabilística", integrationsNote: "Sage, QuickBooks, Pastel, Odoo e integrações ERP são definidas depois da avaliação.",
     integrationsTitle: "Especialistas em integração", integrationsLede: "Mantenha o seu sistema. Nós tornamo-lo conforme com a MRA.",
     hardwareNote: "Hardware orçamentado à parte", setupNote: "*A instalação depende da complexidade do seu sistema.",
+    hardwareTitle: "Hardware que fornecemos", hardwareShots: ["POS em tablet", "Terminal de balcão", "Impressora de recibos"],
     pricingLede: "Duas formas de ficar conforme: leve uma caixa pronta para a MRA, ou ligue o sistema que já usa. O hardware é orçamentado à parte.",
     addonsTitle: "Serviços opcionais", addonsLede: "Cobrados à parte, orçamentados a pedido.",
     mbTitle: "Multi-filial / Empresa", mbDesc: "Tem várias lojas ou precisa de integração personalizada? Definimos um rollout multi-filial com sincronização contabilística e suporte SLA.",
@@ -187,6 +191,7 @@ export const STR: Record<EisLang, EisStrings> = {
     heroSub: "POS ndi integration yotsimikiziridwa ndi MRA kwa mabizinesi a ku Malawi. Tengani till yokonzeka kugulitsa, kapena sungani sisitimu yomwe muli nayo ndipo timayilumikiza ku MRA. Ma risiti a QR, stock control, offline support, accounting sync. Hardware timapereka, quoted separately.",
     ctaConsult: "Pemphani Assessment",
     ctaCompare: "Yerekezerani Mapulani",
+    heroImgAlt: "Eni ake a sitolo awiri ku counter ya golosale yawo",
     trust: ["POS ndi bridge yotsimikiziridwa ndi MRA", "POS ndi stock control", "Accounting sync", "Thandizo ku Lilongwe ndi Blantyre"],
     pricingEyebrow: "Solushoni ya EIS + POS yotsimikiziridwa ndi MRA",
     pricingTitle: "Sankhani setup\nyoyenera client.",
@@ -196,6 +201,7 @@ export const STR: Record<EisLang, EisStrings> = {
     integrations: "Accounting sync", integrationsNote: "Sage, QuickBooks, Pastel, Odoo ndi ERP integration zimawunikidwa pambuyo pa assessment.",
     integrationsTitle: "Akatswiri a integration", integrationsLede: "Sungani sisitimu yanu. Timayipanga kuti igwirizane ndi MRA.",
     hardwareNote: "Hardware quoted separately", setupNote: "*Setup imatengera complexity ya sisitimu yanu.",
+    hardwareTitle: "Hardware yomwe timapereka", hardwareShots: ["Tablet POS", "Counter terminal", "Printer ya ma risiti"],
     pricingLede: "Njira ziwiri zokhalira compliant: tengani till yokonzeka ya MRA, kapena lumikizani sisitimu yomwe mukugwiritsa kale ntchito. Hardware quoted separately.",
     addonsTitle: "Ntchito zowonjezera", addonsLede: "Zimalipiritsidwa padera, quoted pa pempho.",
     mbTitle: "Multi-Branch / Enterprise", mbDesc: "Muli ndi malo angapo kapena mukufuna custom integration? Timakonza multi-branch rollout ndi accounting sync ndi SLA support.",

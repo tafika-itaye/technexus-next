@@ -18,9 +18,9 @@ const BDR2  = "#D1D5DB";
 
 /* Canonical pricing — single source of truth for all languages */
 const PLAN_META = [
-  { name: "Tablet POS",                setup: "MWK 350,000",        monthly: "MWK 60,000",        popular: false, hardware: true,  note: false },
-  { name: "Retail Kiosk POS",          setup: "MWK 600,000",        monthly: "MWK 75,000",        popular: true,  hardware: true,  note: false },
-  { name: "EIS Bridge & Integration",  setup: "From MWK 500,000",   monthly: "MWK 75,000",        popular: false, hardware: false, note: true  },
+  { name: "Tablet POS",                setup: "MWK 350,000",        monthly: "MWK 60,000",        popular: false, hardware: true,  note: false, image: "/images/eis/tablet-pos.webp" },
+  { name: "Retail Kiosk POS",          setup: "MWK 600,000",        monthly: "MWK 75,000",        popular: true,  hardware: true,  note: false, image: "/images/eis/kiosk-pos.webp" },
+  { name: "EIS Bridge & Integration",  setup: "From MWK 500,000",   monthly: "MWK 75,000",        popular: false, hardware: false, note: true,  image: "/images/eis/bridge-software.webp" },
 ];
 
 const MB = { setup: "From MWK 5,600,000", monthly: "From MWK 500,000" };
@@ -80,38 +80,54 @@ export default function EisClient({ t }: { t: EisStrings }) {
         <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "3px", background: G }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(27,127,58,0.08) 0%, rgba(27,127,58,0) 42%)", pointerEvents: "none" }} />
         <div style={{ ...container, position: "relative" }}>
-          <div style={{ ...eyebrow, color: G, marginBottom: "20px" }}>{t.valueEyebrow}</div>
-          <h1 style={{
-            fontFamily: "var(--font-syne, 'Inter', system-ui, sans-serif)",
-            fontWeight: 800,
-            fontSize: "clamp(2.2rem, 5.5vw, 4.2rem)",
-            color: INK,
-            lineHeight: 1.08,
-            letterSpacing: 0,
-            maxWidth: "780px",
-            marginBottom: "24px",
-          }}>
-            {t.heroTitle1}<br />
-            <span style={{ color: G }}>{t.heroTitle2}</span>
-          </h1>
-          <p style={{ fontSize: "18px", color: MUTED, maxWidth: "680px", lineHeight: 1.7, marginBottom: "40px", fontWeight: 400 }}>
-            {t.heroSub}
-          </p>
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-            <a href="#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: G, color: WHITE, fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "7px", textDecoration: "none", letterSpacing: "-0.01em" }}>
-              {t.ctaConsult}
-            </a>
-            <a href="#pricing" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: WHITE, color: INK, fontWeight: 600, fontSize: "15px", padding: "14px 28px", borderRadius: "7px", border: `1px solid ${BDR2}`, textDecoration: "none" }}>
-              {t.ctaCompare}
-            </a>
-          </div>
-          <div style={{ display: "flex", gap: "28px", flexWrap: "wrap", marginTop: "56px", paddingTop: "40px", borderTop: `1px solid ${BDR}` }}>
-            {t.trust.map(item => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.2l3 3 6-6" stroke={G} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                <span style={{ fontSize: "13px", color: BODY, fontWeight: 500 }}>{item}</span>
+          <div className="eis-hero" style={{ display: "grid", gridTemplateColumns: "1.05fr 0.95fr", gap: "56px", alignItems: "center" }}>
+            <div>
+              <div style={{ ...eyebrow, color: G, marginBottom: "20px" }}>{t.valueEyebrow}</div>
+              <h1 style={{
+                fontFamily: "var(--font-syne, 'Inter', system-ui, sans-serif)",
+                fontWeight: 800,
+                fontSize: "clamp(2.2rem, 5vw, 3.6rem)",
+                color: INK,
+                lineHeight: 1.08,
+                letterSpacing: 0,
+                marginBottom: "24px",
+              }}>
+                {t.heroTitle1}<br />
+                <span style={{ color: G }}>{t.heroTitle2}</span>
+              </h1>
+              <p style={{ fontSize: "17px", color: MUTED, maxWidth: "560px", lineHeight: 1.7, marginBottom: "36px", fontWeight: 400 }}>
+                {t.heroSub}
+              </p>
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                <a href="#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: G, color: WHITE, fontWeight: 700, fontSize: "15px", padding: "14px 28px", borderRadius: "7px", textDecoration: "none", letterSpacing: "-0.01em" }}>
+                  {t.ctaConsult}
+                </a>
+                <a href="#pricing" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: WHITE, color: INK, fontWeight: 600, fontSize: "15px", padding: "14px 28px", borderRadius: "7px", border: `1px solid ${BDR2}`, textDecoration: "none" }}>
+                  {t.ctaCompare}
+                </a>
               </div>
-            ))}
+              <div style={{ display: "flex", gap: "20px 28px", flexWrap: "wrap", marginTop: "44px", paddingTop: "32px", borderTop: `1px solid ${BDR}` }}>
+                {t.trust.map(item => (
+                  <div key={item} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.2l3 3 6-6" stroke={G} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    <span style={{ fontSize: "13px", color: BODY, fontWeight: 500 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="eis-hero-media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/eis/hero-team.webp"
+                alt={t.heroImgAlt}
+                width={1200}
+                height={1000}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                style={{ display: "block", width: "100%", height: "auto", aspectRatio: "6 / 5", objectFit: "cover", borderRadius: "16px", border: "1px solid rgba(13,17,23,0.06)", boxShadow: "0 18px 48px rgba(13,17,23,0.14)" }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -147,6 +163,17 @@ export default function EisClient({ t }: { t: EisStrings }) {
                 }}
               >
                 <div style={{ height: "4px", background: plan.popular ? G : BDR }} />
+                {plan.image && (
+                  <img
+                    src={plan.image}
+                    alt=""
+                    width={560}
+                    height={150}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ display: "block", width: "100%", height: "150px", objectFit: "cover", background: LIGHT }}
+                  />
+                )}
                 <div style={{ padding: "24px 24px 20px" }}>
                   {plan.popular && (
                     <div style={{ display: "inline-block", background: G, color: WHITE, fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "3px 10px", borderRadius: "4px", marginBottom: "12px" }}>
@@ -213,6 +240,20 @@ export default function EisClient({ t }: { t: EisStrings }) {
           </div>
 
           <p style={{ fontSize: "12px", color: MUTED, marginTop: "14px" }}>{t.setupNote}</p>
+
+          <div style={{ marginTop: "40px" }}>
+            <div style={eyebrow}>{t.hardwareTitle}</div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px", marginTop: "4px" }}>
+              {[{ src: "/eis/eis-tablet.webp", label: t.hardwareShots[0] }, { src: "/eis/eis-kiosk.webp", label: t.hardwareShots[1] }, { src: "/eis/eis-printer.webp", label: t.hardwareShots[2] }].map((h) => (
+                <figure key={h.src} style={{ margin: 0, border: "1px solid " + BDR, borderRadius: "12px", overflow: "hidden", background: WHITE }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={h.src} alt={h.label} width={600} height={450} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", display: "block" }} />
+                  <figcaption style={{ fontSize: "12px", fontWeight: 600, color: BODY, padding: "10px 14px" }}>{h.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <p style={{ fontSize: "12px", color: MUTED, marginTop: "12px" }}>{t.hardwareNote}</p>
+          </div>
 
           <div style={{ marginTop: "56px", marginBottom: "20px" }}>
             <div style={eyebrow}>{t.integrationsTitle}</div>
@@ -454,6 +495,8 @@ export default function EisClient({ t }: { t: EisStrings }) {
         }
         @media (max-width: 900px) {
           .faq-grid { grid-template-columns: 1fr !important; }
+          .eis-hero { grid-template-columns: 1fr !important; gap: 36px !important; }
+          .eis-hero-media { order: -1; }
         }
         input:focus, select:focus, textarea:focus {
           border-color: #1B7F3A !important;
