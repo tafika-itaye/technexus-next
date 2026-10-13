@@ -140,7 +140,7 @@ export default function EisClient({ t }: { t: EisStrings }) {
             <h2 style={{ ...sectionTitle, maxWidth: "500px" }}>
               {titleLine1}<br />{titleLine2}
             </h2>
-            <a href="#contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: GL, color: G, fontWeight: 600, fontSize: "14px", padding: "11px 22px", borderRadius: "7px", border: "1px solid rgba(27,127,58,0.25)", textDecoration: "none", whiteSpace: "nowrap" as const }}>
+            <a href="#contact" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", background: GL, color: G, fontWeight: 600, fontSize: "14px", padding: "11px 22px", borderRadius: "7px", border: "1px solid rgba(27,127,58,0.25)", textDecoration: "none", textAlign: "center" as const }}>
               {t.askUs}
             </a>
           </div>
@@ -234,7 +234,7 @@ export default function EisClient({ t }: { t: EisStrings }) {
               <p style={{ fontSize: "13px", color: MUTED, lineHeight: 1.6, margin: "0 0 10px" }}>{t.mbDesc}</p>
               <div style={{ fontSize: "13px", fontWeight: 600, color: BODY }}>{t.setupFee}: {MB.setup} &middot; {t.monthlyLabel}: {MB.monthly} {t.perMonth}</div>
             </div>
-            <a href={"https://wa.me/265889941700?text=" + encodeURIComponent("Hi TechNexus, I would like to enquire about the Multi-Branch / Enterprise package")} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: G, color: WHITE, fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "7px", textDecoration: "none", whiteSpace: "nowrap" as const }}>
+            <a href={"https://wa.me/265889941700?text=" + encodeURIComponent("Hi TechNexus, I would like to enquire about the Multi-Branch / Enterprise package")} target="_blank" rel="noopener" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px", background: G, color: WHITE, fontWeight: 700, fontSize: "14px", padding: "12px 24px", borderRadius: "7px", textDecoration: "none", textAlign: "center" as const }}>
               {t.customQuote}
             </a>
           </div>
